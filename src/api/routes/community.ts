@@ -1,0 +1,2 @@
+// Community posts (/api/community)
+

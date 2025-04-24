@@ -1,0 +1,2 @@
+// Resources (/api/resources)
+

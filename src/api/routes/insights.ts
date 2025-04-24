@@ -1,0 +1,2 @@
+// AI insights (/api/insights)
+
