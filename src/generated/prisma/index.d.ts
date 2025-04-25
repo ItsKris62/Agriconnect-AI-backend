@@ -1731,29 +1731,29 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    products: number
-    sentMessages: number
-    receivedMessages: number
-    posts: number
-    orders: number
     events: number
-    ratingsGiven: number
-    ratingsReceived: number
-    passwordResetTokens: number
     feedback: number
+    receivedMessages: number
+    sentMessages: number
+    orders: number
+    passwordResetTokens: number
+    posts: number
+    products: number
+    ratingsReceived: number
+    ratingsGiven: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    products?: boolean | UserCountOutputTypeCountProductsArgs
-    sentMessages?: boolean | UserCountOutputTypeCountSentMessagesArgs
-    receivedMessages?: boolean | UserCountOutputTypeCountReceivedMessagesArgs
-    posts?: boolean | UserCountOutputTypeCountPostsArgs
-    orders?: boolean | UserCountOutputTypeCountOrdersArgs
     events?: boolean | UserCountOutputTypeCountEventsArgs
-    ratingsGiven?: boolean | UserCountOutputTypeCountRatingsGivenArgs
-    ratingsReceived?: boolean | UserCountOutputTypeCountRatingsReceivedArgs
-    passwordResetTokens?: boolean | UserCountOutputTypeCountPasswordResetTokensArgs
     feedback?: boolean | UserCountOutputTypeCountFeedbackArgs
+    receivedMessages?: boolean | UserCountOutputTypeCountReceivedMessagesArgs
+    sentMessages?: boolean | UserCountOutputTypeCountSentMessagesArgs
+    orders?: boolean | UserCountOutputTypeCountOrdersArgs
+    passwordResetTokens?: boolean | UserCountOutputTypeCountPasswordResetTokensArgs
+    posts?: boolean | UserCountOutputTypeCountPostsArgs
+    products?: boolean | UserCountOutputTypeCountProductsArgs
+    ratingsReceived?: boolean | UserCountOutputTypeCountRatingsReceivedArgs
+    ratingsGiven?: boolean | UserCountOutputTypeCountRatingsGivenArgs
   }
 
   // Custom InputTypes
@@ -1770,15 +1770,15 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountProductsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProductWhereInput
+  export type UserCountOutputTypeCountEventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: EventWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountSentMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: MessageWhereInput
+  export type UserCountOutputTypeCountFeedbackArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FeedbackWhereInput
   }
 
   /**
@@ -1791,8 +1791,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountPostsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PostWhereInput
+  export type UserCountOutputTypeCountSentMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MessageWhereInput
   }
 
   /**
@@ -1805,15 +1805,22 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountEventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EventWhereInput
+  export type UserCountOutputTypeCountPasswordResetTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PasswordResetTokenWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountRatingsGivenArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RatingWhereInput
+  export type UserCountOutputTypeCountPostsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PostWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountProductsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProductWhereInput
   }
 
   /**
@@ -1826,15 +1833,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountPasswordResetTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PasswordResetTokenWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountFeedbackArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FeedbackWhereInput
+  export type UserCountOutputTypeCountRatingsGivenArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RatingWhereInput
   }
 
 
@@ -1843,13 +1843,13 @@ export namespace Prisma {
    */
 
   export type ProductCountOutputType = {
-    orders: number
     events: number
+    orders: number
   }
 
   export type ProductCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    orders?: boolean | ProductCountOutputTypeCountOrdersArgs
     events?: boolean | ProductCountOutputTypeCountEventsArgs
+    orders?: boolean | ProductCountOutputTypeCountOrdersArgs
   }
 
   // Custom InputTypes
@@ -1866,15 +1866,15 @@ export namespace Prisma {
   /**
    * ProductCountOutputType without action
    */
-  export type ProductCountOutputTypeCountOrdersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: OrderWhereInput
+  export type ProductCountOutputTypeCountEventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: EventWhereInput
   }
 
   /**
    * ProductCountOutputType without action
    */
-  export type ProductCountOutputTypeCountEventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EventWhereInput
+  export type ProductCountOutputTypeCountOrdersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: OrderWhereInput
   }
 
 
@@ -2328,16 +2328,16 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     averageRating?: boolean
-    products?: boolean | User$productsArgs<ExtArgs>
-    sentMessages?: boolean | User$sentMessagesArgs<ExtArgs>
-    receivedMessages?: boolean | User$receivedMessagesArgs<ExtArgs>
-    posts?: boolean | User$postsArgs<ExtArgs>
-    orders?: boolean | User$ordersArgs<ExtArgs>
     events?: boolean | User$eventsArgs<ExtArgs>
-    ratingsGiven?: boolean | User$ratingsGivenArgs<ExtArgs>
-    ratingsReceived?: boolean | User$ratingsReceivedArgs<ExtArgs>
-    passwordResetTokens?: boolean | User$passwordResetTokensArgs<ExtArgs>
     feedback?: boolean | User$feedbackArgs<ExtArgs>
+    receivedMessages?: boolean | User$receivedMessagesArgs<ExtArgs>
+    sentMessages?: boolean | User$sentMessagesArgs<ExtArgs>
+    orders?: boolean | User$ordersArgs<ExtArgs>
+    passwordResetTokens?: boolean | User$passwordResetTokensArgs<ExtArgs>
+    posts?: boolean | User$postsArgs<ExtArgs>
+    products?: boolean | User$productsArgs<ExtArgs>
+    ratingsReceived?: boolean | User$ratingsReceivedArgs<ExtArgs>
+    ratingsGiven?: boolean | User$ratingsGivenArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -2409,16 +2409,16 @@ export namespace Prisma {
 
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "password" | "firstName" | "lastName" | "phoneNumber" | "role" | "country" | "county" | "subCounty" | "latitude" | "longitude" | "idNumber" | "idImageUrl" | "verificationStatus" | "avatarUrl" | "createdAt" | "updatedAt" | "averageRating", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    products?: boolean | User$productsArgs<ExtArgs>
-    sentMessages?: boolean | User$sentMessagesArgs<ExtArgs>
-    receivedMessages?: boolean | User$receivedMessagesArgs<ExtArgs>
-    posts?: boolean | User$postsArgs<ExtArgs>
-    orders?: boolean | User$ordersArgs<ExtArgs>
     events?: boolean | User$eventsArgs<ExtArgs>
-    ratingsGiven?: boolean | User$ratingsGivenArgs<ExtArgs>
-    ratingsReceived?: boolean | User$ratingsReceivedArgs<ExtArgs>
-    passwordResetTokens?: boolean | User$passwordResetTokensArgs<ExtArgs>
     feedback?: boolean | User$feedbackArgs<ExtArgs>
+    receivedMessages?: boolean | User$receivedMessagesArgs<ExtArgs>
+    sentMessages?: boolean | User$sentMessagesArgs<ExtArgs>
+    orders?: boolean | User$ordersArgs<ExtArgs>
+    passwordResetTokens?: boolean | User$passwordResetTokensArgs<ExtArgs>
+    posts?: boolean | User$postsArgs<ExtArgs>
+    products?: boolean | User$productsArgs<ExtArgs>
+    ratingsReceived?: boolean | User$ratingsReceivedArgs<ExtArgs>
+    ratingsGiven?: boolean | User$ratingsGivenArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -2427,16 +2427,16 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      products: Prisma.$ProductPayload<ExtArgs>[]
-      sentMessages: Prisma.$MessagePayload<ExtArgs>[]
-      receivedMessages: Prisma.$MessagePayload<ExtArgs>[]
-      posts: Prisma.$PostPayload<ExtArgs>[]
-      orders: Prisma.$OrderPayload<ExtArgs>[]
       events: Prisma.$EventPayload<ExtArgs>[]
-      ratingsGiven: Prisma.$RatingPayload<ExtArgs>[]
-      ratingsReceived: Prisma.$RatingPayload<ExtArgs>[]
-      passwordResetTokens: Prisma.$PasswordResetTokenPayload<ExtArgs>[]
       feedback: Prisma.$FeedbackPayload<ExtArgs>[]
+      receivedMessages: Prisma.$MessagePayload<ExtArgs>[]
+      sentMessages: Prisma.$MessagePayload<ExtArgs>[]
+      orders: Prisma.$OrderPayload<ExtArgs>[]
+      passwordResetTokens: Prisma.$PasswordResetTokenPayload<ExtArgs>[]
+      posts: Prisma.$PostPayload<ExtArgs>[]
+      products: Prisma.$ProductPayload<ExtArgs>[]
+      ratingsReceived: Prisma.$RatingPayload<ExtArgs>[]
+      ratingsGiven: Prisma.$RatingPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2852,16 +2852,16 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    products<T extends User$productsArgs<ExtArgs> = {}>(args?: Subset<T, User$productsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    sentMessages<T extends User$sentMessagesArgs<ExtArgs> = {}>(args?: Subset<T, User$sentMessagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    receivedMessages<T extends User$receivedMessagesArgs<ExtArgs> = {}>(args?: Subset<T, User$receivedMessagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    posts<T extends User$postsArgs<ExtArgs> = {}>(args?: Subset<T, User$postsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    orders<T extends User$ordersArgs<ExtArgs> = {}>(args?: Subset<T, User$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     events<T extends User$eventsArgs<ExtArgs> = {}>(args?: Subset<T, User$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    ratingsGiven<T extends User$ratingsGivenArgs<ExtArgs> = {}>(args?: Subset<T, User$ratingsGivenArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RatingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    ratingsReceived<T extends User$ratingsReceivedArgs<ExtArgs> = {}>(args?: Subset<T, User$ratingsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RatingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    passwordResetTokens<T extends User$passwordResetTokensArgs<ExtArgs> = {}>(args?: Subset<T, User$passwordResetTokensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PasswordResetTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     feedback<T extends User$feedbackArgs<ExtArgs> = {}>(args?: Subset<T, User$feedbackArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeedbackPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    receivedMessages<T extends User$receivedMessagesArgs<ExtArgs> = {}>(args?: Subset<T, User$receivedMessagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    sentMessages<T extends User$sentMessagesArgs<ExtArgs> = {}>(args?: Subset<T, User$sentMessagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    orders<T extends User$ordersArgs<ExtArgs> = {}>(args?: Subset<T, User$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    passwordResetTokens<T extends User$passwordResetTokensArgs<ExtArgs> = {}>(args?: Subset<T, User$passwordResetTokensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PasswordResetTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    posts<T extends User$postsArgs<ExtArgs> = {}>(args?: Subset<T, User$postsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    products<T extends User$productsArgs<ExtArgs> = {}>(args?: Subset<T, User$productsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ratingsReceived<T extends User$ratingsReceivedArgs<ExtArgs> = {}>(args?: Subset<T, User$ratingsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RatingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ratingsGiven<T extends User$ratingsGivenArgs<ExtArgs> = {}>(args?: Subset<T, User$ratingsGivenArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RatingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3298,51 +3298,51 @@ export namespace Prisma {
   }
 
   /**
-   * User.products
+   * User.events
    */
-  export type User$productsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$eventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Event
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: EventSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Event
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: EventOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
-    where?: ProductWhereInput
-    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
-    cursor?: ProductWhereUniqueInput
+    include?: EventInclude<ExtArgs> | null
+    where?: EventWhereInput
+    orderBy?: EventOrderByWithRelationInput | EventOrderByWithRelationInput[]
+    cursor?: EventWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
+    distinct?: EventScalarFieldEnum | EventScalarFieldEnum[]
   }
 
   /**
-   * User.sentMessages
+   * User.feedback
    */
-  export type User$sentMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$feedbackArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Message
+     * Select specific fields to fetch from the Feedback
      */
-    select?: MessageSelect<ExtArgs> | null
+    select?: FeedbackSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Message
+     * Omit specific fields from the Feedback
      */
-    omit?: MessageOmit<ExtArgs> | null
+    omit?: FeedbackOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MessageInclude<ExtArgs> | null
-    where?: MessageWhereInput
-    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
-    cursor?: MessageWhereUniqueInput
+    include?: FeedbackInclude<ExtArgs> | null
+    where?: FeedbackWhereInput
+    orderBy?: FeedbackOrderByWithRelationInput | FeedbackOrderByWithRelationInput[]
+    cursor?: FeedbackWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+    distinct?: FeedbackScalarFieldEnum | FeedbackScalarFieldEnum[]
   }
 
   /**
@@ -3370,27 +3370,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.posts
+   * User.sentMessages
    */
-  export type User$postsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$sentMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Post
+     * Select specific fields to fetch from the Message
      */
-    select?: PostSelect<ExtArgs> | null
+    select?: MessageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Post
+     * Omit specific fields from the Message
      */
-    omit?: PostOmit<ExtArgs> | null
+    omit?: MessageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PostInclude<ExtArgs> | null
-    where?: PostWhereInput
-    orderBy?: PostOrderByWithRelationInput | PostOrderByWithRelationInput[]
-    cursor?: PostWhereUniqueInput
+    include?: MessageInclude<ExtArgs> | null
+    where?: MessageWhereInput
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    cursor?: MessageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: PostScalarFieldEnum | PostScalarFieldEnum[]
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
   }
 
   /**
@@ -3418,51 +3418,75 @@ export namespace Prisma {
   }
 
   /**
-   * User.events
+   * User.passwordResetTokens
    */
-  export type User$eventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$passwordResetTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the PasswordResetToken
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: PasswordResetTokenSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Event
+     * Omit specific fields from the PasswordResetToken
      */
-    omit?: EventOmit<ExtArgs> | null
+    omit?: PasswordResetTokenOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
-    where?: EventWhereInput
-    orderBy?: EventOrderByWithRelationInput | EventOrderByWithRelationInput[]
-    cursor?: EventWhereUniqueInput
+    include?: PasswordResetTokenInclude<ExtArgs> | null
+    where?: PasswordResetTokenWhereInput
+    orderBy?: PasswordResetTokenOrderByWithRelationInput | PasswordResetTokenOrderByWithRelationInput[]
+    cursor?: PasswordResetTokenWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: EventScalarFieldEnum | EventScalarFieldEnum[]
+    distinct?: PasswordResetTokenScalarFieldEnum | PasswordResetTokenScalarFieldEnum[]
   }
 
   /**
-   * User.ratingsGiven
+   * User.posts
    */
-  export type User$ratingsGivenArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$postsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Rating
+     * Select specific fields to fetch from the Post
      */
-    select?: RatingSelect<ExtArgs> | null
+    select?: PostSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Rating
+     * Omit specific fields from the Post
      */
-    omit?: RatingOmit<ExtArgs> | null
+    omit?: PostOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RatingInclude<ExtArgs> | null
-    where?: RatingWhereInput
-    orderBy?: RatingOrderByWithRelationInput | RatingOrderByWithRelationInput[]
-    cursor?: RatingWhereUniqueInput
+    include?: PostInclude<ExtArgs> | null
+    where?: PostWhereInput
+    orderBy?: PostOrderByWithRelationInput | PostOrderByWithRelationInput[]
+    cursor?: PostWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: RatingScalarFieldEnum | RatingScalarFieldEnum[]
+    distinct?: PostScalarFieldEnum | PostScalarFieldEnum[]
+  }
+
+  /**
+   * User.products
+   */
+  export type User$productsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    where?: ProductWhereInput
+    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    cursor?: ProductWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
   }
 
   /**
@@ -3490,51 +3514,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.passwordResetTokens
+   * User.ratingsGiven
    */
-  export type User$passwordResetTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$ratingsGivenArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the PasswordResetToken
+     * Select specific fields to fetch from the Rating
      */
-    select?: PasswordResetTokenSelect<ExtArgs> | null
+    select?: RatingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the PasswordResetToken
+     * Omit specific fields from the Rating
      */
-    omit?: PasswordResetTokenOmit<ExtArgs> | null
+    omit?: RatingOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PasswordResetTokenInclude<ExtArgs> | null
-    where?: PasswordResetTokenWhereInput
-    orderBy?: PasswordResetTokenOrderByWithRelationInput | PasswordResetTokenOrderByWithRelationInput[]
-    cursor?: PasswordResetTokenWhereUniqueInput
+    include?: RatingInclude<ExtArgs> | null
+    where?: RatingWhereInput
+    orderBy?: RatingOrderByWithRelationInput | RatingOrderByWithRelationInput[]
+    cursor?: RatingWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: PasswordResetTokenScalarFieldEnum | PasswordResetTokenScalarFieldEnum[]
-  }
-
-  /**
-   * User.feedback
-   */
-  export type User$feedbackArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Feedback
-     */
-    select?: FeedbackSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Feedback
-     */
-    omit?: FeedbackOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FeedbackInclude<ExtArgs> | null
-    where?: FeedbackWhereInput
-    orderBy?: FeedbackOrderByWithRelationInput | FeedbackOrderByWithRelationInput[]
-    cursor?: FeedbackWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: FeedbackScalarFieldEnum | FeedbackScalarFieldEnum[]
+    distinct?: RatingScalarFieldEnum | RatingScalarFieldEnum[]
   }
 
   /**
@@ -3834,9 +3834,9 @@ export namespace Prisma {
     longitude?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    orders?: boolean | Product$ordersArgs<ExtArgs>
     events?: boolean | Product$eventsArgs<ExtArgs>
+    orders?: boolean | Product$ordersArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | ProductCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["product"]>
 
@@ -3889,9 +3889,9 @@ export namespace Prisma {
 
   export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "name" | "quantity" | "price" | "imageUrls" | "qualityScore" | "predictedPrice" | "latitude" | "longitude" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    orders?: boolean | Product$ordersArgs<ExtArgs>
     events?: boolean | Product$eventsArgs<ExtArgs>
+    orders?: boolean | Product$ordersArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | ProductCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ProductIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3904,9 +3904,9 @@ export namespace Prisma {
   export type $ProductPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Product"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
-      orders: Prisma.$OrderPayload<ExtArgs>[]
       events: Prisma.$EventPayload<ExtArgs>[]
+      orders: Prisma.$OrderPayload<ExtArgs>[]
+      user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -4315,9 +4315,9 @@ export namespace Prisma {
    */
   export interface Prisma__ProductClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    orders<T extends Product$ordersArgs<ExtArgs> = {}>(args?: Subset<T, Product$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     events<T extends Product$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Product$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    orders<T extends Product$ordersArgs<ExtArgs> = {}>(args?: Subset<T, Product$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4755,30 +4755,6 @@ export namespace Prisma {
   }
 
   /**
-   * Product.orders
-   */
-  export type Product$ordersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Order
-     */
-    select?: OrderSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Order
-     */
-    omit?: OrderOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrderInclude<ExtArgs> | null
-    where?: OrderWhereInput
-    orderBy?: OrderOrderByWithRelationInput | OrderOrderByWithRelationInput[]
-    cursor?: OrderWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: OrderScalarFieldEnum | OrderScalarFieldEnum[]
-  }
-
-  /**
    * Product.events
    */
   export type Product$eventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4800,6 +4776,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: EventScalarFieldEnum | EventScalarFieldEnum[]
+  }
+
+  /**
+   * Product.orders
+   */
+  export type Product$ordersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Order
+     */
+    select?: OrderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Order
+     */
+    omit?: OrderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OrderInclude<ExtArgs> | null
+    where?: OrderWhereInput
+    orderBy?: OrderOrderByWithRelationInput | OrderOrderByWithRelationInput[]
+    cursor?: OrderWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: OrderScalarFieldEnum | OrderScalarFieldEnum[]
   }
 
   /**
@@ -5059,9 +5059,9 @@ export namespace Prisma {
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    events?: boolean | Order$eventsArgs<ExtArgs>
     buyer?: boolean | UserDefaultArgs<ExtArgs>
     product?: boolean | ProductDefaultArgs<ExtArgs>
-    events?: boolean | Order$eventsArgs<ExtArgs>
     _count?: boolean | OrderCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["order"]>
 
@@ -5104,9 +5104,9 @@ export namespace Prisma {
 
   export type OrderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "buyerId" | "productId" | "quantity" | "totalPrice" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["order"]>
   export type OrderInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    events?: boolean | Order$eventsArgs<ExtArgs>
     buyer?: boolean | UserDefaultArgs<ExtArgs>
     product?: boolean | ProductDefaultArgs<ExtArgs>
-    events?: boolean | Order$eventsArgs<ExtArgs>
     _count?: boolean | OrderCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type OrderIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5121,9 +5121,9 @@ export namespace Prisma {
   export type $OrderPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Order"
     objects: {
+      events: Prisma.$EventPayload<ExtArgs>[]
       buyer: Prisma.$UserPayload<ExtArgs>
       product: Prisma.$ProductPayload<ExtArgs>
-      events: Prisma.$EventPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -5528,9 +5528,9 @@ export namespace Prisma {
    */
   export interface Prisma__OrderClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    events<T extends Order$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Order$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     buyer<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     product<T extends ProductDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProductDefaultArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    events<T extends Order$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Order$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6212,9 +6212,9 @@ export namespace Prisma {
     receiverId?: boolean
     content?: boolean
     createdAt?: boolean
-    sender?: boolean | UserDefaultArgs<ExtArgs>
-    receiver?: boolean | UserDefaultArgs<ExtArgs>
     events?: boolean | Message$eventsArgs<ExtArgs>
+    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | MessageCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["message"]>
 
@@ -6224,8 +6224,8 @@ export namespace Prisma {
     receiverId?: boolean
     content?: boolean
     createdAt?: boolean
-    sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["message"]>
 
   export type MessageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -6234,8 +6234,8 @@ export namespace Prisma {
     receiverId?: boolean
     content?: boolean
     createdAt?: boolean
-    sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["message"]>
 
   export type MessageSelectScalar = {
@@ -6248,26 +6248,26 @@ export namespace Prisma {
 
   export type MessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "senderId" | "receiverId" | "content" | "createdAt", ExtArgs["result"]["message"]>
   export type MessageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    sender?: boolean | UserDefaultArgs<ExtArgs>
-    receiver?: boolean | UserDefaultArgs<ExtArgs>
     events?: boolean | Message$eventsArgs<ExtArgs>
+    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | MessageCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type MessageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type MessageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    sender?: boolean | UserDefaultArgs<ExtArgs>
     receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $MessagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Message"
     objects: {
-      sender: Prisma.$UserPayload<ExtArgs>
-      receiver: Prisma.$UserPayload<ExtArgs>
       events: Prisma.$EventPayload<ExtArgs>[]
+      receiver: Prisma.$UserPayload<ExtArgs>
+      sender: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -6669,9 +6669,9 @@ export namespace Prisma {
    */
   export interface Prisma__MessageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    sender<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    receiver<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     events<T extends Message$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Message$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    receiver<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    sender<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7346,8 +7346,8 @@ export namespace Prisma {
     content?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     events?: boolean | Post$eventsArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | PostCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["post"]>
 
@@ -7379,8 +7379,8 @@ export namespace Prisma {
 
   export type PostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "content" | "createdAt" | "updatedAt", ExtArgs["result"]["post"]>
   export type PostInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     events?: boolean | Post$eventsArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | PostCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type PostIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -7393,8 +7393,8 @@ export namespace Prisma {
   export type $PostPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Post"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
       events: Prisma.$EventPayload<ExtArgs>[]
+      user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -7796,8 +7796,8 @@ export namespace Prisma {
    */
   export interface Prisma__PostClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     events<T extends Post$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Post$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9593,10 +9593,10 @@ export namespace Prisma {
     details?: boolean
     createdAt?: boolean
     user?: boolean | Event$userArgs<ExtArgs>
-    product?: boolean | Event$productArgs<ExtArgs>
-    order?: boolean | Event$orderArgs<ExtArgs>
     message?: boolean | Event$messageArgs<ExtArgs>
+    order?: boolean | Event$orderArgs<ExtArgs>
     post?: boolean | Event$postArgs<ExtArgs>
+    product?: boolean | Event$productArgs<ExtArgs>
     resource?: boolean | Event$resourceArgs<ExtArgs>
   }, ExtArgs["result"]["event"]>
 
@@ -9609,10 +9609,10 @@ export namespace Prisma {
     details?: boolean
     createdAt?: boolean
     user?: boolean | Event$userArgs<ExtArgs>
-    product?: boolean | Event$productArgs<ExtArgs>
-    order?: boolean | Event$orderArgs<ExtArgs>
     message?: boolean | Event$messageArgs<ExtArgs>
+    order?: boolean | Event$orderArgs<ExtArgs>
     post?: boolean | Event$postArgs<ExtArgs>
+    product?: boolean | Event$productArgs<ExtArgs>
     resource?: boolean | Event$resourceArgs<ExtArgs>
   }, ExtArgs["result"]["event"]>
 
@@ -9625,10 +9625,10 @@ export namespace Prisma {
     details?: boolean
     createdAt?: boolean
     user?: boolean | Event$userArgs<ExtArgs>
-    product?: boolean | Event$productArgs<ExtArgs>
-    order?: boolean | Event$orderArgs<ExtArgs>
     message?: boolean | Event$messageArgs<ExtArgs>
+    order?: boolean | Event$orderArgs<ExtArgs>
     post?: boolean | Event$postArgs<ExtArgs>
+    product?: boolean | Event$productArgs<ExtArgs>
     resource?: boolean | Event$resourceArgs<ExtArgs>
   }, ExtArgs["result"]["event"]>
 
@@ -9645,26 +9645,26 @@ export namespace Prisma {
   export type EventOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "action" | "entityType" | "entityId" | "details" | "createdAt", ExtArgs["result"]["event"]>
   export type EventInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | Event$userArgs<ExtArgs>
-    product?: boolean | Event$productArgs<ExtArgs>
-    order?: boolean | Event$orderArgs<ExtArgs>
     message?: boolean | Event$messageArgs<ExtArgs>
+    order?: boolean | Event$orderArgs<ExtArgs>
     post?: boolean | Event$postArgs<ExtArgs>
+    product?: boolean | Event$productArgs<ExtArgs>
     resource?: boolean | Event$resourceArgs<ExtArgs>
   }
   export type EventIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | Event$userArgs<ExtArgs>
-    product?: boolean | Event$productArgs<ExtArgs>
-    order?: boolean | Event$orderArgs<ExtArgs>
     message?: boolean | Event$messageArgs<ExtArgs>
+    order?: boolean | Event$orderArgs<ExtArgs>
     post?: boolean | Event$postArgs<ExtArgs>
+    product?: boolean | Event$productArgs<ExtArgs>
     resource?: boolean | Event$resourceArgs<ExtArgs>
   }
   export type EventIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | Event$userArgs<ExtArgs>
-    product?: boolean | Event$productArgs<ExtArgs>
-    order?: boolean | Event$orderArgs<ExtArgs>
     message?: boolean | Event$messageArgs<ExtArgs>
+    order?: boolean | Event$orderArgs<ExtArgs>
     post?: boolean | Event$postArgs<ExtArgs>
+    product?: boolean | Event$productArgs<ExtArgs>
     resource?: boolean | Event$resourceArgs<ExtArgs>
   }
 
@@ -9672,10 +9672,10 @@ export namespace Prisma {
     name: "Event"
     objects: {
       user: Prisma.$UserPayload<ExtArgs> | null
-      product: Prisma.$ProductPayload<ExtArgs> | null
-      order: Prisma.$OrderPayload<ExtArgs> | null
       message: Prisma.$MessagePayload<ExtArgs> | null
+      order: Prisma.$OrderPayload<ExtArgs> | null
       post: Prisma.$PostPayload<ExtArgs> | null
+      product: Prisma.$ProductPayload<ExtArgs> | null
       resource: Prisma.$ResourcePayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -10081,10 +10081,10 @@ export namespace Prisma {
   export interface Prisma__EventClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     user<T extends Event$userArgs<ExtArgs> = {}>(args?: Subset<T, Event$userArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    product<T extends Event$productArgs<ExtArgs> = {}>(args?: Subset<T, Event$productArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    order<T extends Event$orderArgs<ExtArgs> = {}>(args?: Subset<T, Event$orderArgs<ExtArgs>>): Prisma__OrderClient<$Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     message<T extends Event$messageArgs<ExtArgs> = {}>(args?: Subset<T, Event$messageArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    order<T extends Event$orderArgs<ExtArgs> = {}>(args?: Subset<T, Event$orderArgs<ExtArgs>>): Prisma__OrderClient<$Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     post<T extends Event$postArgs<ExtArgs> = {}>(args?: Subset<T, Event$postArgs<ExtArgs>>): Prisma__PostClient<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    product<T extends Event$productArgs<ExtArgs> = {}>(args?: Subset<T, Event$productArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     resource<T extends Event$resourceArgs<ExtArgs> = {}>(args?: Subset<T, Event$resourceArgs<ExtArgs>>): Prisma__ResourceClient<$Result.GetResult<Prisma.$ResourcePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -10537,22 +10537,22 @@ export namespace Prisma {
   }
 
   /**
-   * Event.product
+   * Event.message
    */
-  export type Event$productArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Event$messageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Message
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: MessageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Message
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: MessageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
-    where?: ProductWhereInput
+    include?: MessageInclude<ExtArgs> | null
+    where?: MessageWhereInput
   }
 
   /**
@@ -10575,25 +10575,6 @@ export namespace Prisma {
   }
 
   /**
-   * Event.message
-   */
-  export type Event$messageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Message
-     */
-    select?: MessageSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Message
-     */
-    omit?: MessageOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: MessageInclude<ExtArgs> | null
-    where?: MessageWhereInput
-  }
-
-  /**
    * Event.post
    */
   export type Event$postArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10610,6 +10591,25 @@ export namespace Prisma {
      */
     include?: PostInclude<ExtArgs> | null
     where?: PostWhereInput
+  }
+
+  /**
+   * Event.product
+   */
+  export type Event$productArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    where?: ProductWhereInput
   }
 
   /**
@@ -10904,8 +10904,8 @@ export namespace Prisma {
     friendliness?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    rater?: boolean | UserDefaultArgs<ExtArgs>
     farmer?: boolean | UserDefaultArgs<ExtArgs>
+    rater?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["rating"]>
 
   export type RatingSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -10918,8 +10918,8 @@ export namespace Prisma {
     friendliness?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    rater?: boolean | UserDefaultArgs<ExtArgs>
     farmer?: boolean | UserDefaultArgs<ExtArgs>
+    rater?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["rating"]>
 
   export type RatingSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -10932,8 +10932,8 @@ export namespace Prisma {
     friendliness?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    rater?: boolean | UserDefaultArgs<ExtArgs>
     farmer?: boolean | UserDefaultArgs<ExtArgs>
+    rater?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["rating"]>
 
   export type RatingSelectScalar = {
@@ -10950,23 +10950,23 @@ export namespace Prisma {
 
   export type RatingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "raterId" | "farmerId" | "productQuality" | "responseTime" | "communication" | "friendliness" | "createdAt" | "updatedAt", ExtArgs["result"]["rating"]>
   export type RatingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    rater?: boolean | UserDefaultArgs<ExtArgs>
     farmer?: boolean | UserDefaultArgs<ExtArgs>
+    rater?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type RatingIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    rater?: boolean | UserDefaultArgs<ExtArgs>
     farmer?: boolean | UserDefaultArgs<ExtArgs>
+    rater?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type RatingIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    rater?: boolean | UserDefaultArgs<ExtArgs>
     farmer?: boolean | UserDefaultArgs<ExtArgs>
+    rater?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $RatingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Rating"
     objects: {
-      rater: Prisma.$UserPayload<ExtArgs>
       farmer: Prisma.$UserPayload<ExtArgs>
+      rater: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -11372,8 +11372,8 @@ export namespace Prisma {
    */
   export interface Prisma__RatingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    rater<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     farmer<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    rater<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -14379,16 +14379,16 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     averageRating?: FloatNullableFilter<"User"> | number | null
-    products?: ProductListRelationFilter
-    sentMessages?: MessageListRelationFilter
-    receivedMessages?: MessageListRelationFilter
-    posts?: PostListRelationFilter
-    orders?: OrderListRelationFilter
     events?: EventListRelationFilter
-    ratingsGiven?: RatingListRelationFilter
-    ratingsReceived?: RatingListRelationFilter
-    passwordResetTokens?: PasswordResetTokenListRelationFilter
     feedback?: FeedbackListRelationFilter
+    receivedMessages?: MessageListRelationFilter
+    sentMessages?: MessageListRelationFilter
+    orders?: OrderListRelationFilter
+    passwordResetTokens?: PasswordResetTokenListRelationFilter
+    posts?: PostListRelationFilter
+    products?: ProductListRelationFilter
+    ratingsReceived?: RatingListRelationFilter
+    ratingsGiven?: RatingListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -14411,16 +14411,16 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     averageRating?: SortOrderInput | SortOrder
-    products?: ProductOrderByRelationAggregateInput
-    sentMessages?: MessageOrderByRelationAggregateInput
-    receivedMessages?: MessageOrderByRelationAggregateInput
-    posts?: PostOrderByRelationAggregateInput
-    orders?: OrderOrderByRelationAggregateInput
     events?: EventOrderByRelationAggregateInput
-    ratingsGiven?: RatingOrderByRelationAggregateInput
-    ratingsReceived?: RatingOrderByRelationAggregateInput
-    passwordResetTokens?: PasswordResetTokenOrderByRelationAggregateInput
     feedback?: FeedbackOrderByRelationAggregateInput
+    receivedMessages?: MessageOrderByRelationAggregateInput
+    sentMessages?: MessageOrderByRelationAggregateInput
+    orders?: OrderOrderByRelationAggregateInput
+    passwordResetTokens?: PasswordResetTokenOrderByRelationAggregateInput
+    posts?: PostOrderByRelationAggregateInput
+    products?: ProductOrderByRelationAggregateInput
+    ratingsReceived?: RatingOrderByRelationAggregateInput
+    ratingsGiven?: RatingOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -14446,16 +14446,16 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     averageRating?: FloatNullableFilter<"User"> | number | null
-    products?: ProductListRelationFilter
-    sentMessages?: MessageListRelationFilter
-    receivedMessages?: MessageListRelationFilter
-    posts?: PostListRelationFilter
-    orders?: OrderListRelationFilter
     events?: EventListRelationFilter
-    ratingsGiven?: RatingListRelationFilter
-    ratingsReceived?: RatingListRelationFilter
-    passwordResetTokens?: PasswordResetTokenListRelationFilter
     feedback?: FeedbackListRelationFilter
+    receivedMessages?: MessageListRelationFilter
+    sentMessages?: MessageListRelationFilter
+    orders?: OrderListRelationFilter
+    passwordResetTokens?: PasswordResetTokenListRelationFilter
+    posts?: PostListRelationFilter
+    products?: ProductListRelationFilter
+    ratingsReceived?: RatingListRelationFilter
+    ratingsGiven?: RatingListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -14526,9 +14526,9 @@ export namespace Prisma {
     longitude?: FloatNullableFilter<"Product"> | number | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    orders?: OrderListRelationFilter
     events?: EventListRelationFilter
+    orders?: OrderListRelationFilter
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type ProductOrderByWithRelationInput = {
@@ -14544,9 +14544,9 @@ export namespace Prisma {
     longitude?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    user?: UserOrderByWithRelationInput
-    orders?: OrderOrderByRelationAggregateInput
     events?: EventOrderByRelationAggregateInput
+    orders?: OrderOrderByRelationAggregateInput
+    user?: UserOrderByWithRelationInput
   }
 
   export type ProductWhereUniqueInput = Prisma.AtLeast<{
@@ -14565,9 +14565,9 @@ export namespace Prisma {
     longitude?: FloatNullableFilter<"Product"> | number | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    orders?: OrderListRelationFilter
     events?: EventListRelationFilter
+    orders?: OrderListRelationFilter
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
   export type ProductOrderByWithAggregationInput = {
@@ -14620,9 +14620,9 @@ export namespace Prisma {
     status?: StringFilter<"Order"> | string
     createdAt?: DateTimeFilter<"Order"> | Date | string
     updatedAt?: DateTimeFilter<"Order"> | Date | string
+    events?: EventListRelationFilter
     buyer?: XOR<UserScalarRelationFilter, UserWhereInput>
     product?: XOR<ProductScalarRelationFilter, ProductWhereInput>
-    events?: EventListRelationFilter
   }
 
   export type OrderOrderByWithRelationInput = {
@@ -14634,9 +14634,9 @@ export namespace Prisma {
     status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    events?: EventOrderByRelationAggregateInput
     buyer?: UserOrderByWithRelationInput
     product?: ProductOrderByWithRelationInput
-    events?: EventOrderByRelationAggregateInput
   }
 
   export type OrderWhereUniqueInput = Prisma.AtLeast<{
@@ -14651,9 +14651,9 @@ export namespace Prisma {
     status?: StringFilter<"Order"> | string
     createdAt?: DateTimeFilter<"Order"> | Date | string
     updatedAt?: DateTimeFilter<"Order"> | Date | string
+    events?: EventListRelationFilter
     buyer?: XOR<UserScalarRelationFilter, UserWhereInput>
     product?: XOR<ProductScalarRelationFilter, ProductWhereInput>
-    events?: EventListRelationFilter
   }, "id">
 
   export type OrderOrderByWithAggregationInput = {
@@ -14695,9 +14695,9 @@ export namespace Prisma {
     receiverId?: IntFilter<"Message"> | number
     content?: StringFilter<"Message"> | string
     createdAt?: DateTimeFilter<"Message"> | Date | string
-    sender?: XOR<UserScalarRelationFilter, UserWhereInput>
-    receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
     events?: EventListRelationFilter
+    receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
+    sender?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type MessageOrderByWithRelationInput = {
@@ -14706,9 +14706,9 @@ export namespace Prisma {
     receiverId?: SortOrder
     content?: SortOrder
     createdAt?: SortOrder
-    sender?: UserOrderByWithRelationInput
-    receiver?: UserOrderByWithRelationInput
     events?: EventOrderByRelationAggregateInput
+    receiver?: UserOrderByWithRelationInput
+    sender?: UserOrderByWithRelationInput
   }
 
   export type MessageWhereUniqueInput = Prisma.AtLeast<{
@@ -14720,9 +14720,9 @@ export namespace Prisma {
     receiverId?: IntFilter<"Message"> | number
     content?: StringFilter<"Message"> | string
     createdAt?: DateTimeFilter<"Message"> | Date | string
-    sender?: XOR<UserScalarRelationFilter, UserWhereInput>
-    receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
     events?: EventListRelationFilter
+    receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
+    sender?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
   export type MessageOrderByWithAggregationInput = {
@@ -14758,8 +14758,8 @@ export namespace Prisma {
     content?: StringFilter<"Post"> | string
     createdAt?: DateTimeFilter<"Post"> | Date | string
     updatedAt?: DateTimeFilter<"Post"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     events?: EventListRelationFilter
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type PostOrderByWithRelationInput = {
@@ -14768,8 +14768,8 @@ export namespace Prisma {
     content?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    user?: UserOrderByWithRelationInput
     events?: EventOrderByRelationAggregateInput
+    user?: UserOrderByWithRelationInput
   }
 
   export type PostWhereUniqueInput = Prisma.AtLeast<{
@@ -14781,8 +14781,8 @@ export namespace Prisma {
     content?: StringFilter<"Post"> | string
     createdAt?: DateTimeFilter<"Post"> | Date | string
     updatedAt?: DateTimeFilter<"Post"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     events?: EventListRelationFilter
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
   export type PostOrderByWithAggregationInput = {
@@ -14878,10 +14878,10 @@ export namespace Prisma {
     details?: JsonNullableFilter<"Event">
     createdAt?: DateTimeFilter<"Event"> | Date | string
     user?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    product?: XOR<ProductNullableScalarRelationFilter, ProductWhereInput> | null
-    order?: XOR<OrderNullableScalarRelationFilter, OrderWhereInput> | null
     message?: XOR<MessageNullableScalarRelationFilter, MessageWhereInput> | null
+    order?: XOR<OrderNullableScalarRelationFilter, OrderWhereInput> | null
     post?: XOR<PostNullableScalarRelationFilter, PostWhereInput> | null
+    product?: XOR<ProductNullableScalarRelationFilter, ProductWhereInput> | null
     resource?: XOR<ResourceNullableScalarRelationFilter, ResourceWhereInput> | null
   }
 
@@ -14894,10 +14894,10 @@ export namespace Prisma {
     details?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     user?: UserOrderByWithRelationInput
-    product?: ProductOrderByWithRelationInput
-    order?: OrderOrderByWithRelationInput
     message?: MessageOrderByWithRelationInput
+    order?: OrderOrderByWithRelationInput
     post?: PostOrderByWithRelationInput
+    product?: ProductOrderByWithRelationInput
     resource?: ResourceOrderByWithRelationInput
   }
 
@@ -14913,10 +14913,10 @@ export namespace Prisma {
     details?: JsonNullableFilter<"Event">
     createdAt?: DateTimeFilter<"Event"> | Date | string
     user?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    product?: XOR<ProductNullableScalarRelationFilter, ProductWhereInput> | null
-    order?: XOR<OrderNullableScalarRelationFilter, OrderWhereInput> | null
     message?: XOR<MessageNullableScalarRelationFilter, MessageWhereInput> | null
+    order?: XOR<OrderNullableScalarRelationFilter, OrderWhereInput> | null
     post?: XOR<PostNullableScalarRelationFilter, PostWhereInput> | null
+    product?: XOR<ProductNullableScalarRelationFilter, ProductWhereInput> | null
     resource?: XOR<ResourceNullableScalarRelationFilter, ResourceWhereInput> | null
   }, "id">
 
@@ -14961,8 +14961,8 @@ export namespace Prisma {
     friendliness?: IntFilter<"Rating"> | number
     createdAt?: DateTimeFilter<"Rating"> | Date | string
     updatedAt?: DateTimeFilter<"Rating"> | Date | string
-    rater?: XOR<UserScalarRelationFilter, UserWhereInput>
     farmer?: XOR<UserScalarRelationFilter, UserWhereInput>
+    rater?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type RatingOrderByWithRelationInput = {
@@ -14975,8 +14975,8 @@ export namespace Prisma {
     friendliness?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    rater?: UserOrderByWithRelationInput
     farmer?: UserOrderByWithRelationInput
+    rater?: UserOrderByWithRelationInput
   }
 
   export type RatingWhereUniqueInput = Prisma.AtLeast<{
@@ -14992,8 +14992,8 @@ export namespace Prisma {
     friendliness?: IntFilter<"Rating"> | number
     createdAt?: DateTimeFilter<"Rating"> | Date | string
     updatedAt?: DateTimeFilter<"Rating"> | Date | string
-    rater?: XOR<UserScalarRelationFilter, UserWhereInput>
     farmer?: XOR<UserScalarRelationFilter, UserWhereInput>
+    rater?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
   export type RatingOrderByWithAggregationInput = {
@@ -15161,16 +15161,16 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
     events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
     feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -15193,16 +15193,16 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
     events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
     feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
   }
 
   export type UserUpdateInput = {
@@ -15224,16 +15224,16 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
     events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -15256,16 +15256,16 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
     events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -15344,9 +15344,9 @@ export namespace Prisma {
     longitude?: number | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutProductsInput
-    orders?: OrderCreateNestedManyWithoutProductInput
     events?: EventCreateNestedManyWithoutProductInput
+    orders?: OrderCreateNestedManyWithoutProductInput
+    user: UserCreateNestedOneWithoutProductsInput
   }
 
   export type ProductUncheckedCreateInput = {
@@ -15362,8 +15362,8 @@ export namespace Prisma {
     longitude?: number | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    orders?: OrderUncheckedCreateNestedManyWithoutProductInput
     events?: EventUncheckedCreateNestedManyWithoutProductInput
+    orders?: OrderUncheckedCreateNestedManyWithoutProductInput
   }
 
   export type ProductUpdateInput = {
@@ -15377,9 +15377,9 @@ export namespace Prisma {
     longitude?: NullableFloatFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutProductsNestedInput
-    orders?: OrderUpdateManyWithoutProductNestedInput
     events?: EventUpdateManyWithoutProductNestedInput
+    orders?: OrderUpdateManyWithoutProductNestedInput
+    user?: UserUpdateOneRequiredWithoutProductsNestedInput
   }
 
   export type ProductUncheckedUpdateInput = {
@@ -15395,8 +15395,8 @@ export namespace Prisma {
     longitude?: NullableFloatFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    orders?: OrderUncheckedUpdateManyWithoutProductNestedInput
     events?: EventUncheckedUpdateManyWithoutProductNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutProductNestedInput
   }
 
   export type ProductCreateManyInput = {
@@ -15448,9 +15448,9 @@ export namespace Prisma {
     status?: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    events?: EventCreateNestedManyWithoutOrderInput
     buyer: UserCreateNestedOneWithoutOrdersInput
     product: ProductCreateNestedOneWithoutOrdersInput
-    events?: EventCreateNestedManyWithoutOrderInput
   }
 
   export type OrderUncheckedCreateInput = {
@@ -15471,9 +15471,9 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    events?: EventUpdateManyWithoutOrderNestedInput
     buyer?: UserUpdateOneRequiredWithoutOrdersNestedInput
     product?: ProductUpdateOneRequiredWithoutOrdersNestedInput
-    events?: EventUpdateManyWithoutOrderNestedInput
   }
 
   export type OrderUncheckedUpdateInput = {
@@ -15521,9 +15521,9 @@ export namespace Prisma {
   export type MessageCreateInput = {
     content: string
     createdAt?: Date | string
-    sender: UserCreateNestedOneWithoutSentMessagesInput
-    receiver: UserCreateNestedOneWithoutReceivedMessagesInput
     events?: EventCreateNestedManyWithoutMessageInput
+    receiver: UserCreateNestedOneWithoutReceivedMessagesInput
+    sender: UserCreateNestedOneWithoutSentMessagesInput
   }
 
   export type MessageUncheckedCreateInput = {
@@ -15538,9 +15538,9 @@ export namespace Prisma {
   export type MessageUpdateInput = {
     content?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: UserUpdateOneRequiredWithoutSentMessagesNestedInput
-    receiver?: UserUpdateOneRequiredWithoutReceivedMessagesNestedInput
     events?: EventUpdateManyWithoutMessageNestedInput
+    receiver?: UserUpdateOneRequiredWithoutReceivedMessagesNestedInput
+    sender?: UserUpdateOneRequiredWithoutSentMessagesNestedInput
   }
 
   export type MessageUncheckedUpdateInput = {
@@ -15577,8 +15577,8 @@ export namespace Prisma {
     content: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutPostsInput
     events?: EventCreateNestedManyWithoutPostInput
+    user: UserCreateNestedOneWithoutPostsInput
   }
 
   export type PostUncheckedCreateInput = {
@@ -15594,8 +15594,8 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutPostsNestedInput
     events?: EventUpdateManyWithoutPostNestedInput
+    user?: UserUpdateOneRequiredWithoutPostsNestedInput
   }
 
   export type PostUncheckedUpdateInput = {
@@ -15692,10 +15692,10 @@ export namespace Prisma {
     details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     user?: UserCreateNestedOneWithoutEventsInput
-    product?: ProductCreateNestedOneWithoutEventsInput
-    order?: OrderCreateNestedOneWithoutEventsInput
     message?: MessageCreateNestedOneWithoutEventsInput
+    order?: OrderCreateNestedOneWithoutEventsInput
     post?: PostCreateNestedOneWithoutEventsInput
+    product?: ProductCreateNestedOneWithoutEventsInput
     resource?: ResourceCreateNestedOneWithoutEventsInput
   }
 
@@ -15715,10 +15715,10 @@ export namespace Prisma {
     details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneWithoutEventsNestedInput
-    product?: ProductUpdateOneWithoutEventsNestedInput
-    order?: OrderUpdateOneWithoutEventsNestedInput
     message?: MessageUpdateOneWithoutEventsNestedInput
+    order?: OrderUpdateOneWithoutEventsNestedInput
     post?: PostUpdateOneWithoutEventsNestedInput
+    product?: ProductUpdateOneWithoutEventsNestedInput
     resource?: ResourceUpdateOneWithoutEventsNestedInput
   }
 
@@ -15766,8 +15766,8 @@ export namespace Prisma {
     friendliness: number
     createdAt?: Date | string
     updatedAt?: Date | string
-    rater: UserCreateNestedOneWithoutRatingsGivenInput
     farmer: UserCreateNestedOneWithoutRatingsReceivedInput
+    rater: UserCreateNestedOneWithoutRatingsGivenInput
   }
 
   export type RatingUncheckedCreateInput = {
@@ -15789,8 +15789,8 @@ export namespace Prisma {
     friendliness?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rater?: UserUpdateOneRequiredWithoutRatingsGivenNestedInput
     farmer?: UserUpdateOneRequiredWithoutRatingsReceivedNestedInput
+    rater?: UserUpdateOneRequiredWithoutRatingsGivenNestedInput
   }
 
   export type RatingUncheckedUpdateInput = {
@@ -16026,46 +16026,10 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type ProductListRelationFilter = {
-    every?: ProductWhereInput
-    some?: ProductWhereInput
-    none?: ProductWhereInput
-  }
-
-  export type MessageListRelationFilter = {
-    every?: MessageWhereInput
-    some?: MessageWhereInput
-    none?: MessageWhereInput
-  }
-
-  export type PostListRelationFilter = {
-    every?: PostWhereInput
-    some?: PostWhereInput
-    none?: PostWhereInput
-  }
-
-  export type OrderListRelationFilter = {
-    every?: OrderWhereInput
-    some?: OrderWhereInput
-    none?: OrderWhereInput
-  }
-
   export type EventListRelationFilter = {
     every?: EventWhereInput
     some?: EventWhereInput
     none?: EventWhereInput
-  }
-
-  export type RatingListRelationFilter = {
-    every?: RatingWhereInput
-    some?: RatingWhereInput
-    none?: RatingWhereInput
-  }
-
-  export type PasswordResetTokenListRelationFilter = {
-    every?: PasswordResetTokenWhereInput
-    some?: PasswordResetTokenWhereInput
-    none?: PasswordResetTokenWhereInput
   }
 
   export type FeedbackListRelationFilter = {
@@ -16074,12 +16038,52 @@ export namespace Prisma {
     none?: FeedbackWhereInput
   }
 
+  export type MessageListRelationFilter = {
+    every?: MessageWhereInput
+    some?: MessageWhereInput
+    none?: MessageWhereInput
+  }
+
+  export type OrderListRelationFilter = {
+    every?: OrderWhereInput
+    some?: OrderWhereInput
+    none?: OrderWhereInput
+  }
+
+  export type PasswordResetTokenListRelationFilter = {
+    every?: PasswordResetTokenWhereInput
+    some?: PasswordResetTokenWhereInput
+    none?: PasswordResetTokenWhereInput
+  }
+
+  export type PostListRelationFilter = {
+    every?: PostWhereInput
+    some?: PostWhereInput
+    none?: PostWhereInput
+  }
+
+  export type ProductListRelationFilter = {
+    every?: ProductWhereInput
+    some?: ProductWhereInput
+    none?: ProductWhereInput
+  }
+
+  export type RatingListRelationFilter = {
+    every?: RatingWhereInput
+    some?: RatingWhereInput
+    none?: RatingWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
   }
 
-  export type ProductOrderByRelationAggregateInput = {
+  export type EventOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type FeedbackOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -16087,19 +16091,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type PostOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
   export type OrderOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type EventOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type RatingOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -16107,7 +16099,15 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type FeedbackOrderByRelationAggregateInput = {
+  export type PostOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ProductOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type RatingOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -16603,9 +16603,9 @@ export namespace Prisma {
     isNot?: UserWhereInput | null
   }
 
-  export type ProductNullableScalarRelationFilter = {
-    is?: ProductWhereInput | null
-    isNot?: ProductWhereInput | null
+  export type MessageNullableScalarRelationFilter = {
+    is?: MessageWhereInput | null
+    isNot?: MessageWhereInput | null
   }
 
   export type OrderNullableScalarRelationFilter = {
@@ -16613,14 +16613,14 @@ export namespace Prisma {
     isNot?: OrderWhereInput | null
   }
 
-  export type MessageNullableScalarRelationFilter = {
-    is?: MessageWhereInput | null
-    isNot?: MessageWhereInput | null
-  }
-
   export type PostNullableScalarRelationFilter = {
     is?: PostWhereInput | null
     isNot?: PostWhereInput | null
+  }
+
+  export type ProductNullableScalarRelationFilter = {
+    is?: ProductWhereInput | null
+    isNot?: ProductWhereInput | null
   }
 
   export type ResourceNullableScalarRelationFilter = {
@@ -16836,67 +16836,11 @@ export namespace Prisma {
     rating?: SortOrder
   }
 
-  export type ProductCreateNestedManyWithoutUserInput = {
-    create?: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput> | ProductCreateWithoutUserInput[] | ProductUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProductCreateOrConnectWithoutUserInput | ProductCreateOrConnectWithoutUserInput[]
-    createMany?: ProductCreateManyUserInputEnvelope
-    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-  }
-
-  export type MessageCreateNestedManyWithoutSenderInput = {
-    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
-    createMany?: MessageCreateManySenderInputEnvelope
-    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-  }
-
-  export type MessageCreateNestedManyWithoutReceiverInput = {
-    create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
-    createMany?: MessageCreateManyReceiverInputEnvelope
-    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-  }
-
-  export type PostCreateNestedManyWithoutUserInput = {
-    create?: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput> | PostCreateWithoutUserInput[] | PostUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: PostCreateOrConnectWithoutUserInput | PostCreateOrConnectWithoutUserInput[]
-    createMany?: PostCreateManyUserInputEnvelope
-    connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
-  }
-
-  export type OrderCreateNestedManyWithoutBuyerInput = {
-    create?: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput> | OrderCreateWithoutBuyerInput[] | OrderUncheckedCreateWithoutBuyerInput[]
-    connectOrCreate?: OrderCreateOrConnectWithoutBuyerInput | OrderCreateOrConnectWithoutBuyerInput[]
-    createMany?: OrderCreateManyBuyerInputEnvelope
-    connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-  }
-
   export type EventCreateNestedManyWithoutUserInput = {
     create?: XOR<EventCreateWithoutUserInput, EventUncheckedCreateWithoutUserInput> | EventCreateWithoutUserInput[] | EventUncheckedCreateWithoutUserInput[]
     connectOrCreate?: EventCreateOrConnectWithoutUserInput | EventCreateOrConnectWithoutUserInput[]
     createMany?: EventCreateManyUserInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-  }
-
-  export type RatingCreateNestedManyWithoutRaterInput = {
-    create?: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput> | RatingCreateWithoutRaterInput[] | RatingUncheckedCreateWithoutRaterInput[]
-    connectOrCreate?: RatingCreateOrConnectWithoutRaterInput | RatingCreateOrConnectWithoutRaterInput[]
-    createMany?: RatingCreateManyRaterInputEnvelope
-    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-  }
-
-  export type RatingCreateNestedManyWithoutFarmerInput = {
-    create?: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput> | RatingCreateWithoutFarmerInput[] | RatingUncheckedCreateWithoutFarmerInput[]
-    connectOrCreate?: RatingCreateOrConnectWithoutFarmerInput | RatingCreateOrConnectWithoutFarmerInput[]
-    createMany?: RatingCreateManyFarmerInputEnvelope
-    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-  }
-
-  export type PasswordResetTokenCreateNestedManyWithoutUserInput = {
-    create?: XOR<PasswordResetTokenCreateWithoutUserInput, PasswordResetTokenUncheckedCreateWithoutUserInput> | PasswordResetTokenCreateWithoutUserInput[] | PasswordResetTokenUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: PasswordResetTokenCreateOrConnectWithoutUserInput | PasswordResetTokenCreateOrConnectWithoutUserInput[]
-    createMany?: PasswordResetTokenCreateManyUserInputEnvelope
-    connect?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
   }
 
   export type FeedbackCreateNestedManyWithoutUserInput = {
@@ -16906,39 +16850,60 @@ export namespace Prisma {
     connect?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
   }
 
-  export type ProductUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput> | ProductCreateWithoutUserInput[] | ProductUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProductCreateOrConnectWithoutUserInput | ProductCreateOrConnectWithoutUserInput[]
-    createMany?: ProductCreateManyUserInputEnvelope
-    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-  }
-
-  export type MessageUncheckedCreateNestedManyWithoutSenderInput = {
-    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
-    createMany?: MessageCreateManySenderInputEnvelope
-    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-  }
-
-  export type MessageUncheckedCreateNestedManyWithoutReceiverInput = {
+  export type MessageCreateNestedManyWithoutReceiverInput = {
     create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
     connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
     createMany?: MessageCreateManyReceiverInputEnvelope
     connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
   }
 
-  export type PostUncheckedCreateNestedManyWithoutUserInput = {
+  export type MessageCreateNestedManyWithoutSenderInput = {
+    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
+    createMany?: MessageCreateManySenderInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type OrderCreateNestedManyWithoutBuyerInput = {
+    create?: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput> | OrderCreateWithoutBuyerInput[] | OrderUncheckedCreateWithoutBuyerInput[]
+    connectOrCreate?: OrderCreateOrConnectWithoutBuyerInput | OrderCreateOrConnectWithoutBuyerInput[]
+    createMany?: OrderCreateManyBuyerInputEnvelope
+    connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+  }
+
+  export type PasswordResetTokenCreateNestedManyWithoutUserInput = {
+    create?: XOR<PasswordResetTokenCreateWithoutUserInput, PasswordResetTokenUncheckedCreateWithoutUserInput> | PasswordResetTokenCreateWithoutUserInput[] | PasswordResetTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: PasswordResetTokenCreateOrConnectWithoutUserInput | PasswordResetTokenCreateOrConnectWithoutUserInput[]
+    createMany?: PasswordResetTokenCreateManyUserInputEnvelope
+    connect?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
+  }
+
+  export type PostCreateNestedManyWithoutUserInput = {
     create?: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput> | PostCreateWithoutUserInput[] | PostUncheckedCreateWithoutUserInput[]
     connectOrCreate?: PostCreateOrConnectWithoutUserInput | PostCreateOrConnectWithoutUserInput[]
     createMany?: PostCreateManyUserInputEnvelope
     connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
   }
 
-  export type OrderUncheckedCreateNestedManyWithoutBuyerInput = {
-    create?: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput> | OrderCreateWithoutBuyerInput[] | OrderUncheckedCreateWithoutBuyerInput[]
-    connectOrCreate?: OrderCreateOrConnectWithoutBuyerInput | OrderCreateOrConnectWithoutBuyerInput[]
-    createMany?: OrderCreateManyBuyerInputEnvelope
-    connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+  export type ProductCreateNestedManyWithoutUserInput = {
+    create?: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput> | ProductCreateWithoutUserInput[] | ProductUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProductCreateOrConnectWithoutUserInput | ProductCreateOrConnectWithoutUserInput[]
+    createMany?: ProductCreateManyUserInputEnvelope
+    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+  }
+
+  export type RatingCreateNestedManyWithoutFarmerInput = {
+    create?: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput> | RatingCreateWithoutFarmerInput[] | RatingUncheckedCreateWithoutFarmerInput[]
+    connectOrCreate?: RatingCreateOrConnectWithoutFarmerInput | RatingCreateOrConnectWithoutFarmerInput[]
+    createMany?: RatingCreateManyFarmerInputEnvelope
+    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+  }
+
+  export type RatingCreateNestedManyWithoutRaterInput = {
+    create?: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput> | RatingCreateWithoutRaterInput[] | RatingUncheckedCreateWithoutRaterInput[]
+    connectOrCreate?: RatingCreateOrConnectWithoutRaterInput | RatingCreateOrConnectWithoutRaterInput[]
+    createMany?: RatingCreateManyRaterInputEnvelope
+    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
   }
 
   export type EventUncheckedCreateNestedManyWithoutUserInput = {
@@ -16948,18 +16913,32 @@ export namespace Prisma {
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
-  export type RatingUncheckedCreateNestedManyWithoutRaterInput = {
-    create?: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput> | RatingCreateWithoutRaterInput[] | RatingUncheckedCreateWithoutRaterInput[]
-    connectOrCreate?: RatingCreateOrConnectWithoutRaterInput | RatingCreateOrConnectWithoutRaterInput[]
-    createMany?: RatingCreateManyRaterInputEnvelope
-    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+  export type FeedbackUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<FeedbackCreateWithoutUserInput, FeedbackUncheckedCreateWithoutUserInput> | FeedbackCreateWithoutUserInput[] | FeedbackUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: FeedbackCreateOrConnectWithoutUserInput | FeedbackCreateOrConnectWithoutUserInput[]
+    createMany?: FeedbackCreateManyUserInputEnvelope
+    connect?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
   }
 
-  export type RatingUncheckedCreateNestedManyWithoutFarmerInput = {
-    create?: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput> | RatingCreateWithoutFarmerInput[] | RatingUncheckedCreateWithoutFarmerInput[]
-    connectOrCreate?: RatingCreateOrConnectWithoutFarmerInput | RatingCreateOrConnectWithoutFarmerInput[]
-    createMany?: RatingCreateManyFarmerInputEnvelope
-    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+  export type MessageUncheckedCreateNestedManyWithoutReceiverInput = {
+    create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
+    createMany?: MessageCreateManyReceiverInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type MessageUncheckedCreateNestedManyWithoutSenderInput = {
+    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
+    createMany?: MessageCreateManySenderInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type OrderUncheckedCreateNestedManyWithoutBuyerInput = {
+    create?: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput> | OrderCreateWithoutBuyerInput[] | OrderUncheckedCreateWithoutBuyerInput[]
+    connectOrCreate?: OrderCreateOrConnectWithoutBuyerInput | OrderCreateOrConnectWithoutBuyerInput[]
+    createMany?: OrderCreateManyBuyerInputEnvelope
+    connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
   }
 
   export type PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput = {
@@ -16969,11 +16948,32 @@ export namespace Prisma {
     connect?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
   }
 
-  export type FeedbackUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<FeedbackCreateWithoutUserInput, FeedbackUncheckedCreateWithoutUserInput> | FeedbackCreateWithoutUserInput[] | FeedbackUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: FeedbackCreateOrConnectWithoutUserInput | FeedbackCreateOrConnectWithoutUserInput[]
-    createMany?: FeedbackCreateManyUserInputEnvelope
-    connect?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
+  export type PostUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput> | PostCreateWithoutUserInput[] | PostUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: PostCreateOrConnectWithoutUserInput | PostCreateOrConnectWithoutUserInput[]
+    createMany?: PostCreateManyUserInputEnvelope
+    connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
+  }
+
+  export type ProductUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput> | ProductCreateWithoutUserInput[] | ProductUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProductCreateOrConnectWithoutUserInput | ProductCreateOrConnectWithoutUserInput[]
+    createMany?: ProductCreateManyUserInputEnvelope
+    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+  }
+
+  export type RatingUncheckedCreateNestedManyWithoutFarmerInput = {
+    create?: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput> | RatingCreateWithoutFarmerInput[] | RatingUncheckedCreateWithoutFarmerInput[]
+    connectOrCreate?: RatingCreateOrConnectWithoutFarmerInput | RatingCreateOrConnectWithoutFarmerInput[]
+    createMany?: RatingCreateManyFarmerInputEnvelope
+    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+  }
+
+  export type RatingUncheckedCreateNestedManyWithoutRaterInput = {
+    create?: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput> | RatingCreateWithoutRaterInput[] | RatingUncheckedCreateWithoutRaterInput[]
+    connectOrCreate?: RatingCreateOrConnectWithoutRaterInput | RatingCreateOrConnectWithoutRaterInput[]
+    createMany?: RatingCreateManyRaterInputEnvelope
+    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -17008,76 +17008,6 @@ export namespace Prisma {
     set?: Date | string
   }
 
-  export type ProductUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput> | ProductCreateWithoutUserInput[] | ProductUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProductCreateOrConnectWithoutUserInput | ProductCreateOrConnectWithoutUserInput[]
-    upsert?: ProductUpsertWithWhereUniqueWithoutUserInput | ProductUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ProductCreateManyUserInputEnvelope
-    set?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    disconnect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    delete?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    update?: ProductUpdateWithWhereUniqueWithoutUserInput | ProductUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ProductUpdateManyWithWhereWithoutUserInput | ProductUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ProductScalarWhereInput | ProductScalarWhereInput[]
-  }
-
-  export type MessageUpdateManyWithoutSenderNestedInput = {
-    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
-    upsert?: MessageUpsertWithWhereUniqueWithoutSenderInput | MessageUpsertWithWhereUniqueWithoutSenderInput[]
-    createMany?: MessageCreateManySenderInputEnvelope
-    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    update?: MessageUpdateWithWhereUniqueWithoutSenderInput | MessageUpdateWithWhereUniqueWithoutSenderInput[]
-    updateMany?: MessageUpdateManyWithWhereWithoutSenderInput | MessageUpdateManyWithWhereWithoutSenderInput[]
-    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
-  }
-
-  export type MessageUpdateManyWithoutReceiverNestedInput = {
-    create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
-    connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
-    upsert?: MessageUpsertWithWhereUniqueWithoutReceiverInput | MessageUpsertWithWhereUniqueWithoutReceiverInput[]
-    createMany?: MessageCreateManyReceiverInputEnvelope
-    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    update?: MessageUpdateWithWhereUniqueWithoutReceiverInput | MessageUpdateWithWhereUniqueWithoutReceiverInput[]
-    updateMany?: MessageUpdateManyWithWhereWithoutReceiverInput | MessageUpdateManyWithWhereWithoutReceiverInput[]
-    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
-  }
-
-  export type PostUpdateManyWithoutUserNestedInput = {
-    create?: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput> | PostCreateWithoutUserInput[] | PostUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: PostCreateOrConnectWithoutUserInput | PostCreateOrConnectWithoutUserInput[]
-    upsert?: PostUpsertWithWhereUniqueWithoutUserInput | PostUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: PostCreateManyUserInputEnvelope
-    set?: PostWhereUniqueInput | PostWhereUniqueInput[]
-    disconnect?: PostWhereUniqueInput | PostWhereUniqueInput[]
-    delete?: PostWhereUniqueInput | PostWhereUniqueInput[]
-    connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
-    update?: PostUpdateWithWhereUniqueWithoutUserInput | PostUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: PostUpdateManyWithWhereWithoutUserInput | PostUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
-  }
-
-  export type OrderUpdateManyWithoutBuyerNestedInput = {
-    create?: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput> | OrderCreateWithoutBuyerInput[] | OrderUncheckedCreateWithoutBuyerInput[]
-    connectOrCreate?: OrderCreateOrConnectWithoutBuyerInput | OrderCreateOrConnectWithoutBuyerInput[]
-    upsert?: OrderUpsertWithWhereUniqueWithoutBuyerInput | OrderUpsertWithWhereUniqueWithoutBuyerInput[]
-    createMany?: OrderCreateManyBuyerInputEnvelope
-    set?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-    disconnect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-    delete?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-    connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-    update?: OrderUpdateWithWhereUniqueWithoutBuyerInput | OrderUpdateWithWhereUniqueWithoutBuyerInput[]
-    updateMany?: OrderUpdateManyWithWhereWithoutBuyerInput | OrderUpdateManyWithWhereWithoutBuyerInput[]
-    deleteMany?: OrderScalarWhereInput | OrderScalarWhereInput[]
-  }
-
   export type EventUpdateManyWithoutUserNestedInput = {
     create?: XOR<EventCreateWithoutUserInput, EventUncheckedCreateWithoutUserInput> | EventCreateWithoutUserInput[] | EventUncheckedCreateWithoutUserInput[]
     connectOrCreate?: EventCreateOrConnectWithoutUserInput | EventCreateOrConnectWithoutUserInput[]
@@ -17090,48 +17020,6 @@ export namespace Prisma {
     update?: EventUpdateWithWhereUniqueWithoutUserInput | EventUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: EventUpdateManyWithWhereWithoutUserInput | EventUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
-  }
-
-  export type RatingUpdateManyWithoutRaterNestedInput = {
-    create?: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput> | RatingCreateWithoutRaterInput[] | RatingUncheckedCreateWithoutRaterInput[]
-    connectOrCreate?: RatingCreateOrConnectWithoutRaterInput | RatingCreateOrConnectWithoutRaterInput[]
-    upsert?: RatingUpsertWithWhereUniqueWithoutRaterInput | RatingUpsertWithWhereUniqueWithoutRaterInput[]
-    createMany?: RatingCreateManyRaterInputEnvelope
-    set?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    disconnect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    delete?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    update?: RatingUpdateWithWhereUniqueWithoutRaterInput | RatingUpdateWithWhereUniqueWithoutRaterInput[]
-    updateMany?: RatingUpdateManyWithWhereWithoutRaterInput | RatingUpdateManyWithWhereWithoutRaterInput[]
-    deleteMany?: RatingScalarWhereInput | RatingScalarWhereInput[]
-  }
-
-  export type RatingUpdateManyWithoutFarmerNestedInput = {
-    create?: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput> | RatingCreateWithoutFarmerInput[] | RatingUncheckedCreateWithoutFarmerInput[]
-    connectOrCreate?: RatingCreateOrConnectWithoutFarmerInput | RatingCreateOrConnectWithoutFarmerInput[]
-    upsert?: RatingUpsertWithWhereUniqueWithoutFarmerInput | RatingUpsertWithWhereUniqueWithoutFarmerInput[]
-    createMany?: RatingCreateManyFarmerInputEnvelope
-    set?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    disconnect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    delete?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    update?: RatingUpdateWithWhereUniqueWithoutFarmerInput | RatingUpdateWithWhereUniqueWithoutFarmerInput[]
-    updateMany?: RatingUpdateManyWithWhereWithoutFarmerInput | RatingUpdateManyWithWhereWithoutFarmerInput[]
-    deleteMany?: RatingScalarWhereInput | RatingScalarWhereInput[]
-  }
-
-  export type PasswordResetTokenUpdateManyWithoutUserNestedInput = {
-    create?: XOR<PasswordResetTokenCreateWithoutUserInput, PasswordResetTokenUncheckedCreateWithoutUserInput> | PasswordResetTokenCreateWithoutUserInput[] | PasswordResetTokenUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: PasswordResetTokenCreateOrConnectWithoutUserInput | PasswordResetTokenCreateOrConnectWithoutUserInput[]
-    upsert?: PasswordResetTokenUpsertWithWhereUniqueWithoutUserInput | PasswordResetTokenUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: PasswordResetTokenCreateManyUserInputEnvelope
-    set?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
-    disconnect?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
-    delete?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
-    connect?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
-    update?: PasswordResetTokenUpdateWithWhereUniqueWithoutUserInput | PasswordResetTokenUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: PasswordResetTokenUpdateManyWithWhereWithoutUserInput | PasswordResetTokenUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: PasswordResetTokenScalarWhereInput | PasswordResetTokenScalarWhereInput[]
   }
 
   export type FeedbackUpdateManyWithoutUserNestedInput = {
@@ -17148,43 +17036,7 @@ export namespace Prisma {
     deleteMany?: FeedbackScalarWhereInput | FeedbackScalarWhereInput[]
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type ProductUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput> | ProductCreateWithoutUserInput[] | ProductUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProductCreateOrConnectWithoutUserInput | ProductCreateOrConnectWithoutUserInput[]
-    upsert?: ProductUpsertWithWhereUniqueWithoutUserInput | ProductUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ProductCreateManyUserInputEnvelope
-    set?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    disconnect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    delete?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    update?: ProductUpdateWithWhereUniqueWithoutUserInput | ProductUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ProductUpdateManyWithWhereWithoutUserInput | ProductUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ProductScalarWhereInput | ProductScalarWhereInput[]
-  }
-
-  export type MessageUncheckedUpdateManyWithoutSenderNestedInput = {
-    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
-    upsert?: MessageUpsertWithWhereUniqueWithoutSenderInput | MessageUpsertWithWhereUniqueWithoutSenderInput[]
-    createMany?: MessageCreateManySenderInputEnvelope
-    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
-    update?: MessageUpdateWithWhereUniqueWithoutSenderInput | MessageUpdateWithWhereUniqueWithoutSenderInput[]
-    updateMany?: MessageUpdateManyWithWhereWithoutSenderInput | MessageUpdateManyWithWhereWithoutSenderInput[]
-    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
-  }
-
-  export type MessageUncheckedUpdateManyWithoutReceiverNestedInput = {
+  export type MessageUpdateManyWithoutReceiverNestedInput = {
     create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
     connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
     upsert?: MessageUpsertWithWhereUniqueWithoutReceiverInput | MessageUpsertWithWhereUniqueWithoutReceiverInput[]
@@ -17198,7 +17050,49 @@ export namespace Prisma {
     deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
   }
 
-  export type PostUncheckedUpdateManyWithoutUserNestedInput = {
+  export type MessageUpdateManyWithoutSenderNestedInput = {
+    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutSenderInput | MessageUpsertWithWhereUniqueWithoutSenderInput[]
+    createMany?: MessageCreateManySenderInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutSenderInput | MessageUpdateWithWhereUniqueWithoutSenderInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutSenderInput | MessageUpdateManyWithWhereWithoutSenderInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type OrderUpdateManyWithoutBuyerNestedInput = {
+    create?: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput> | OrderCreateWithoutBuyerInput[] | OrderUncheckedCreateWithoutBuyerInput[]
+    connectOrCreate?: OrderCreateOrConnectWithoutBuyerInput | OrderCreateOrConnectWithoutBuyerInput[]
+    upsert?: OrderUpsertWithWhereUniqueWithoutBuyerInput | OrderUpsertWithWhereUniqueWithoutBuyerInput[]
+    createMany?: OrderCreateManyBuyerInputEnvelope
+    set?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+    disconnect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+    delete?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+    connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+    update?: OrderUpdateWithWhereUniqueWithoutBuyerInput | OrderUpdateWithWhereUniqueWithoutBuyerInput[]
+    updateMany?: OrderUpdateManyWithWhereWithoutBuyerInput | OrderUpdateManyWithWhereWithoutBuyerInput[]
+    deleteMany?: OrderScalarWhereInput | OrderScalarWhereInput[]
+  }
+
+  export type PasswordResetTokenUpdateManyWithoutUserNestedInput = {
+    create?: XOR<PasswordResetTokenCreateWithoutUserInput, PasswordResetTokenUncheckedCreateWithoutUserInput> | PasswordResetTokenCreateWithoutUserInput[] | PasswordResetTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: PasswordResetTokenCreateOrConnectWithoutUserInput | PasswordResetTokenCreateOrConnectWithoutUserInput[]
+    upsert?: PasswordResetTokenUpsertWithWhereUniqueWithoutUserInput | PasswordResetTokenUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: PasswordResetTokenCreateManyUserInputEnvelope
+    set?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
+    disconnect?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
+    delete?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
+    connect?: PasswordResetTokenWhereUniqueInput | PasswordResetTokenWhereUniqueInput[]
+    update?: PasswordResetTokenUpdateWithWhereUniqueWithoutUserInput | PasswordResetTokenUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: PasswordResetTokenUpdateManyWithWhereWithoutUserInput | PasswordResetTokenUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: PasswordResetTokenScalarWhereInput | PasswordResetTokenScalarWhereInput[]
+  }
+
+  export type PostUpdateManyWithoutUserNestedInput = {
     create?: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput> | PostCreateWithoutUserInput[] | PostUncheckedCreateWithoutUserInput[]
     connectOrCreate?: PostCreateOrConnectWithoutUserInput | PostCreateOrConnectWithoutUserInput[]
     upsert?: PostUpsertWithWhereUniqueWithoutUserInput | PostUpsertWithWhereUniqueWithoutUserInput[]
@@ -17212,18 +17106,54 @@ export namespace Prisma {
     deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
   }
 
-  export type OrderUncheckedUpdateManyWithoutBuyerNestedInput = {
-    create?: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput> | OrderCreateWithoutBuyerInput[] | OrderUncheckedCreateWithoutBuyerInput[]
-    connectOrCreate?: OrderCreateOrConnectWithoutBuyerInput | OrderCreateOrConnectWithoutBuyerInput[]
-    upsert?: OrderUpsertWithWhereUniqueWithoutBuyerInput | OrderUpsertWithWhereUniqueWithoutBuyerInput[]
-    createMany?: OrderCreateManyBuyerInputEnvelope
-    set?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-    disconnect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-    delete?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-    connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-    update?: OrderUpdateWithWhereUniqueWithoutBuyerInput | OrderUpdateWithWhereUniqueWithoutBuyerInput[]
-    updateMany?: OrderUpdateManyWithWhereWithoutBuyerInput | OrderUpdateManyWithWhereWithoutBuyerInput[]
-    deleteMany?: OrderScalarWhereInput | OrderScalarWhereInput[]
+  export type ProductUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput> | ProductCreateWithoutUserInput[] | ProductUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProductCreateOrConnectWithoutUserInput | ProductCreateOrConnectWithoutUserInput[]
+    upsert?: ProductUpsertWithWhereUniqueWithoutUserInput | ProductUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ProductCreateManyUserInputEnvelope
+    set?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    disconnect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    delete?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    update?: ProductUpdateWithWhereUniqueWithoutUserInput | ProductUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ProductUpdateManyWithWhereWithoutUserInput | ProductUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ProductScalarWhereInput | ProductScalarWhereInput[]
+  }
+
+  export type RatingUpdateManyWithoutFarmerNestedInput = {
+    create?: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput> | RatingCreateWithoutFarmerInput[] | RatingUncheckedCreateWithoutFarmerInput[]
+    connectOrCreate?: RatingCreateOrConnectWithoutFarmerInput | RatingCreateOrConnectWithoutFarmerInput[]
+    upsert?: RatingUpsertWithWhereUniqueWithoutFarmerInput | RatingUpsertWithWhereUniqueWithoutFarmerInput[]
+    createMany?: RatingCreateManyFarmerInputEnvelope
+    set?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    disconnect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    delete?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    update?: RatingUpdateWithWhereUniqueWithoutFarmerInput | RatingUpdateWithWhereUniqueWithoutFarmerInput[]
+    updateMany?: RatingUpdateManyWithWhereWithoutFarmerInput | RatingUpdateManyWithWhereWithoutFarmerInput[]
+    deleteMany?: RatingScalarWhereInput | RatingScalarWhereInput[]
+  }
+
+  export type RatingUpdateManyWithoutRaterNestedInput = {
+    create?: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput> | RatingCreateWithoutRaterInput[] | RatingUncheckedCreateWithoutRaterInput[]
+    connectOrCreate?: RatingCreateOrConnectWithoutRaterInput | RatingCreateOrConnectWithoutRaterInput[]
+    upsert?: RatingUpsertWithWhereUniqueWithoutRaterInput | RatingUpsertWithWhereUniqueWithoutRaterInput[]
+    createMany?: RatingCreateManyRaterInputEnvelope
+    set?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    disconnect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    delete?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    update?: RatingUpdateWithWhereUniqueWithoutRaterInput | RatingUpdateWithWhereUniqueWithoutRaterInput[]
+    updateMany?: RatingUpdateManyWithWhereWithoutRaterInput | RatingUpdateManyWithWhereWithoutRaterInput[]
+    deleteMany?: RatingScalarWhereInput | RatingScalarWhereInput[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type EventUncheckedUpdateManyWithoutUserNestedInput = {
@@ -17240,32 +17170,60 @@ export namespace Prisma {
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
-  export type RatingUncheckedUpdateManyWithoutRaterNestedInput = {
-    create?: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput> | RatingCreateWithoutRaterInput[] | RatingUncheckedCreateWithoutRaterInput[]
-    connectOrCreate?: RatingCreateOrConnectWithoutRaterInput | RatingCreateOrConnectWithoutRaterInput[]
-    upsert?: RatingUpsertWithWhereUniqueWithoutRaterInput | RatingUpsertWithWhereUniqueWithoutRaterInput[]
-    createMany?: RatingCreateManyRaterInputEnvelope
-    set?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    disconnect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    delete?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    update?: RatingUpdateWithWhereUniqueWithoutRaterInput | RatingUpdateWithWhereUniqueWithoutRaterInput[]
-    updateMany?: RatingUpdateManyWithWhereWithoutRaterInput | RatingUpdateManyWithWhereWithoutRaterInput[]
-    deleteMany?: RatingScalarWhereInput | RatingScalarWhereInput[]
+  export type FeedbackUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<FeedbackCreateWithoutUserInput, FeedbackUncheckedCreateWithoutUserInput> | FeedbackCreateWithoutUserInput[] | FeedbackUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: FeedbackCreateOrConnectWithoutUserInput | FeedbackCreateOrConnectWithoutUserInput[]
+    upsert?: FeedbackUpsertWithWhereUniqueWithoutUserInput | FeedbackUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: FeedbackCreateManyUserInputEnvelope
+    set?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
+    disconnect?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
+    delete?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
+    connect?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
+    update?: FeedbackUpdateWithWhereUniqueWithoutUserInput | FeedbackUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: FeedbackUpdateManyWithWhereWithoutUserInput | FeedbackUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: FeedbackScalarWhereInput | FeedbackScalarWhereInput[]
   }
 
-  export type RatingUncheckedUpdateManyWithoutFarmerNestedInput = {
-    create?: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput> | RatingCreateWithoutFarmerInput[] | RatingUncheckedCreateWithoutFarmerInput[]
-    connectOrCreate?: RatingCreateOrConnectWithoutFarmerInput | RatingCreateOrConnectWithoutFarmerInput[]
-    upsert?: RatingUpsertWithWhereUniqueWithoutFarmerInput | RatingUpsertWithWhereUniqueWithoutFarmerInput[]
-    createMany?: RatingCreateManyFarmerInputEnvelope
-    set?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    disconnect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    delete?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
-    update?: RatingUpdateWithWhereUniqueWithoutFarmerInput | RatingUpdateWithWhereUniqueWithoutFarmerInput[]
-    updateMany?: RatingUpdateManyWithWhereWithoutFarmerInput | RatingUpdateManyWithWhereWithoutFarmerInput[]
-    deleteMany?: RatingScalarWhereInput | RatingScalarWhereInput[]
+  export type MessageUncheckedUpdateManyWithoutReceiverNestedInput = {
+    create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutReceiverInput | MessageUpsertWithWhereUniqueWithoutReceiverInput[]
+    createMany?: MessageCreateManyReceiverInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutReceiverInput | MessageUpdateWithWhereUniqueWithoutReceiverInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutReceiverInput | MessageUpdateManyWithWhereWithoutReceiverInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type MessageUncheckedUpdateManyWithoutSenderNestedInput = {
+    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutSenderInput | MessageUpsertWithWhereUniqueWithoutSenderInput[]
+    createMany?: MessageCreateManySenderInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutSenderInput | MessageUpdateWithWhereUniqueWithoutSenderInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutSenderInput | MessageUpdateManyWithWhereWithoutSenderInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type OrderUncheckedUpdateManyWithoutBuyerNestedInput = {
+    create?: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput> | OrderCreateWithoutBuyerInput[] | OrderUncheckedCreateWithoutBuyerInput[]
+    connectOrCreate?: OrderCreateOrConnectWithoutBuyerInput | OrderCreateOrConnectWithoutBuyerInput[]
+    upsert?: OrderUpsertWithWhereUniqueWithoutBuyerInput | OrderUpsertWithWhereUniqueWithoutBuyerInput[]
+    createMany?: OrderCreateManyBuyerInputEnvelope
+    set?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+    disconnect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+    delete?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+    connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
+    update?: OrderUpdateWithWhereUniqueWithoutBuyerInput | OrderUpdateWithWhereUniqueWithoutBuyerInput[]
+    updateMany?: OrderUpdateManyWithWhereWithoutBuyerInput | OrderUpdateManyWithWhereWithoutBuyerInput[]
+    deleteMany?: OrderScalarWhereInput | OrderScalarWhereInput[]
   }
 
   export type PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput = {
@@ -17282,28 +17240,71 @@ export namespace Prisma {
     deleteMany?: PasswordResetTokenScalarWhereInput | PasswordResetTokenScalarWhereInput[]
   }
 
-  export type FeedbackUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<FeedbackCreateWithoutUserInput, FeedbackUncheckedCreateWithoutUserInput> | FeedbackCreateWithoutUserInput[] | FeedbackUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: FeedbackCreateOrConnectWithoutUserInput | FeedbackCreateOrConnectWithoutUserInput[]
-    upsert?: FeedbackUpsertWithWhereUniqueWithoutUserInput | FeedbackUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: FeedbackCreateManyUserInputEnvelope
-    set?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
-    disconnect?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
-    delete?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
-    connect?: FeedbackWhereUniqueInput | FeedbackWhereUniqueInput[]
-    update?: FeedbackUpdateWithWhereUniqueWithoutUserInput | FeedbackUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: FeedbackUpdateManyWithWhereWithoutUserInput | FeedbackUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: FeedbackScalarWhereInput | FeedbackScalarWhereInput[]
+  export type PostUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput> | PostCreateWithoutUserInput[] | PostUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: PostCreateOrConnectWithoutUserInput | PostCreateOrConnectWithoutUserInput[]
+    upsert?: PostUpsertWithWhereUniqueWithoutUserInput | PostUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: PostCreateManyUserInputEnvelope
+    set?: PostWhereUniqueInput | PostWhereUniqueInput[]
+    disconnect?: PostWhereUniqueInput | PostWhereUniqueInput[]
+    delete?: PostWhereUniqueInput | PostWhereUniqueInput[]
+    connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
+    update?: PostUpdateWithWhereUniqueWithoutUserInput | PostUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: PostUpdateManyWithWhereWithoutUserInput | PostUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
+  }
+
+  export type ProductUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput> | ProductCreateWithoutUserInput[] | ProductUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProductCreateOrConnectWithoutUserInput | ProductCreateOrConnectWithoutUserInput[]
+    upsert?: ProductUpsertWithWhereUniqueWithoutUserInput | ProductUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ProductCreateManyUserInputEnvelope
+    set?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    disconnect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    delete?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    update?: ProductUpdateWithWhereUniqueWithoutUserInput | ProductUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ProductUpdateManyWithWhereWithoutUserInput | ProductUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ProductScalarWhereInput | ProductScalarWhereInput[]
+  }
+
+  export type RatingUncheckedUpdateManyWithoutFarmerNestedInput = {
+    create?: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput> | RatingCreateWithoutFarmerInput[] | RatingUncheckedCreateWithoutFarmerInput[]
+    connectOrCreate?: RatingCreateOrConnectWithoutFarmerInput | RatingCreateOrConnectWithoutFarmerInput[]
+    upsert?: RatingUpsertWithWhereUniqueWithoutFarmerInput | RatingUpsertWithWhereUniqueWithoutFarmerInput[]
+    createMany?: RatingCreateManyFarmerInputEnvelope
+    set?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    disconnect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    delete?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    update?: RatingUpdateWithWhereUniqueWithoutFarmerInput | RatingUpdateWithWhereUniqueWithoutFarmerInput[]
+    updateMany?: RatingUpdateManyWithWhereWithoutFarmerInput | RatingUpdateManyWithWhereWithoutFarmerInput[]
+    deleteMany?: RatingScalarWhereInput | RatingScalarWhereInput[]
+  }
+
+  export type RatingUncheckedUpdateManyWithoutRaterNestedInput = {
+    create?: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput> | RatingCreateWithoutRaterInput[] | RatingUncheckedCreateWithoutRaterInput[]
+    connectOrCreate?: RatingCreateOrConnectWithoutRaterInput | RatingCreateOrConnectWithoutRaterInput[]
+    upsert?: RatingUpsertWithWhereUniqueWithoutRaterInput | RatingUpsertWithWhereUniqueWithoutRaterInput[]
+    createMany?: RatingCreateManyRaterInputEnvelope
+    set?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    disconnect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    delete?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    connect?: RatingWhereUniqueInput | RatingWhereUniqueInput[]
+    update?: RatingUpdateWithWhereUniqueWithoutRaterInput | RatingUpdateWithWhereUniqueWithoutRaterInput[]
+    updateMany?: RatingUpdateManyWithWhereWithoutRaterInput | RatingUpdateManyWithWhereWithoutRaterInput[]
+    deleteMany?: RatingScalarWhereInput | RatingScalarWhereInput[]
   }
 
   export type ProductCreateimageUrlsInput = {
     set: string[]
   }
 
-  export type UserCreateNestedOneWithoutProductsInput = {
-    create?: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProductsInput
-    connect?: UserWhereUniqueInput
+  export type EventCreateNestedManyWithoutProductInput = {
+    create?: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput> | EventCreateWithoutProductInput[] | EventUncheckedCreateWithoutProductInput[]
+    connectOrCreate?: EventCreateOrConnectWithoutProductInput | EventCreateOrConnectWithoutProductInput[]
+    createMany?: EventCreateManyProductInputEnvelope
+    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
   export type OrderCreateNestedManyWithoutProductInput = {
@@ -17313,7 +17314,13 @@ export namespace Prisma {
     connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
   }
 
-  export type EventCreateNestedManyWithoutProductInput = {
+  export type UserCreateNestedOneWithoutProductsInput = {
+    create?: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProductsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type EventUncheckedCreateNestedManyWithoutProductInput = {
     create?: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput> | EventCreateWithoutProductInput[] | EventUncheckedCreateWithoutProductInput[]
     connectOrCreate?: EventCreateOrConnectWithoutProductInput | EventCreateOrConnectWithoutProductInput[]
     createMany?: EventCreateManyProductInputEnvelope
@@ -17325,13 +17332,6 @@ export namespace Prisma {
     connectOrCreate?: OrderCreateOrConnectWithoutProductInput | OrderCreateOrConnectWithoutProductInput[]
     createMany?: OrderCreateManyProductInputEnvelope
     connect?: OrderWhereUniqueInput | OrderWhereUniqueInput[]
-  }
-
-  export type EventUncheckedCreateNestedManyWithoutProductInput = {
-    create?: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput> | EventCreateWithoutProductInput[] | EventUncheckedCreateWithoutProductInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutProductInput | EventCreateOrConnectWithoutProductInput[]
-    createMany?: EventCreateManyProductInputEnvelope
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
   export type FloatFieldUpdateOperationsInput = {
@@ -17347,12 +17347,18 @@ export namespace Prisma {
     push?: string | string[]
   }
 
-  export type UserUpdateOneRequiredWithoutProductsNestedInput = {
-    create?: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProductsInput
-    upsert?: UserUpsertWithoutProductsInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProductsInput, UserUpdateWithoutProductsInput>, UserUncheckedUpdateWithoutProductsInput>
+  export type EventUpdateManyWithoutProductNestedInput = {
+    create?: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput> | EventCreateWithoutProductInput[] | EventUncheckedCreateWithoutProductInput[]
+    connectOrCreate?: EventCreateOrConnectWithoutProductInput | EventCreateOrConnectWithoutProductInput[]
+    upsert?: EventUpsertWithWhereUniqueWithoutProductInput | EventUpsertWithWhereUniqueWithoutProductInput[]
+    createMany?: EventCreateManyProductInputEnvelope
+    set?: EventWhereUniqueInput | EventWhereUniqueInput[]
+    disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+    delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
+    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+    update?: EventUpdateWithWhereUniqueWithoutProductInput | EventUpdateWithWhereUniqueWithoutProductInput[]
+    updateMany?: EventUpdateManyWithWhereWithoutProductInput | EventUpdateManyWithWhereWithoutProductInput[]
+    deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
   export type OrderUpdateManyWithoutProductNestedInput = {
@@ -17369,7 +17375,15 @@ export namespace Prisma {
     deleteMany?: OrderScalarWhereInput | OrderScalarWhereInput[]
   }
 
-  export type EventUpdateManyWithoutProductNestedInput = {
+  export type UserUpdateOneRequiredWithoutProductsNestedInput = {
+    create?: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProductsInput
+    upsert?: UserUpsertWithoutProductsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProductsInput, UserUpdateWithoutProductsInput>, UserUncheckedUpdateWithoutProductsInput>
+  }
+
+  export type EventUncheckedUpdateManyWithoutProductNestedInput = {
     create?: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput> | EventCreateWithoutProductInput[] | EventUncheckedCreateWithoutProductInput[]
     connectOrCreate?: EventCreateOrConnectWithoutProductInput | EventCreateOrConnectWithoutProductInput[]
     upsert?: EventUpsertWithWhereUniqueWithoutProductInput | EventUpsertWithWhereUniqueWithoutProductInput[]
@@ -17397,18 +17411,11 @@ export namespace Prisma {
     deleteMany?: OrderScalarWhereInput | OrderScalarWhereInput[]
   }
 
-  export type EventUncheckedUpdateManyWithoutProductNestedInput = {
-    create?: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput> | EventCreateWithoutProductInput[] | EventUncheckedCreateWithoutProductInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutProductInput | EventCreateOrConnectWithoutProductInput[]
-    upsert?: EventUpsertWithWhereUniqueWithoutProductInput | EventUpsertWithWhereUniqueWithoutProductInput[]
-    createMany?: EventCreateManyProductInputEnvelope
-    set?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
+  export type EventCreateNestedManyWithoutOrderInput = {
+    create?: XOR<EventCreateWithoutOrderInput, EventUncheckedCreateWithoutOrderInput> | EventCreateWithoutOrderInput[] | EventUncheckedCreateWithoutOrderInput[]
+    connectOrCreate?: EventCreateOrConnectWithoutOrderInput | EventCreateOrConnectWithoutOrderInput[]
+    createMany?: EventCreateManyOrderInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    update?: EventUpdateWithWhereUniqueWithoutProductInput | EventUpdateWithWhereUniqueWithoutProductInput[]
-    updateMany?: EventUpdateManyWithWhereWithoutProductInput | EventUpdateManyWithWhereWithoutProductInput[]
-    deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutOrdersInput = {
@@ -17423,18 +17430,25 @@ export namespace Prisma {
     connect?: ProductWhereUniqueInput
   }
 
-  export type EventCreateNestedManyWithoutOrderInput = {
+  export type EventUncheckedCreateNestedManyWithoutOrderInput = {
     create?: XOR<EventCreateWithoutOrderInput, EventUncheckedCreateWithoutOrderInput> | EventCreateWithoutOrderInput[] | EventUncheckedCreateWithoutOrderInput[]
     connectOrCreate?: EventCreateOrConnectWithoutOrderInput | EventCreateOrConnectWithoutOrderInput[]
     createMany?: EventCreateManyOrderInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
-  export type EventUncheckedCreateNestedManyWithoutOrderInput = {
+  export type EventUpdateManyWithoutOrderNestedInput = {
     create?: XOR<EventCreateWithoutOrderInput, EventUncheckedCreateWithoutOrderInput> | EventCreateWithoutOrderInput[] | EventUncheckedCreateWithoutOrderInput[]
     connectOrCreate?: EventCreateOrConnectWithoutOrderInput | EventCreateOrConnectWithoutOrderInput[]
+    upsert?: EventUpsertWithWhereUniqueWithoutOrderInput | EventUpsertWithWhereUniqueWithoutOrderInput[]
     createMany?: EventCreateManyOrderInputEnvelope
+    set?: EventWhereUniqueInput | EventWhereUniqueInput[]
+    disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+    delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+    update?: EventUpdateWithWhereUniqueWithoutOrderInput | EventUpdateWithWhereUniqueWithoutOrderInput[]
+    updateMany?: EventUpdateManyWithWhereWithoutOrderInput | EventUpdateManyWithWhereWithoutOrderInput[]
+    deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
   export type UserUpdateOneRequiredWithoutOrdersNestedInput = {
@@ -17453,20 +17467,6 @@ export namespace Prisma {
     update?: XOR<XOR<ProductUpdateToOneWithWhereWithoutOrdersInput, ProductUpdateWithoutOrdersInput>, ProductUncheckedUpdateWithoutOrdersInput>
   }
 
-  export type EventUpdateManyWithoutOrderNestedInput = {
-    create?: XOR<EventCreateWithoutOrderInput, EventUncheckedCreateWithoutOrderInput> | EventCreateWithoutOrderInput[] | EventUncheckedCreateWithoutOrderInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutOrderInput | EventCreateOrConnectWithoutOrderInput[]
-    upsert?: EventUpsertWithWhereUniqueWithoutOrderInput | EventUpsertWithWhereUniqueWithoutOrderInput[]
-    createMany?: EventCreateManyOrderInputEnvelope
-    set?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    update?: EventUpdateWithWhereUniqueWithoutOrderInput | EventUpdateWithWhereUniqueWithoutOrderInput[]
-    updateMany?: EventUpdateManyWithWhereWithoutOrderInput | EventUpdateManyWithWhereWithoutOrderInput[]
-    deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
-  }
-
   export type EventUncheckedUpdateManyWithoutOrderNestedInput = {
     create?: XOR<EventCreateWithoutOrderInput, EventUncheckedCreateWithoutOrderInput> | EventCreateWithoutOrderInput[] | EventUncheckedCreateWithoutOrderInput[]
     connectOrCreate?: EventCreateOrConnectWithoutOrderInput | EventCreateOrConnectWithoutOrderInput[]
@@ -17481,10 +17481,11 @@ export namespace Prisma {
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutSentMessagesInput = {
-    create?: XOR<UserCreateWithoutSentMessagesInput, UserUncheckedCreateWithoutSentMessagesInput>
-    connectOrCreate?: UserCreateOrConnectWithoutSentMessagesInput
-    connect?: UserWhereUniqueInput
+  export type EventCreateNestedManyWithoutMessageInput = {
+    create?: XOR<EventCreateWithoutMessageInput, EventUncheckedCreateWithoutMessageInput> | EventCreateWithoutMessageInput[] | EventUncheckedCreateWithoutMessageInput[]
+    connectOrCreate?: EventCreateOrConnectWithoutMessageInput | EventCreateOrConnectWithoutMessageInput[]
+    createMany?: EventCreateManyMessageInputEnvelope
+    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
   export type UserCreateNestedOneWithoutReceivedMessagesInput = {
@@ -17493,11 +17494,10 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type EventCreateNestedManyWithoutMessageInput = {
-    create?: XOR<EventCreateWithoutMessageInput, EventUncheckedCreateWithoutMessageInput> | EventCreateWithoutMessageInput[] | EventUncheckedCreateWithoutMessageInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutMessageInput | EventCreateOrConnectWithoutMessageInput[]
-    createMany?: EventCreateManyMessageInputEnvelope
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+  export type UserCreateNestedOneWithoutSentMessagesInput = {
+    create?: XOR<UserCreateWithoutSentMessagesInput, UserUncheckedCreateWithoutSentMessagesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutSentMessagesInput
+    connect?: UserWhereUniqueInput
   }
 
   export type EventUncheckedCreateNestedManyWithoutMessageInput = {
@@ -17505,22 +17505,6 @@ export namespace Prisma {
     connectOrCreate?: EventCreateOrConnectWithoutMessageInput | EventCreateOrConnectWithoutMessageInput[]
     createMany?: EventCreateManyMessageInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-  }
-
-  export type UserUpdateOneRequiredWithoutSentMessagesNestedInput = {
-    create?: XOR<UserCreateWithoutSentMessagesInput, UserUncheckedCreateWithoutSentMessagesInput>
-    connectOrCreate?: UserCreateOrConnectWithoutSentMessagesInput
-    upsert?: UserUpsertWithoutSentMessagesInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSentMessagesInput, UserUpdateWithoutSentMessagesInput>, UserUncheckedUpdateWithoutSentMessagesInput>
-  }
-
-  export type UserUpdateOneRequiredWithoutReceivedMessagesNestedInput = {
-    create?: XOR<UserCreateWithoutReceivedMessagesInput, UserUncheckedCreateWithoutReceivedMessagesInput>
-    connectOrCreate?: UserCreateOrConnectWithoutReceivedMessagesInput
-    upsert?: UserUpsertWithoutReceivedMessagesInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutReceivedMessagesInput, UserUpdateWithoutReceivedMessagesInput>, UserUncheckedUpdateWithoutReceivedMessagesInput>
   }
 
   export type EventUpdateManyWithoutMessageNestedInput = {
@@ -17537,6 +17521,22 @@ export namespace Prisma {
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
+  export type UserUpdateOneRequiredWithoutReceivedMessagesNestedInput = {
+    create?: XOR<UserCreateWithoutReceivedMessagesInput, UserUncheckedCreateWithoutReceivedMessagesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutReceivedMessagesInput
+    upsert?: UserUpsertWithoutReceivedMessagesInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutReceivedMessagesInput, UserUpdateWithoutReceivedMessagesInput>, UserUncheckedUpdateWithoutReceivedMessagesInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutSentMessagesNestedInput = {
+    create?: XOR<UserCreateWithoutSentMessagesInput, UserUncheckedCreateWithoutSentMessagesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutSentMessagesInput
+    upsert?: UserUpsertWithoutSentMessagesInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSentMessagesInput, UserUpdateWithoutSentMessagesInput>, UserUncheckedUpdateWithoutSentMessagesInput>
+  }
+
   export type EventUncheckedUpdateManyWithoutMessageNestedInput = {
     create?: XOR<EventCreateWithoutMessageInput, EventUncheckedCreateWithoutMessageInput> | EventCreateWithoutMessageInput[] | EventUncheckedCreateWithoutMessageInput[]
     connectOrCreate?: EventCreateOrConnectWithoutMessageInput | EventCreateOrConnectWithoutMessageInput[]
@@ -17551,12 +17551,6 @@ export namespace Prisma {
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutPostsInput = {
-    create?: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutPostsInput
-    connect?: UserWhereUniqueInput
-  }
-
   export type EventCreateNestedManyWithoutPostInput = {
     create?: XOR<EventCreateWithoutPostInput, EventUncheckedCreateWithoutPostInput> | EventCreateWithoutPostInput[] | EventUncheckedCreateWithoutPostInput[]
     connectOrCreate?: EventCreateOrConnectWithoutPostInput | EventCreateOrConnectWithoutPostInput[]
@@ -17564,19 +17558,17 @@ export namespace Prisma {
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
+  export type UserCreateNestedOneWithoutPostsInput = {
+    create?: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutPostsInput
+    connect?: UserWhereUniqueInput
+  }
+
   export type EventUncheckedCreateNestedManyWithoutPostInput = {
     create?: XOR<EventCreateWithoutPostInput, EventUncheckedCreateWithoutPostInput> | EventCreateWithoutPostInput[] | EventUncheckedCreateWithoutPostInput[]
     connectOrCreate?: EventCreateOrConnectWithoutPostInput | EventCreateOrConnectWithoutPostInput[]
     createMany?: EventCreateManyPostInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-  }
-
-  export type UserUpdateOneRequiredWithoutPostsNestedInput = {
-    create?: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutPostsInput
-    upsert?: UserUpsertWithoutPostsInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPostsInput, UserUpdateWithoutPostsInput>, UserUncheckedUpdateWithoutPostsInput>
   }
 
   export type EventUpdateManyWithoutPostNestedInput = {
@@ -17591,6 +17583,14 @@ export namespace Prisma {
     update?: EventUpdateWithWhereUniqueWithoutPostInput | EventUpdateWithWhereUniqueWithoutPostInput[]
     updateMany?: EventUpdateManyWithWhereWithoutPostInput | EventUpdateManyWithWhereWithoutPostInput[]
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
+  }
+
+  export type UserUpdateOneRequiredWithoutPostsNestedInput = {
+    create?: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutPostsInput
+    upsert?: UserUpsertWithoutPostsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPostsInput, UserUpdateWithoutPostsInput>, UserUncheckedUpdateWithoutPostsInput>
   }
 
   export type EventUncheckedUpdateManyWithoutPostNestedInput = {
@@ -17655,10 +17655,10 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type ProductCreateNestedOneWithoutEventsInput = {
-    create?: XOR<ProductCreateWithoutEventsInput, ProductUncheckedCreateWithoutEventsInput>
-    connectOrCreate?: ProductCreateOrConnectWithoutEventsInput
-    connect?: ProductWhereUniqueInput
+  export type MessageCreateNestedOneWithoutEventsInput = {
+    create?: XOR<MessageCreateWithoutEventsInput, MessageUncheckedCreateWithoutEventsInput>
+    connectOrCreate?: MessageCreateOrConnectWithoutEventsInput
+    connect?: MessageWhereUniqueInput
   }
 
   export type OrderCreateNestedOneWithoutEventsInput = {
@@ -17667,16 +17667,16 @@ export namespace Prisma {
     connect?: OrderWhereUniqueInput
   }
 
-  export type MessageCreateNestedOneWithoutEventsInput = {
-    create?: XOR<MessageCreateWithoutEventsInput, MessageUncheckedCreateWithoutEventsInput>
-    connectOrCreate?: MessageCreateOrConnectWithoutEventsInput
-    connect?: MessageWhereUniqueInput
-  }
-
   export type PostCreateNestedOneWithoutEventsInput = {
     create?: XOR<PostCreateWithoutEventsInput, PostUncheckedCreateWithoutEventsInput>
     connectOrCreate?: PostCreateOrConnectWithoutEventsInput
     connect?: PostWhereUniqueInput
+  }
+
+  export type ProductCreateNestedOneWithoutEventsInput = {
+    create?: XOR<ProductCreateWithoutEventsInput, ProductUncheckedCreateWithoutEventsInput>
+    connectOrCreate?: ProductCreateOrConnectWithoutEventsInput
+    connect?: ProductWhereUniqueInput
   }
 
   export type ResourceCreateNestedOneWithoutEventsInput = {
@@ -17695,14 +17695,14 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutEventsInput, UserUpdateWithoutEventsInput>, UserUncheckedUpdateWithoutEventsInput>
   }
 
-  export type ProductUpdateOneWithoutEventsNestedInput = {
-    create?: XOR<ProductCreateWithoutEventsInput, ProductUncheckedCreateWithoutEventsInput>
-    connectOrCreate?: ProductCreateOrConnectWithoutEventsInput
-    upsert?: ProductUpsertWithoutEventsInput
-    disconnect?: ProductWhereInput | boolean
-    delete?: ProductWhereInput | boolean
-    connect?: ProductWhereUniqueInput
-    update?: XOR<XOR<ProductUpdateToOneWithWhereWithoutEventsInput, ProductUpdateWithoutEventsInput>, ProductUncheckedUpdateWithoutEventsInput>
+  export type MessageUpdateOneWithoutEventsNestedInput = {
+    create?: XOR<MessageCreateWithoutEventsInput, MessageUncheckedCreateWithoutEventsInput>
+    connectOrCreate?: MessageCreateOrConnectWithoutEventsInput
+    upsert?: MessageUpsertWithoutEventsInput
+    disconnect?: MessageWhereInput | boolean
+    delete?: MessageWhereInput | boolean
+    connect?: MessageWhereUniqueInput
+    update?: XOR<XOR<MessageUpdateToOneWithWhereWithoutEventsInput, MessageUpdateWithoutEventsInput>, MessageUncheckedUpdateWithoutEventsInput>
   }
 
   export type OrderUpdateOneWithoutEventsNestedInput = {
@@ -17715,16 +17715,6 @@ export namespace Prisma {
     update?: XOR<XOR<OrderUpdateToOneWithWhereWithoutEventsInput, OrderUpdateWithoutEventsInput>, OrderUncheckedUpdateWithoutEventsInput>
   }
 
-  export type MessageUpdateOneWithoutEventsNestedInput = {
-    create?: XOR<MessageCreateWithoutEventsInput, MessageUncheckedCreateWithoutEventsInput>
-    connectOrCreate?: MessageCreateOrConnectWithoutEventsInput
-    upsert?: MessageUpsertWithoutEventsInput
-    disconnect?: MessageWhereInput | boolean
-    delete?: MessageWhereInput | boolean
-    connect?: MessageWhereUniqueInput
-    update?: XOR<XOR<MessageUpdateToOneWithWhereWithoutEventsInput, MessageUpdateWithoutEventsInput>, MessageUncheckedUpdateWithoutEventsInput>
-  }
-
   export type PostUpdateOneWithoutEventsNestedInput = {
     create?: XOR<PostCreateWithoutEventsInput, PostUncheckedCreateWithoutEventsInput>
     connectOrCreate?: PostCreateOrConnectWithoutEventsInput
@@ -17733,6 +17723,16 @@ export namespace Prisma {
     delete?: PostWhereInput | boolean
     connect?: PostWhereUniqueInput
     update?: XOR<XOR<PostUpdateToOneWithWhereWithoutEventsInput, PostUpdateWithoutEventsInput>, PostUncheckedUpdateWithoutEventsInput>
+  }
+
+  export type ProductUpdateOneWithoutEventsNestedInput = {
+    create?: XOR<ProductCreateWithoutEventsInput, ProductUncheckedCreateWithoutEventsInput>
+    connectOrCreate?: ProductCreateOrConnectWithoutEventsInput
+    upsert?: ProductUpsertWithoutEventsInput
+    disconnect?: ProductWhereInput | boolean
+    delete?: ProductWhereInput | boolean
+    connect?: ProductWhereUniqueInput
+    update?: XOR<XOR<ProductUpdateToOneWithWhereWithoutEventsInput, ProductUpdateWithoutEventsInput>, ProductUncheckedUpdateWithoutEventsInput>
   }
 
   export type ResourceUpdateOneWithoutEventsNestedInput = {
@@ -17753,24 +17753,16 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type UserCreateNestedOneWithoutRatingsGivenInput = {
-    create?: XOR<UserCreateWithoutRatingsGivenInput, UserUncheckedCreateWithoutRatingsGivenInput>
-    connectOrCreate?: UserCreateOrConnectWithoutRatingsGivenInput
-    connect?: UserWhereUniqueInput
-  }
-
   export type UserCreateNestedOneWithoutRatingsReceivedInput = {
     create?: XOR<UserCreateWithoutRatingsReceivedInput, UserUncheckedCreateWithoutRatingsReceivedInput>
     connectOrCreate?: UserCreateOrConnectWithoutRatingsReceivedInput
     connect?: UserWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutRatingsGivenNestedInput = {
+  export type UserCreateNestedOneWithoutRatingsGivenInput = {
     create?: XOR<UserCreateWithoutRatingsGivenInput, UserUncheckedCreateWithoutRatingsGivenInput>
     connectOrCreate?: UserCreateOrConnectWithoutRatingsGivenInput
-    upsert?: UserUpsertWithoutRatingsGivenInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutRatingsGivenInput, UserUpdateWithoutRatingsGivenInput>, UserUncheckedUpdateWithoutRatingsGivenInput>
   }
 
   export type UserUpdateOneRequiredWithoutRatingsReceivedNestedInput = {
@@ -17779,6 +17771,14 @@ export namespace Prisma {
     upsert?: UserUpsertWithoutRatingsReceivedInput
     connect?: UserWhereUniqueInput
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutRatingsReceivedInput, UserUpdateWithoutRatingsReceivedInput>, UserUncheckedUpdateWithoutRatingsReceivedInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutRatingsGivenNestedInput = {
+    create?: XOR<UserCreateWithoutRatingsGivenInput, UserUncheckedCreateWithoutRatingsGivenInput>
+    connectOrCreate?: UserCreateOrConnectWithoutRatingsGivenInput
+    upsert?: UserUpsertWithoutRatingsGivenInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutRatingsGivenInput, UserUpdateWithoutRatingsGivenInput>, UserUncheckedUpdateWithoutRatingsGivenInput>
   }
 
   export type UserCreateNestedOneWithoutPasswordResetTokensInput = {
@@ -18080,52 +18080,92 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
-  export type ProductCreateWithoutUserInput = {
-    name: string
-    quantity: number
-    price: number
-    imageUrls?: ProductCreateimageUrlsInput | string[]
-    qualityScore?: number | null
-    predictedPrice?: number | null
-    latitude?: number | null
-    longitude?: number | null
+  export type EventCreateWithoutUserInput = {
+    action: string
+    entityType?: string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
-    updatedAt?: Date | string
-    orders?: OrderCreateNestedManyWithoutProductInput
-    events?: EventCreateNestedManyWithoutProductInput
+    message?: MessageCreateNestedOneWithoutEventsInput
+    order?: OrderCreateNestedOneWithoutEventsInput
+    post?: PostCreateNestedOneWithoutEventsInput
+    product?: ProductCreateNestedOneWithoutEventsInput
+    resource?: ResourceCreateNestedOneWithoutEventsInput
   }
 
-  export type ProductUncheckedCreateWithoutUserInput = {
+  export type EventUncheckedCreateWithoutUserInput = {
     id?: number
-    name: string
-    quantity: number
-    price: number
-    imageUrls?: ProductCreateimageUrlsInput | string[]
-    qualityScore?: number | null
-    predictedPrice?: number | null
-    latitude?: number | null
-    longitude?: number | null
+    action: string
+    entityType?: string | null
+    entityId?: number | null
+    details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
-    updatedAt?: Date | string
-    orders?: OrderUncheckedCreateNestedManyWithoutProductInput
-    events?: EventUncheckedCreateNestedManyWithoutProductInput
   }
 
-  export type ProductCreateOrConnectWithoutUserInput = {
-    where: ProductWhereUniqueInput
-    create: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput>
+  export type EventCreateOrConnectWithoutUserInput = {
+    where: EventWhereUniqueInput
+    create: XOR<EventCreateWithoutUserInput, EventUncheckedCreateWithoutUserInput>
   }
 
-  export type ProductCreateManyUserInputEnvelope = {
-    data: ProductCreateManyUserInput | ProductCreateManyUserInput[]
+  export type EventCreateManyUserInputEnvelope = {
+    data: EventCreateManyUserInput | EventCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FeedbackCreateWithoutUserInput = {
+    name?: string | null
+    rating: number
+    comment: string
+    createdAt?: Date | string
+  }
+
+  export type FeedbackUncheckedCreateWithoutUserInput = {
+    id?: number
+    name?: string | null
+    rating: number
+    comment: string
+    createdAt?: Date | string
+  }
+
+  export type FeedbackCreateOrConnectWithoutUserInput = {
+    where: FeedbackWhereUniqueInput
+    create: XOR<FeedbackCreateWithoutUserInput, FeedbackUncheckedCreateWithoutUserInput>
+  }
+
+  export type FeedbackCreateManyUserInputEnvelope = {
+    data: FeedbackCreateManyUserInput | FeedbackCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type MessageCreateWithoutReceiverInput = {
+    content: string
+    createdAt?: Date | string
+    events?: EventCreateNestedManyWithoutMessageInput
+    sender: UserCreateNestedOneWithoutSentMessagesInput
+  }
+
+  export type MessageUncheckedCreateWithoutReceiverInput = {
+    id?: number
+    senderId: number
+    content: string
+    createdAt?: Date | string
+    events?: EventUncheckedCreateNestedManyWithoutMessageInput
+  }
+
+  export type MessageCreateOrConnectWithoutReceiverInput = {
+    where: MessageWhereUniqueInput
+    create: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput>
+  }
+
+  export type MessageCreateManyReceiverInputEnvelope = {
+    data: MessageCreateManyReceiverInput | MessageCreateManyReceiverInput[]
     skipDuplicates?: boolean
   }
 
   export type MessageCreateWithoutSenderInput = {
     content: string
     createdAt?: Date | string
-    receiver: UserCreateNestedOneWithoutReceivedMessagesInput
     events?: EventCreateNestedManyWithoutMessageInput
+    receiver: UserCreateNestedOneWithoutReceivedMessagesInput
   }
 
   export type MessageUncheckedCreateWithoutSenderInput = {
@@ -18146,28 +18186,55 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type MessageCreateWithoutReceiverInput = {
-    content: string
+  export type OrderCreateWithoutBuyerInput = {
+    quantity: number
+    totalPrice: number
+    status?: string
     createdAt?: Date | string
-    sender: UserCreateNestedOneWithoutSentMessagesInput
-    events?: EventCreateNestedManyWithoutMessageInput
+    updatedAt?: Date | string
+    events?: EventCreateNestedManyWithoutOrderInput
+    product: ProductCreateNestedOneWithoutOrdersInput
   }
 
-  export type MessageUncheckedCreateWithoutReceiverInput = {
+  export type OrderUncheckedCreateWithoutBuyerInput = {
     id?: number
-    senderId: number
-    content: string
+    productId: number
+    quantity: number
+    totalPrice: number
+    status?: string
     createdAt?: Date | string
-    events?: EventUncheckedCreateNestedManyWithoutMessageInput
+    updatedAt?: Date | string
+    events?: EventUncheckedCreateNestedManyWithoutOrderInput
   }
 
-  export type MessageCreateOrConnectWithoutReceiverInput = {
-    where: MessageWhereUniqueInput
-    create: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput>
+  export type OrderCreateOrConnectWithoutBuyerInput = {
+    where: OrderWhereUniqueInput
+    create: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput>
   }
 
-  export type MessageCreateManyReceiverInputEnvelope = {
-    data: MessageCreateManyReceiverInput | MessageCreateManyReceiverInput[]
+  export type OrderCreateManyBuyerInputEnvelope = {
+    data: OrderCreateManyBuyerInput | OrderCreateManyBuyerInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type PasswordResetTokenCreateWithoutUserInput = {
+    token: string
+    expiresAt: Date | string
+  }
+
+  export type PasswordResetTokenUncheckedCreateWithoutUserInput = {
+    id?: number
+    token: string
+    expiresAt: Date | string
+  }
+
+  export type PasswordResetTokenCreateOrConnectWithoutUserInput = {
+    where: PasswordResetTokenWhereUniqueInput
+    create: XOR<PasswordResetTokenCreateWithoutUserInput, PasswordResetTokenUncheckedCreateWithoutUserInput>
+  }
+
+  export type PasswordResetTokenCreateManyUserInputEnvelope = {
+    data: PasswordResetTokenCreateManyUserInput | PasswordResetTokenCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
@@ -18196,96 +18263,44 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type OrderCreateWithoutBuyerInput = {
+  export type ProductCreateWithoutUserInput = {
+    name: string
     quantity: number
-    totalPrice: number
-    status?: string
+    price: number
+    imageUrls?: ProductCreateimageUrlsInput | string[]
+    qualityScore?: number | null
+    predictedPrice?: number | null
+    latitude?: number | null
+    longitude?: number | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    product: ProductCreateNestedOneWithoutOrdersInput
-    events?: EventCreateNestedManyWithoutOrderInput
+    events?: EventCreateNestedManyWithoutProductInput
+    orders?: OrderCreateNestedManyWithoutProductInput
   }
 
-  export type OrderUncheckedCreateWithoutBuyerInput = {
+  export type ProductUncheckedCreateWithoutUserInput = {
     id?: number
-    productId: number
+    name: string
     quantity: number
-    totalPrice: number
-    status?: string
+    price: number
+    imageUrls?: ProductCreateimageUrlsInput | string[]
+    qualityScore?: number | null
+    predictedPrice?: number | null
+    latitude?: number | null
+    longitude?: number | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    events?: EventUncheckedCreateNestedManyWithoutOrderInput
+    events?: EventUncheckedCreateNestedManyWithoutProductInput
+    orders?: OrderUncheckedCreateNestedManyWithoutProductInput
   }
 
-  export type OrderCreateOrConnectWithoutBuyerInput = {
-    where: OrderWhereUniqueInput
-    create: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput>
+  export type ProductCreateOrConnectWithoutUserInput = {
+    where: ProductWhereUniqueInput
+    create: XOR<ProductCreateWithoutUserInput, ProductUncheckedCreateWithoutUserInput>
   }
 
-  export type OrderCreateManyBuyerInputEnvelope = {
-    data: OrderCreateManyBuyerInput | OrderCreateManyBuyerInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type EventCreateWithoutUserInput = {
-    action: string
-    entityType?: string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-    product?: ProductCreateNestedOneWithoutEventsInput
-    order?: OrderCreateNestedOneWithoutEventsInput
-    message?: MessageCreateNestedOneWithoutEventsInput
-    post?: PostCreateNestedOneWithoutEventsInput
-    resource?: ResourceCreateNestedOneWithoutEventsInput
-  }
-
-  export type EventUncheckedCreateWithoutUserInput = {
-    id?: number
-    action: string
-    entityType?: string | null
-    entityId?: number | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-  }
-
-  export type EventCreateOrConnectWithoutUserInput = {
-    where: EventWhereUniqueInput
-    create: XOR<EventCreateWithoutUserInput, EventUncheckedCreateWithoutUserInput>
-  }
-
-  export type EventCreateManyUserInputEnvelope = {
-    data: EventCreateManyUserInput | EventCreateManyUserInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type RatingCreateWithoutRaterInput = {
-    productQuality: number
-    responseTime: number
-    communication: number
-    friendliness: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    farmer: UserCreateNestedOneWithoutRatingsReceivedInput
-  }
-
-  export type RatingUncheckedCreateWithoutRaterInput = {
-    id?: number
-    farmerId: number
-    productQuality: number
-    responseTime: number
-    communication: number
-    friendliness: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type RatingCreateOrConnectWithoutRaterInput = {
-    where: RatingWhereUniqueInput
-    create: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput>
-  }
-
-  export type RatingCreateManyRaterInputEnvelope = {
-    data: RatingCreateManyRaterInput | RatingCreateManyRaterInput[]
+  export type ProductCreateManyUserInputEnvelope = {
+    data: ProductCreateManyUserInput | ProductCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
@@ -18320,50 +18335,218 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type PasswordResetTokenCreateWithoutUserInput = {
-    token: string
-    expiresAt: Date | string
+  export type RatingCreateWithoutRaterInput = {
+    productQuality: number
+    responseTime: number
+    communication: number
+    friendliness: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    farmer: UserCreateNestedOneWithoutRatingsReceivedInput
   }
 
-  export type PasswordResetTokenUncheckedCreateWithoutUserInput = {
+  export type RatingUncheckedCreateWithoutRaterInput = {
     id?: number
-    token: string
-    expiresAt: Date | string
+    farmerId: number
+    productQuality: number
+    responseTime: number
+    communication: number
+    friendliness: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type PasswordResetTokenCreateOrConnectWithoutUserInput = {
-    where: PasswordResetTokenWhereUniqueInput
-    create: XOR<PasswordResetTokenCreateWithoutUserInput, PasswordResetTokenUncheckedCreateWithoutUserInput>
+  export type RatingCreateOrConnectWithoutRaterInput = {
+    where: RatingWhereUniqueInput
+    create: XOR<RatingCreateWithoutRaterInput, RatingUncheckedCreateWithoutRaterInput>
   }
 
-  export type PasswordResetTokenCreateManyUserInputEnvelope = {
-    data: PasswordResetTokenCreateManyUserInput | PasswordResetTokenCreateManyUserInput[]
+  export type RatingCreateManyRaterInputEnvelope = {
+    data: RatingCreateManyRaterInput | RatingCreateManyRaterInput[]
     skipDuplicates?: boolean
   }
 
-  export type FeedbackCreateWithoutUserInput = {
-    name?: string | null
-    rating: number
-    comment: string
-    createdAt?: Date | string
+  export type EventUpsertWithWhereUniqueWithoutUserInput = {
+    where: EventWhereUniqueInput
+    update: XOR<EventUpdateWithoutUserInput, EventUncheckedUpdateWithoutUserInput>
+    create: XOR<EventCreateWithoutUserInput, EventUncheckedCreateWithoutUserInput>
   }
 
-  export type FeedbackUncheckedCreateWithoutUserInput = {
-    id?: number
-    name?: string | null
-    rating: number
-    comment: string
-    createdAt?: Date | string
+  export type EventUpdateWithWhereUniqueWithoutUserInput = {
+    where: EventWhereUniqueInput
+    data: XOR<EventUpdateWithoutUserInput, EventUncheckedUpdateWithoutUserInput>
   }
 
-  export type FeedbackCreateOrConnectWithoutUserInput = {
+  export type EventUpdateManyWithWhereWithoutUserInput = {
+    where: EventScalarWhereInput
+    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type EventScalarWhereInput = {
+    AND?: EventScalarWhereInput | EventScalarWhereInput[]
+    OR?: EventScalarWhereInput[]
+    NOT?: EventScalarWhereInput | EventScalarWhereInput[]
+    id?: IntFilter<"Event"> | number
+    userId?: IntNullableFilter<"Event"> | number | null
+    action?: StringFilter<"Event"> | string
+    entityType?: StringNullableFilter<"Event"> | string | null
+    entityId?: IntNullableFilter<"Event"> | number | null
+    details?: JsonNullableFilter<"Event">
+    createdAt?: DateTimeFilter<"Event"> | Date | string
+  }
+
+  export type FeedbackUpsertWithWhereUniqueWithoutUserInput = {
     where: FeedbackWhereUniqueInput
+    update: XOR<FeedbackUpdateWithoutUserInput, FeedbackUncheckedUpdateWithoutUserInput>
     create: XOR<FeedbackCreateWithoutUserInput, FeedbackUncheckedCreateWithoutUserInput>
   }
 
-  export type FeedbackCreateManyUserInputEnvelope = {
-    data: FeedbackCreateManyUserInput | FeedbackCreateManyUserInput[]
-    skipDuplicates?: boolean
+  export type FeedbackUpdateWithWhereUniqueWithoutUserInput = {
+    where: FeedbackWhereUniqueInput
+    data: XOR<FeedbackUpdateWithoutUserInput, FeedbackUncheckedUpdateWithoutUserInput>
+  }
+
+  export type FeedbackUpdateManyWithWhereWithoutUserInput = {
+    where: FeedbackScalarWhereInput
+    data: XOR<FeedbackUpdateManyMutationInput, FeedbackUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type FeedbackScalarWhereInput = {
+    AND?: FeedbackScalarWhereInput | FeedbackScalarWhereInput[]
+    OR?: FeedbackScalarWhereInput[]
+    NOT?: FeedbackScalarWhereInput | FeedbackScalarWhereInput[]
+    id?: IntFilter<"Feedback"> | number
+    userId?: IntNullableFilter<"Feedback"> | number | null
+    name?: StringNullableFilter<"Feedback"> | string | null
+    rating?: IntFilter<"Feedback"> | number
+    comment?: StringFilter<"Feedback"> | string
+    createdAt?: DateTimeFilter<"Feedback"> | Date | string
+  }
+
+  export type MessageUpsertWithWhereUniqueWithoutReceiverInput = {
+    where: MessageWhereUniqueInput
+    update: XOR<MessageUpdateWithoutReceiverInput, MessageUncheckedUpdateWithoutReceiverInput>
+    create: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput>
+  }
+
+  export type MessageUpdateWithWhereUniqueWithoutReceiverInput = {
+    where: MessageWhereUniqueInput
+    data: XOR<MessageUpdateWithoutReceiverInput, MessageUncheckedUpdateWithoutReceiverInput>
+  }
+
+  export type MessageUpdateManyWithWhereWithoutReceiverInput = {
+    where: MessageScalarWhereInput
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutReceiverInput>
+  }
+
+  export type MessageScalarWhereInput = {
+    AND?: MessageScalarWhereInput | MessageScalarWhereInput[]
+    OR?: MessageScalarWhereInput[]
+    NOT?: MessageScalarWhereInput | MessageScalarWhereInput[]
+    id?: IntFilter<"Message"> | number
+    senderId?: IntFilter<"Message"> | number
+    receiverId?: IntFilter<"Message"> | number
+    content?: StringFilter<"Message"> | string
+    createdAt?: DateTimeFilter<"Message"> | Date | string
+  }
+
+  export type MessageUpsertWithWhereUniqueWithoutSenderInput = {
+    where: MessageWhereUniqueInput
+    update: XOR<MessageUpdateWithoutSenderInput, MessageUncheckedUpdateWithoutSenderInput>
+    create: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput>
+  }
+
+  export type MessageUpdateWithWhereUniqueWithoutSenderInput = {
+    where: MessageWhereUniqueInput
+    data: XOR<MessageUpdateWithoutSenderInput, MessageUncheckedUpdateWithoutSenderInput>
+  }
+
+  export type MessageUpdateManyWithWhereWithoutSenderInput = {
+    where: MessageScalarWhereInput
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutSenderInput>
+  }
+
+  export type OrderUpsertWithWhereUniqueWithoutBuyerInput = {
+    where: OrderWhereUniqueInput
+    update: XOR<OrderUpdateWithoutBuyerInput, OrderUncheckedUpdateWithoutBuyerInput>
+    create: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput>
+  }
+
+  export type OrderUpdateWithWhereUniqueWithoutBuyerInput = {
+    where: OrderWhereUniqueInput
+    data: XOR<OrderUpdateWithoutBuyerInput, OrderUncheckedUpdateWithoutBuyerInput>
+  }
+
+  export type OrderUpdateManyWithWhereWithoutBuyerInput = {
+    where: OrderScalarWhereInput
+    data: XOR<OrderUpdateManyMutationInput, OrderUncheckedUpdateManyWithoutBuyerInput>
+  }
+
+  export type OrderScalarWhereInput = {
+    AND?: OrderScalarWhereInput | OrderScalarWhereInput[]
+    OR?: OrderScalarWhereInput[]
+    NOT?: OrderScalarWhereInput | OrderScalarWhereInput[]
+    id?: IntFilter<"Order"> | number
+    buyerId?: IntFilter<"Order"> | number
+    productId?: IntFilter<"Order"> | number
+    quantity?: FloatFilter<"Order"> | number
+    totalPrice?: FloatFilter<"Order"> | number
+    status?: StringFilter<"Order"> | string
+    createdAt?: DateTimeFilter<"Order"> | Date | string
+    updatedAt?: DateTimeFilter<"Order"> | Date | string
+  }
+
+  export type PasswordResetTokenUpsertWithWhereUniqueWithoutUserInput = {
+    where: PasswordResetTokenWhereUniqueInput
+    update: XOR<PasswordResetTokenUpdateWithoutUserInput, PasswordResetTokenUncheckedUpdateWithoutUserInput>
+    create: XOR<PasswordResetTokenCreateWithoutUserInput, PasswordResetTokenUncheckedCreateWithoutUserInput>
+  }
+
+  export type PasswordResetTokenUpdateWithWhereUniqueWithoutUserInput = {
+    where: PasswordResetTokenWhereUniqueInput
+    data: XOR<PasswordResetTokenUpdateWithoutUserInput, PasswordResetTokenUncheckedUpdateWithoutUserInput>
+  }
+
+  export type PasswordResetTokenUpdateManyWithWhereWithoutUserInput = {
+    where: PasswordResetTokenScalarWhereInput
+    data: XOR<PasswordResetTokenUpdateManyMutationInput, PasswordResetTokenUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type PasswordResetTokenScalarWhereInput = {
+    AND?: PasswordResetTokenScalarWhereInput | PasswordResetTokenScalarWhereInput[]
+    OR?: PasswordResetTokenScalarWhereInput[]
+    NOT?: PasswordResetTokenScalarWhereInput | PasswordResetTokenScalarWhereInput[]
+    id?: IntFilter<"PasswordResetToken"> | number
+    token?: StringFilter<"PasswordResetToken"> | string
+    userId?: IntFilter<"PasswordResetToken"> | number
+    expiresAt?: DateTimeFilter<"PasswordResetToken"> | Date | string
+  }
+
+  export type PostUpsertWithWhereUniqueWithoutUserInput = {
+    where: PostWhereUniqueInput
+    update: XOR<PostUpdateWithoutUserInput, PostUncheckedUpdateWithoutUserInput>
+    create: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput>
+  }
+
+  export type PostUpdateWithWhereUniqueWithoutUserInput = {
+    where: PostWhereUniqueInput
+    data: XOR<PostUpdateWithoutUserInput, PostUncheckedUpdateWithoutUserInput>
+  }
+
+  export type PostUpdateManyWithWhereWithoutUserInput = {
+    where: PostScalarWhereInput
+    data: XOR<PostUpdateManyMutationInput, PostUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type PostScalarWhereInput = {
+    AND?: PostScalarWhereInput | PostScalarWhereInput[]
+    OR?: PostScalarWhereInput[]
+    NOT?: PostScalarWhereInput | PostScalarWhereInput[]
+    id?: IntFilter<"Post"> | number
+    userId?: IntFilter<"Post"> | number
+    content?: StringFilter<"Post"> | string
+    createdAt?: DateTimeFilter<"Post"> | Date | string
+    updatedAt?: DateTimeFilter<"Post"> | Date | string
   }
 
   export type ProductUpsertWithWhereUniqueWithoutUserInput = {
@@ -18400,133 +18583,35 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Product"> | Date | string
   }
 
-  export type MessageUpsertWithWhereUniqueWithoutSenderInput = {
-    where: MessageWhereUniqueInput
-    update: XOR<MessageUpdateWithoutSenderInput, MessageUncheckedUpdateWithoutSenderInput>
-    create: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput>
+  export type RatingUpsertWithWhereUniqueWithoutFarmerInput = {
+    where: RatingWhereUniqueInput
+    update: XOR<RatingUpdateWithoutFarmerInput, RatingUncheckedUpdateWithoutFarmerInput>
+    create: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput>
   }
 
-  export type MessageUpdateWithWhereUniqueWithoutSenderInput = {
-    where: MessageWhereUniqueInput
-    data: XOR<MessageUpdateWithoutSenderInput, MessageUncheckedUpdateWithoutSenderInput>
+  export type RatingUpdateWithWhereUniqueWithoutFarmerInput = {
+    where: RatingWhereUniqueInput
+    data: XOR<RatingUpdateWithoutFarmerInput, RatingUncheckedUpdateWithoutFarmerInput>
   }
 
-  export type MessageUpdateManyWithWhereWithoutSenderInput = {
-    where: MessageScalarWhereInput
-    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutSenderInput>
+  export type RatingUpdateManyWithWhereWithoutFarmerInput = {
+    where: RatingScalarWhereInput
+    data: XOR<RatingUpdateManyMutationInput, RatingUncheckedUpdateManyWithoutFarmerInput>
   }
 
-  export type MessageScalarWhereInput = {
-    AND?: MessageScalarWhereInput | MessageScalarWhereInput[]
-    OR?: MessageScalarWhereInput[]
-    NOT?: MessageScalarWhereInput | MessageScalarWhereInput[]
-    id?: IntFilter<"Message"> | number
-    senderId?: IntFilter<"Message"> | number
-    receiverId?: IntFilter<"Message"> | number
-    content?: StringFilter<"Message"> | string
-    createdAt?: DateTimeFilter<"Message"> | Date | string
-  }
-
-  export type MessageUpsertWithWhereUniqueWithoutReceiverInput = {
-    where: MessageWhereUniqueInput
-    update: XOR<MessageUpdateWithoutReceiverInput, MessageUncheckedUpdateWithoutReceiverInput>
-    create: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput>
-  }
-
-  export type MessageUpdateWithWhereUniqueWithoutReceiverInput = {
-    where: MessageWhereUniqueInput
-    data: XOR<MessageUpdateWithoutReceiverInput, MessageUncheckedUpdateWithoutReceiverInput>
-  }
-
-  export type MessageUpdateManyWithWhereWithoutReceiverInput = {
-    where: MessageScalarWhereInput
-    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutReceiverInput>
-  }
-
-  export type PostUpsertWithWhereUniqueWithoutUserInput = {
-    where: PostWhereUniqueInput
-    update: XOR<PostUpdateWithoutUserInput, PostUncheckedUpdateWithoutUserInput>
-    create: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput>
-  }
-
-  export type PostUpdateWithWhereUniqueWithoutUserInput = {
-    where: PostWhereUniqueInput
-    data: XOR<PostUpdateWithoutUserInput, PostUncheckedUpdateWithoutUserInput>
-  }
-
-  export type PostUpdateManyWithWhereWithoutUserInput = {
-    where: PostScalarWhereInput
-    data: XOR<PostUpdateManyMutationInput, PostUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type PostScalarWhereInput = {
-    AND?: PostScalarWhereInput | PostScalarWhereInput[]
-    OR?: PostScalarWhereInput[]
-    NOT?: PostScalarWhereInput | PostScalarWhereInput[]
-    id?: IntFilter<"Post"> | number
-    userId?: IntFilter<"Post"> | number
-    content?: StringFilter<"Post"> | string
-    createdAt?: DateTimeFilter<"Post"> | Date | string
-    updatedAt?: DateTimeFilter<"Post"> | Date | string
-  }
-
-  export type OrderUpsertWithWhereUniqueWithoutBuyerInput = {
-    where: OrderWhereUniqueInput
-    update: XOR<OrderUpdateWithoutBuyerInput, OrderUncheckedUpdateWithoutBuyerInput>
-    create: XOR<OrderCreateWithoutBuyerInput, OrderUncheckedCreateWithoutBuyerInput>
-  }
-
-  export type OrderUpdateWithWhereUniqueWithoutBuyerInput = {
-    where: OrderWhereUniqueInput
-    data: XOR<OrderUpdateWithoutBuyerInput, OrderUncheckedUpdateWithoutBuyerInput>
-  }
-
-  export type OrderUpdateManyWithWhereWithoutBuyerInput = {
-    where: OrderScalarWhereInput
-    data: XOR<OrderUpdateManyMutationInput, OrderUncheckedUpdateManyWithoutBuyerInput>
-  }
-
-  export type OrderScalarWhereInput = {
-    AND?: OrderScalarWhereInput | OrderScalarWhereInput[]
-    OR?: OrderScalarWhereInput[]
-    NOT?: OrderScalarWhereInput | OrderScalarWhereInput[]
-    id?: IntFilter<"Order"> | number
-    buyerId?: IntFilter<"Order"> | number
-    productId?: IntFilter<"Order"> | number
-    quantity?: FloatFilter<"Order"> | number
-    totalPrice?: FloatFilter<"Order"> | number
-    status?: StringFilter<"Order"> | string
-    createdAt?: DateTimeFilter<"Order"> | Date | string
-    updatedAt?: DateTimeFilter<"Order"> | Date | string
-  }
-
-  export type EventUpsertWithWhereUniqueWithoutUserInput = {
-    where: EventWhereUniqueInput
-    update: XOR<EventUpdateWithoutUserInput, EventUncheckedUpdateWithoutUserInput>
-    create: XOR<EventCreateWithoutUserInput, EventUncheckedCreateWithoutUserInput>
-  }
-
-  export type EventUpdateWithWhereUniqueWithoutUserInput = {
-    where: EventWhereUniqueInput
-    data: XOR<EventUpdateWithoutUserInput, EventUncheckedUpdateWithoutUserInput>
-  }
-
-  export type EventUpdateManyWithWhereWithoutUserInput = {
-    where: EventScalarWhereInput
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type EventScalarWhereInput = {
-    AND?: EventScalarWhereInput | EventScalarWhereInput[]
-    OR?: EventScalarWhereInput[]
-    NOT?: EventScalarWhereInput | EventScalarWhereInput[]
-    id?: IntFilter<"Event"> | number
-    userId?: IntNullableFilter<"Event"> | number | null
-    action?: StringFilter<"Event"> | string
-    entityType?: StringNullableFilter<"Event"> | string | null
-    entityId?: IntNullableFilter<"Event"> | number | null
-    details?: JsonNullableFilter<"Event">
-    createdAt?: DateTimeFilter<"Event"> | Date | string
+  export type RatingScalarWhereInput = {
+    AND?: RatingScalarWhereInput | RatingScalarWhereInput[]
+    OR?: RatingScalarWhereInput[]
+    NOT?: RatingScalarWhereInput | RatingScalarWhereInput[]
+    id?: IntFilter<"Rating"> | number
+    raterId?: IntFilter<"Rating"> | number
+    farmerId?: IntFilter<"Rating"> | number
+    productQuality?: IntFilter<"Rating"> | number
+    responseTime?: IntFilter<"Rating"> | number
+    communication?: IntFilter<"Rating"> | number
+    friendliness?: IntFilter<"Rating"> | number
+    createdAt?: DateTimeFilter<"Rating"> | Date | string
+    updatedAt?: DateTimeFilter<"Rating"> | Date | string
   }
 
   export type RatingUpsertWithWhereUniqueWithoutRaterInput = {
@@ -18545,155 +18630,35 @@ export namespace Prisma {
     data: XOR<RatingUpdateManyMutationInput, RatingUncheckedUpdateManyWithoutRaterInput>
   }
 
-  export type RatingScalarWhereInput = {
-    AND?: RatingScalarWhereInput | RatingScalarWhereInput[]
-    OR?: RatingScalarWhereInput[]
-    NOT?: RatingScalarWhereInput | RatingScalarWhereInput[]
-    id?: IntFilter<"Rating"> | number
-    raterId?: IntFilter<"Rating"> | number
-    farmerId?: IntFilter<"Rating"> | number
-    productQuality?: IntFilter<"Rating"> | number
-    responseTime?: IntFilter<"Rating"> | number
-    communication?: IntFilter<"Rating"> | number
-    friendliness?: IntFilter<"Rating"> | number
-    createdAt?: DateTimeFilter<"Rating"> | Date | string
-    updatedAt?: DateTimeFilter<"Rating"> | Date | string
-  }
-
-  export type RatingUpsertWithWhereUniqueWithoutFarmerInput = {
-    where: RatingWhereUniqueInput
-    update: XOR<RatingUpdateWithoutFarmerInput, RatingUncheckedUpdateWithoutFarmerInput>
-    create: XOR<RatingCreateWithoutFarmerInput, RatingUncheckedCreateWithoutFarmerInput>
-  }
-
-  export type RatingUpdateWithWhereUniqueWithoutFarmerInput = {
-    where: RatingWhereUniqueInput
-    data: XOR<RatingUpdateWithoutFarmerInput, RatingUncheckedUpdateWithoutFarmerInput>
-  }
-
-  export type RatingUpdateManyWithWhereWithoutFarmerInput = {
-    where: RatingScalarWhereInput
-    data: XOR<RatingUpdateManyMutationInput, RatingUncheckedUpdateManyWithoutFarmerInput>
-  }
-
-  export type PasswordResetTokenUpsertWithWhereUniqueWithoutUserInput = {
-    where: PasswordResetTokenWhereUniqueInput
-    update: XOR<PasswordResetTokenUpdateWithoutUserInput, PasswordResetTokenUncheckedUpdateWithoutUserInput>
-    create: XOR<PasswordResetTokenCreateWithoutUserInput, PasswordResetTokenUncheckedCreateWithoutUserInput>
-  }
-
-  export type PasswordResetTokenUpdateWithWhereUniqueWithoutUserInput = {
-    where: PasswordResetTokenWhereUniqueInput
-    data: XOR<PasswordResetTokenUpdateWithoutUserInput, PasswordResetTokenUncheckedUpdateWithoutUserInput>
-  }
-
-  export type PasswordResetTokenUpdateManyWithWhereWithoutUserInput = {
-    where: PasswordResetTokenScalarWhereInput
-    data: XOR<PasswordResetTokenUpdateManyMutationInput, PasswordResetTokenUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type PasswordResetTokenScalarWhereInput = {
-    AND?: PasswordResetTokenScalarWhereInput | PasswordResetTokenScalarWhereInput[]
-    OR?: PasswordResetTokenScalarWhereInput[]
-    NOT?: PasswordResetTokenScalarWhereInput | PasswordResetTokenScalarWhereInput[]
-    id?: IntFilter<"PasswordResetToken"> | number
-    token?: StringFilter<"PasswordResetToken"> | string
-    userId?: IntFilter<"PasswordResetToken"> | number
-    expiresAt?: DateTimeFilter<"PasswordResetToken"> | Date | string
-  }
-
-  export type FeedbackUpsertWithWhereUniqueWithoutUserInput = {
-    where: FeedbackWhereUniqueInput
-    update: XOR<FeedbackUpdateWithoutUserInput, FeedbackUncheckedUpdateWithoutUserInput>
-    create: XOR<FeedbackCreateWithoutUserInput, FeedbackUncheckedCreateWithoutUserInput>
-  }
-
-  export type FeedbackUpdateWithWhereUniqueWithoutUserInput = {
-    where: FeedbackWhereUniqueInput
-    data: XOR<FeedbackUpdateWithoutUserInput, FeedbackUncheckedUpdateWithoutUserInput>
-  }
-
-  export type FeedbackUpdateManyWithWhereWithoutUserInput = {
-    where: FeedbackScalarWhereInput
-    data: XOR<FeedbackUpdateManyMutationInput, FeedbackUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type FeedbackScalarWhereInput = {
-    AND?: FeedbackScalarWhereInput | FeedbackScalarWhereInput[]
-    OR?: FeedbackScalarWhereInput[]
-    NOT?: FeedbackScalarWhereInput | FeedbackScalarWhereInput[]
-    id?: IntFilter<"Feedback"> | number
-    userId?: IntNullableFilter<"Feedback"> | number | null
-    name?: StringNullableFilter<"Feedback"> | string | null
-    rating?: IntFilter<"Feedback"> | number
-    comment?: StringFilter<"Feedback"> | string
-    createdAt?: DateTimeFilter<"Feedback"> | Date | string
-  }
-
-  export type UserCreateWithoutProductsInput = {
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-    phoneNumber?: string | null
-    role?: $Enums.UserRole
-    country: $Enums.Country
-    county?: string | null
-    subCounty?: string | null
-    latitude?: number | null
-    longitude?: number | null
-    idNumber?: string | null
-    idImageUrl?: string | null
-    verificationStatus?: $Enums.VerificationStatus
-    avatarUrl?: string | null
+  export type EventCreateWithoutProductInput = {
+    action: string
+    entityType?: string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
-    updatedAt?: Date | string
-    averageRating?: number | null
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
-    events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
-    feedback?: FeedbackCreateNestedManyWithoutUserInput
+    user?: UserCreateNestedOneWithoutEventsInput
+    message?: MessageCreateNestedOneWithoutEventsInput
+    order?: OrderCreateNestedOneWithoutEventsInput
+    post?: PostCreateNestedOneWithoutEventsInput
+    resource?: ResourceCreateNestedOneWithoutEventsInput
   }
 
-  export type UserUncheckedCreateWithoutProductsInput = {
+  export type EventUncheckedCreateWithoutProductInput = {
     id?: number
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-    phoneNumber?: string | null
-    role?: $Enums.UserRole
-    country: $Enums.Country
-    county?: string | null
-    subCounty?: string | null
-    latitude?: number | null
-    longitude?: number | null
-    idNumber?: string | null
-    idImageUrl?: string | null
-    verificationStatus?: $Enums.VerificationStatus
-    avatarUrl?: string | null
+    userId?: number | null
+    action: string
+    entityType?: string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
-    updatedAt?: Date | string
-    averageRating?: number | null
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
-    events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
-    feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutProductsInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
+  export type EventCreateOrConnectWithoutProductInput = {
+    where: EventWhereUniqueInput
+    create: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput>
+  }
+
+  export type EventCreateManyProductInputEnvelope = {
+    data: EventCreateManyProductInput | EventCreateManyProductInput[]
+    skipDuplicates?: boolean
   }
 
   export type OrderCreateWithoutProductInput = {
@@ -18702,8 +18667,8 @@ export namespace Prisma {
     status?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    buyer: UserCreateNestedOneWithoutOrdersInput
     events?: EventCreateNestedManyWithoutOrderInput
+    buyer: UserCreateNestedOneWithoutOrdersInput
   }
 
   export type OrderUncheckedCreateWithoutProductInput = {
@@ -18727,35 +18692,102 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type EventCreateWithoutProductInput = {
-    action: string
-    entityType?: string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
+  export type UserCreateWithoutProductsInput = {
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phoneNumber?: string | null
+    role?: $Enums.UserRole
+    country: $Enums.Country
+    county?: string | null
+    subCounty?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    idNumber?: string | null
+    idImageUrl?: string | null
+    verificationStatus?: $Enums.VerificationStatus
+    avatarUrl?: string | null
     createdAt?: Date | string
-    user?: UserCreateNestedOneWithoutEventsInput
-    order?: OrderCreateNestedOneWithoutEventsInput
-    message?: MessageCreateNestedOneWithoutEventsInput
-    post?: PostCreateNestedOneWithoutEventsInput
-    resource?: ResourceCreateNestedOneWithoutEventsInput
+    updatedAt?: Date | string
+    averageRating?: number | null
+    events?: EventCreateNestedManyWithoutUserInput
+    feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
   }
 
-  export type EventUncheckedCreateWithoutProductInput = {
+  export type UserUncheckedCreateWithoutProductsInput = {
     id?: number
-    userId?: number | null
-    action: string
-    entityType?: string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phoneNumber?: string | null
+    role?: $Enums.UserRole
+    country: $Enums.Country
+    county?: string | null
+    subCounty?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    idNumber?: string | null
+    idImageUrl?: string | null
+    verificationStatus?: $Enums.VerificationStatus
+    avatarUrl?: string | null
     createdAt?: Date | string
+    updatedAt?: Date | string
+    averageRating?: number | null
+    events?: EventUncheckedCreateNestedManyWithoutUserInput
+    feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
   }
 
-  export type EventCreateOrConnectWithoutProductInput = {
+  export type UserCreateOrConnectWithoutProductsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
+  }
+
+  export type EventUpsertWithWhereUniqueWithoutProductInput = {
     where: EventWhereUniqueInput
+    update: XOR<EventUpdateWithoutProductInput, EventUncheckedUpdateWithoutProductInput>
     create: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput>
   }
 
-  export type EventCreateManyProductInputEnvelope = {
-    data: EventCreateManyProductInput | EventCreateManyProductInput[]
-    skipDuplicates?: boolean
+  export type EventUpdateWithWhereUniqueWithoutProductInput = {
+    where: EventWhereUniqueInput
+    data: XOR<EventUpdateWithoutProductInput, EventUncheckedUpdateWithoutProductInput>
+  }
+
+  export type EventUpdateManyWithWhereWithoutProductInput = {
+    where: EventScalarWhereInput
+    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutProductInput>
+  }
+
+  export type OrderUpsertWithWhereUniqueWithoutProductInput = {
+    where: OrderWhereUniqueInput
+    update: XOR<OrderUpdateWithoutProductInput, OrderUncheckedUpdateWithoutProductInput>
+    create: XOR<OrderCreateWithoutProductInput, OrderUncheckedCreateWithoutProductInput>
+  }
+
+  export type OrderUpdateWithWhereUniqueWithoutProductInput = {
+    where: OrderWhereUniqueInput
+    data: XOR<OrderUpdateWithoutProductInput, OrderUncheckedUpdateWithoutProductInput>
+  }
+
+  export type OrderUpdateManyWithWhereWithoutProductInput = {
+    where: OrderScalarWhereInput
+    data: XOR<OrderUpdateManyMutationInput, OrderUncheckedUpdateManyWithoutProductInput>
   }
 
   export type UserUpsertWithoutProductsInput = {
@@ -18788,15 +18820,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
     events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProductsInput = {
@@ -18819,47 +18851,46 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
     events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
   }
 
-  export type OrderUpsertWithWhereUniqueWithoutProductInput = {
-    where: OrderWhereUniqueInput
-    update: XOR<OrderUpdateWithoutProductInput, OrderUncheckedUpdateWithoutProductInput>
-    create: XOR<OrderCreateWithoutProductInput, OrderUncheckedCreateWithoutProductInput>
+  export type EventCreateWithoutOrderInput = {
+    action: string
+    entityType?: string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    user?: UserCreateNestedOneWithoutEventsInput
+    message?: MessageCreateNestedOneWithoutEventsInput
+    post?: PostCreateNestedOneWithoutEventsInput
+    product?: ProductCreateNestedOneWithoutEventsInput
+    resource?: ResourceCreateNestedOneWithoutEventsInput
   }
 
-  export type OrderUpdateWithWhereUniqueWithoutProductInput = {
-    where: OrderWhereUniqueInput
-    data: XOR<OrderUpdateWithoutProductInput, OrderUncheckedUpdateWithoutProductInput>
+  export type EventUncheckedCreateWithoutOrderInput = {
+    id?: number
+    userId?: number | null
+    action: string
+    entityType?: string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
   }
 
-  export type OrderUpdateManyWithWhereWithoutProductInput = {
-    where: OrderScalarWhereInput
-    data: XOR<OrderUpdateManyMutationInput, OrderUncheckedUpdateManyWithoutProductInput>
-  }
-
-  export type EventUpsertWithWhereUniqueWithoutProductInput = {
+  export type EventCreateOrConnectWithoutOrderInput = {
     where: EventWhereUniqueInput
-    update: XOR<EventUpdateWithoutProductInput, EventUncheckedUpdateWithoutProductInput>
-    create: XOR<EventCreateWithoutProductInput, EventUncheckedCreateWithoutProductInput>
+    create: XOR<EventCreateWithoutOrderInput, EventUncheckedCreateWithoutOrderInput>
   }
 
-  export type EventUpdateWithWhereUniqueWithoutProductInput = {
-    where: EventWhereUniqueInput
-    data: XOR<EventUpdateWithoutProductInput, EventUncheckedUpdateWithoutProductInput>
-  }
-
-  export type EventUpdateManyWithWhereWithoutProductInput = {
-    where: EventScalarWhereInput
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutProductInput>
+  export type EventCreateManyOrderInputEnvelope = {
+    data: EventCreateManyOrderInput | EventCreateManyOrderInput[]
+    skipDuplicates?: boolean
   }
 
   export type UserCreateWithoutOrdersInput = {
@@ -18881,15 +18912,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
     events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
     feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
   }
 
   export type UserUncheckedCreateWithoutOrdersInput = {
@@ -18912,15 +18943,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
     events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
     feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
   }
 
   export type UserCreateOrConnectWithoutOrdersInput = {
@@ -18939,8 +18970,8 @@ export namespace Prisma {
     longitude?: number | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutProductsInput
     events?: EventCreateNestedManyWithoutProductInput
+    user: UserCreateNestedOneWithoutProductsInput
   }
 
   export type ProductUncheckedCreateWithoutOrdersInput = {
@@ -18964,35 +18995,20 @@ export namespace Prisma {
     create: XOR<ProductCreateWithoutOrdersInput, ProductUncheckedCreateWithoutOrdersInput>
   }
 
-  export type EventCreateWithoutOrderInput = {
-    action: string
-    entityType?: string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-    user?: UserCreateNestedOneWithoutEventsInput
-    product?: ProductCreateNestedOneWithoutEventsInput
-    message?: MessageCreateNestedOneWithoutEventsInput
-    post?: PostCreateNestedOneWithoutEventsInput
-    resource?: ResourceCreateNestedOneWithoutEventsInput
-  }
-
-  export type EventUncheckedCreateWithoutOrderInput = {
-    id?: number
-    userId?: number | null
-    action: string
-    entityType?: string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-  }
-
-  export type EventCreateOrConnectWithoutOrderInput = {
+  export type EventUpsertWithWhereUniqueWithoutOrderInput = {
     where: EventWhereUniqueInput
+    update: XOR<EventUpdateWithoutOrderInput, EventUncheckedUpdateWithoutOrderInput>
     create: XOR<EventCreateWithoutOrderInput, EventUncheckedCreateWithoutOrderInput>
   }
 
-  export type EventCreateManyOrderInputEnvelope = {
-    data: EventCreateManyOrderInput | EventCreateManyOrderInput[]
-    skipDuplicates?: boolean
+  export type EventUpdateWithWhereUniqueWithoutOrderInput = {
+    where: EventWhereUniqueInput
+    data: XOR<EventUpdateWithoutOrderInput, EventUncheckedUpdateWithoutOrderInput>
+  }
+
+  export type EventUpdateManyWithWhereWithoutOrderInput = {
+    where: EventScalarWhereInput
+    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutOrderInput>
   }
 
   export type UserUpsertWithoutOrdersInput = {
@@ -19025,15 +19041,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
     events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateWithoutOrdersInput = {
@@ -19056,15 +19072,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
     events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
   }
 
   export type ProductUpsertWithoutOrdersInput = {
@@ -19089,8 +19105,8 @@ export namespace Prisma {
     longitude?: NullableFloatFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutProductsNestedInput
     events?: EventUpdateManyWithoutProductNestedInput
+    user?: UserUpdateOneRequiredWithoutProductsNestedInput
   }
 
   export type ProductUncheckedUpdateWithoutOrdersInput = {
@@ -19109,163 +19125,15 @@ export namespace Prisma {
     events?: EventUncheckedUpdateManyWithoutProductNestedInput
   }
 
-  export type EventUpsertWithWhereUniqueWithoutOrderInput = {
-    where: EventWhereUniqueInput
-    update: XOR<EventUpdateWithoutOrderInput, EventUncheckedUpdateWithoutOrderInput>
-    create: XOR<EventCreateWithoutOrderInput, EventUncheckedCreateWithoutOrderInput>
-  }
-
-  export type EventUpdateWithWhereUniqueWithoutOrderInput = {
-    where: EventWhereUniqueInput
-    data: XOR<EventUpdateWithoutOrderInput, EventUncheckedUpdateWithoutOrderInput>
-  }
-
-  export type EventUpdateManyWithWhereWithoutOrderInput = {
-    where: EventScalarWhereInput
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutOrderInput>
-  }
-
-  export type UserCreateWithoutSentMessagesInput = {
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-    phoneNumber?: string | null
-    role?: $Enums.UserRole
-    country: $Enums.Country
-    county?: string | null
-    subCounty?: string | null
-    latitude?: number | null
-    longitude?: number | null
-    idNumber?: string | null
-    idImageUrl?: string | null
-    verificationStatus?: $Enums.VerificationStatus
-    avatarUrl?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
-    events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
-    feedback?: FeedbackCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutSentMessagesInput = {
-    id?: number
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-    phoneNumber?: string | null
-    role?: $Enums.UserRole
-    country: $Enums.Country
-    county?: string | null
-    subCounty?: string | null
-    latitude?: number | null
-    longitude?: number | null
-    idNumber?: string | null
-    idImageUrl?: string | null
-    verificationStatus?: $Enums.VerificationStatus
-    avatarUrl?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
-    events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
-    feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutSentMessagesInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutSentMessagesInput, UserUncheckedCreateWithoutSentMessagesInput>
-  }
-
-  export type UserCreateWithoutReceivedMessagesInput = {
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-    phoneNumber?: string | null
-    role?: $Enums.UserRole
-    country: $Enums.Country
-    county?: string | null
-    subCounty?: string | null
-    latitude?: number | null
-    longitude?: number | null
-    idNumber?: string | null
-    idImageUrl?: string | null
-    verificationStatus?: $Enums.VerificationStatus
-    avatarUrl?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
-    events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
-    feedback?: FeedbackCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutReceivedMessagesInput = {
-    id?: number
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-    phoneNumber?: string | null
-    role?: $Enums.UserRole
-    country: $Enums.Country
-    county?: string | null
-    subCounty?: string | null
-    latitude?: number | null
-    longitude?: number | null
-    idNumber?: string | null
-    idImageUrl?: string | null
-    verificationStatus?: $Enums.VerificationStatus
-    avatarUrl?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
-    events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
-    feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutReceivedMessagesInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutReceivedMessagesInput, UserUncheckedCreateWithoutReceivedMessagesInput>
-  }
-
   export type EventCreateWithoutMessageInput = {
     action: string
     entityType?: string | null
     details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     user?: UserCreateNestedOneWithoutEventsInput
-    product?: ProductCreateNestedOneWithoutEventsInput
     order?: OrderCreateNestedOneWithoutEventsInput
     post?: PostCreateNestedOneWithoutEventsInput
+    product?: ProductCreateNestedOneWithoutEventsInput
     resource?: ResourceCreateNestedOneWithoutEventsInput
   }
 
@@ -19288,76 +19156,152 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type UserUpsertWithoutSentMessagesInput = {
-    update: XOR<UserUpdateWithoutSentMessagesInput, UserUncheckedUpdateWithoutSentMessagesInput>
+  export type UserCreateWithoutReceivedMessagesInput = {
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phoneNumber?: string | null
+    role?: $Enums.UserRole
+    country: $Enums.Country
+    county?: string | null
+    subCounty?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    idNumber?: string | null
+    idImageUrl?: string | null
+    verificationStatus?: $Enums.VerificationStatus
+    avatarUrl?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    averageRating?: number | null
+    events?: EventCreateNestedManyWithoutUserInput
+    feedback?: FeedbackCreateNestedManyWithoutUserInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
+  }
+
+  export type UserUncheckedCreateWithoutReceivedMessagesInput = {
+    id?: number
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phoneNumber?: string | null
+    role?: $Enums.UserRole
+    country: $Enums.Country
+    county?: string | null
+    subCounty?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    idNumber?: string | null
+    idImageUrl?: string | null
+    verificationStatus?: $Enums.VerificationStatus
+    avatarUrl?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    averageRating?: number | null
+    events?: EventUncheckedCreateNestedManyWithoutUserInput
+    feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
+  }
+
+  export type UserCreateOrConnectWithoutReceivedMessagesInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutReceivedMessagesInput, UserUncheckedCreateWithoutReceivedMessagesInput>
+  }
+
+  export type UserCreateWithoutSentMessagesInput = {
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phoneNumber?: string | null
+    role?: $Enums.UserRole
+    country: $Enums.Country
+    county?: string | null
+    subCounty?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    idNumber?: string | null
+    idImageUrl?: string | null
+    verificationStatus?: $Enums.VerificationStatus
+    avatarUrl?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    averageRating?: number | null
+    events?: EventCreateNestedManyWithoutUserInput
+    feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
+  }
+
+  export type UserUncheckedCreateWithoutSentMessagesInput = {
+    id?: number
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phoneNumber?: string | null
+    role?: $Enums.UserRole
+    country: $Enums.Country
+    county?: string | null
+    subCounty?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    idNumber?: string | null
+    idImageUrl?: string | null
+    verificationStatus?: $Enums.VerificationStatus
+    avatarUrl?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    averageRating?: number | null
+    events?: EventUncheckedCreateNestedManyWithoutUserInput
+    feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
+  }
+
+  export type UserCreateOrConnectWithoutSentMessagesInput = {
+    where: UserWhereUniqueInput
     create: XOR<UserCreateWithoutSentMessagesInput, UserUncheckedCreateWithoutSentMessagesInput>
-    where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutSentMessagesInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutSentMessagesInput, UserUncheckedUpdateWithoutSentMessagesInput>
+  export type EventUpsertWithWhereUniqueWithoutMessageInput = {
+    where: EventWhereUniqueInput
+    update: XOR<EventUpdateWithoutMessageInput, EventUncheckedUpdateWithoutMessageInput>
+    create: XOR<EventCreateWithoutMessageInput, EventUncheckedCreateWithoutMessageInput>
   }
 
-  export type UserUpdateWithoutSentMessagesInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
-    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    country?: EnumCountryFieldUpdateOperationsInput | $Enums.Country
-    county?: NullableStringFieldUpdateOperationsInput | string | null
-    subCounty?: NullableStringFieldUpdateOperationsInput | string | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    idNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    idImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
-    events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
-    feedback?: FeedbackUpdateManyWithoutUserNestedInput
+  export type EventUpdateWithWhereUniqueWithoutMessageInput = {
+    where: EventWhereUniqueInput
+    data: XOR<EventUpdateWithoutMessageInput, EventUncheckedUpdateWithoutMessageInput>
   }
 
-  export type UserUncheckedUpdateWithoutSentMessagesInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
-    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    country?: EnumCountryFieldUpdateOperationsInput | $Enums.Country
-    county?: NullableStringFieldUpdateOperationsInput | string | null
-    subCounty?: NullableStringFieldUpdateOperationsInput | string | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    idNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    idImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
-    events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
-    feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+  export type EventUpdateManyWithWhereWithoutMessageInput = {
+    where: EventScalarWhereInput
+    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutMessageInput>
   }
 
   export type UserUpsertWithoutReceivedMessagesInput = {
@@ -19390,15 +19334,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
     events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateWithoutReceivedMessagesInput = {
@@ -19421,31 +19365,118 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
     events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
   }
 
-  export type EventUpsertWithWhereUniqueWithoutMessageInput = {
+  export type UserUpsertWithoutSentMessagesInput = {
+    update: XOR<UserUpdateWithoutSentMessagesInput, UserUncheckedUpdateWithoutSentMessagesInput>
+    create: XOR<UserCreateWithoutSentMessagesInput, UserUncheckedCreateWithoutSentMessagesInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutSentMessagesInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutSentMessagesInput, UserUncheckedUpdateWithoutSentMessagesInput>
+  }
+
+  export type UserUpdateWithoutSentMessagesInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    country?: EnumCountryFieldUpdateOperationsInput | $Enums.Country
+    county?: NullableStringFieldUpdateOperationsInput | string | null
+    subCounty?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    idNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    idImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
+    events?: EventUpdateManyWithoutUserNestedInput
+    feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutSentMessagesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    country?: EnumCountryFieldUpdateOperationsInput | $Enums.Country
+    county?: NullableStringFieldUpdateOperationsInput | string | null
+    subCounty?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    idNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    idImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
+    events?: EventUncheckedUpdateManyWithoutUserNestedInput
+    feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
+  }
+
+  export type EventCreateWithoutPostInput = {
+    action: string
+    entityType?: string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    user?: UserCreateNestedOneWithoutEventsInput
+    message?: MessageCreateNestedOneWithoutEventsInput
+    order?: OrderCreateNestedOneWithoutEventsInput
+    product?: ProductCreateNestedOneWithoutEventsInput
+    resource?: ResourceCreateNestedOneWithoutEventsInput
+  }
+
+  export type EventUncheckedCreateWithoutPostInput = {
+    id?: number
+    userId?: number | null
+    action: string
+    entityType?: string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type EventCreateOrConnectWithoutPostInput = {
     where: EventWhereUniqueInput
-    update: XOR<EventUpdateWithoutMessageInput, EventUncheckedUpdateWithoutMessageInput>
-    create: XOR<EventCreateWithoutMessageInput, EventUncheckedCreateWithoutMessageInput>
+    create: XOR<EventCreateWithoutPostInput, EventUncheckedCreateWithoutPostInput>
   }
 
-  export type EventUpdateWithWhereUniqueWithoutMessageInput = {
-    where: EventWhereUniqueInput
-    data: XOR<EventUpdateWithoutMessageInput, EventUncheckedUpdateWithoutMessageInput>
-  }
-
-  export type EventUpdateManyWithWhereWithoutMessageInput = {
-    where: EventScalarWhereInput
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutMessageInput>
+  export type EventCreateManyPostInputEnvelope = {
+    data: EventCreateManyPostInput | EventCreateManyPostInput[]
+    skipDuplicates?: boolean
   }
 
   export type UserCreateWithoutPostsInput = {
@@ -19467,15 +19498,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
     events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
     feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
   }
 
   export type UserUncheckedCreateWithoutPostsInput = {
@@ -19498,15 +19529,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
     events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
     feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
   }
 
   export type UserCreateOrConnectWithoutPostsInput = {
@@ -19514,35 +19545,20 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
   }
 
-  export type EventCreateWithoutPostInput = {
-    action: string
-    entityType?: string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-    user?: UserCreateNestedOneWithoutEventsInput
-    product?: ProductCreateNestedOneWithoutEventsInput
-    order?: OrderCreateNestedOneWithoutEventsInput
-    message?: MessageCreateNestedOneWithoutEventsInput
-    resource?: ResourceCreateNestedOneWithoutEventsInput
-  }
-
-  export type EventUncheckedCreateWithoutPostInput = {
-    id?: number
-    userId?: number | null
-    action: string
-    entityType?: string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-  }
-
-  export type EventCreateOrConnectWithoutPostInput = {
+  export type EventUpsertWithWhereUniqueWithoutPostInput = {
     where: EventWhereUniqueInput
+    update: XOR<EventUpdateWithoutPostInput, EventUncheckedUpdateWithoutPostInput>
     create: XOR<EventCreateWithoutPostInput, EventUncheckedCreateWithoutPostInput>
   }
 
-  export type EventCreateManyPostInputEnvelope = {
-    data: EventCreateManyPostInput | EventCreateManyPostInput[]
-    skipDuplicates?: boolean
+  export type EventUpdateWithWhereUniqueWithoutPostInput = {
+    where: EventWhereUniqueInput
+    data: XOR<EventUpdateWithoutPostInput, EventUncheckedUpdateWithoutPostInput>
+  }
+
+  export type EventUpdateManyWithWhereWithoutPostInput = {
+    where: EventScalarWhereInput
+    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutPostInput>
   }
 
   export type UserUpsertWithoutPostsInput = {
@@ -19575,15 +19591,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
     events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateWithoutPostsInput = {
@@ -19606,31 +19622,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
     events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type EventUpsertWithWhereUniqueWithoutPostInput = {
-    where: EventWhereUniqueInput
-    update: XOR<EventUpdateWithoutPostInput, EventUncheckedUpdateWithoutPostInput>
-    create: XOR<EventCreateWithoutPostInput, EventUncheckedCreateWithoutPostInput>
-  }
-
-  export type EventUpdateWithWhereUniqueWithoutPostInput = {
-    where: EventWhereUniqueInput
-    data: XOR<EventUpdateWithoutPostInput, EventUncheckedUpdateWithoutPostInput>
-  }
-
-  export type EventUpdateManyWithWhereWithoutPostInput = {
-    where: EventScalarWhereInput
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutPostInput>
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
   }
 
   export type EventCreateWithoutResourceInput = {
@@ -19639,10 +19639,10 @@ export namespace Prisma {
     details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     user?: UserCreateNestedOneWithoutEventsInput
-    product?: ProductCreateNestedOneWithoutEventsInput
-    order?: OrderCreateNestedOneWithoutEventsInput
     message?: MessageCreateNestedOneWithoutEventsInput
+    order?: OrderCreateNestedOneWithoutEventsInput
     post?: PostCreateNestedOneWithoutEventsInput
+    product?: ProductCreateNestedOneWithoutEventsInput
   }
 
   export type EventUncheckedCreateWithoutResourceInput = {
@@ -19699,15 +19699,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
     feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
   }
 
   export type UserUncheckedCreateWithoutEventsInput = {
@@ -19730,15 +19730,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
     feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
   }
 
   export type UserCreateOrConnectWithoutEventsInput = {
@@ -19746,40 +19746,24 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutEventsInput, UserUncheckedCreateWithoutEventsInput>
   }
 
-  export type ProductCreateWithoutEventsInput = {
-    name: string
-    quantity: number
-    price: number
-    imageUrls?: ProductCreateimageUrlsInput | string[]
-    qualityScore?: number | null
-    predictedPrice?: number | null
-    latitude?: number | null
-    longitude?: number | null
+  export type MessageCreateWithoutEventsInput = {
+    content: string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutProductsInput
-    orders?: OrderCreateNestedManyWithoutProductInput
+    receiver: UserCreateNestedOneWithoutReceivedMessagesInput
+    sender: UserCreateNestedOneWithoutSentMessagesInput
   }
 
-  export type ProductUncheckedCreateWithoutEventsInput = {
+  export type MessageUncheckedCreateWithoutEventsInput = {
     id?: number
-    userId: number
-    name: string
-    quantity: number
-    price: number
-    imageUrls?: ProductCreateimageUrlsInput | string[]
-    qualityScore?: number | null
-    predictedPrice?: number | null
-    latitude?: number | null
-    longitude?: number | null
+    senderId: number
+    receiverId: number
+    content: string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    orders?: OrderUncheckedCreateNestedManyWithoutProductInput
   }
 
-  export type ProductCreateOrConnectWithoutEventsInput = {
-    where: ProductWhereUniqueInput
-    create: XOR<ProductCreateWithoutEventsInput, ProductUncheckedCreateWithoutEventsInput>
+  export type MessageCreateOrConnectWithoutEventsInput = {
+    where: MessageWhereUniqueInput
+    create: XOR<MessageCreateWithoutEventsInput, MessageUncheckedCreateWithoutEventsInput>
   }
 
   export type OrderCreateWithoutEventsInput = {
@@ -19808,26 +19792,6 @@ export namespace Prisma {
     create: XOR<OrderCreateWithoutEventsInput, OrderUncheckedCreateWithoutEventsInput>
   }
 
-  export type MessageCreateWithoutEventsInput = {
-    content: string
-    createdAt?: Date | string
-    sender: UserCreateNestedOneWithoutSentMessagesInput
-    receiver: UserCreateNestedOneWithoutReceivedMessagesInput
-  }
-
-  export type MessageUncheckedCreateWithoutEventsInput = {
-    id?: number
-    senderId: number
-    receiverId: number
-    content: string
-    createdAt?: Date | string
-  }
-
-  export type MessageCreateOrConnectWithoutEventsInput = {
-    where: MessageWhereUniqueInput
-    create: XOR<MessageCreateWithoutEventsInput, MessageUncheckedCreateWithoutEventsInput>
-  }
-
   export type PostCreateWithoutEventsInput = {
     content: string
     createdAt?: Date | string
@@ -19846,6 +19810,42 @@ export namespace Prisma {
   export type PostCreateOrConnectWithoutEventsInput = {
     where: PostWhereUniqueInput
     create: XOR<PostCreateWithoutEventsInput, PostUncheckedCreateWithoutEventsInput>
+  }
+
+  export type ProductCreateWithoutEventsInput = {
+    name: string
+    quantity: number
+    price: number
+    imageUrls?: ProductCreateimageUrlsInput | string[]
+    qualityScore?: number | null
+    predictedPrice?: number | null
+    latitude?: number | null
+    longitude?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    orders?: OrderCreateNestedManyWithoutProductInput
+    user: UserCreateNestedOneWithoutProductsInput
+  }
+
+  export type ProductUncheckedCreateWithoutEventsInput = {
+    id?: number
+    userId: number
+    name: string
+    quantity: number
+    price: number
+    imageUrls?: ProductCreateimageUrlsInput | string[]
+    qualityScore?: number | null
+    predictedPrice?: number | null
+    latitude?: number | null
+    longitude?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    orders?: OrderUncheckedCreateNestedManyWithoutProductInput
+  }
+
+  export type ProductCreateOrConnectWithoutEventsInput = {
+    where: ProductWhereUniqueInput
+    create: XOR<ProductCreateWithoutEventsInput, ProductUncheckedCreateWithoutEventsInput>
   }
 
   export type ResourceCreateWithoutEventsInput = {
@@ -19898,15 +19898,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateWithoutEventsInput = {
@@ -19929,57 +19929,41 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
   }
 
-  export type ProductUpsertWithoutEventsInput = {
-    update: XOR<ProductUpdateWithoutEventsInput, ProductUncheckedUpdateWithoutEventsInput>
-    create: XOR<ProductCreateWithoutEventsInput, ProductUncheckedCreateWithoutEventsInput>
-    where?: ProductWhereInput
+  export type MessageUpsertWithoutEventsInput = {
+    update: XOR<MessageUpdateWithoutEventsInput, MessageUncheckedUpdateWithoutEventsInput>
+    create: XOR<MessageCreateWithoutEventsInput, MessageUncheckedCreateWithoutEventsInput>
+    where?: MessageWhereInput
   }
 
-  export type ProductUpdateToOneWithWhereWithoutEventsInput = {
-    where?: ProductWhereInput
-    data: XOR<ProductUpdateWithoutEventsInput, ProductUncheckedUpdateWithoutEventsInput>
+  export type MessageUpdateToOneWithWhereWithoutEventsInput = {
+    where?: MessageWhereInput
+    data: XOR<MessageUpdateWithoutEventsInput, MessageUncheckedUpdateWithoutEventsInput>
   }
 
-  export type ProductUpdateWithoutEventsInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    quantity?: FloatFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    imageUrls?: ProductUpdateimageUrlsInput | string[]
-    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
-    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+  export type MessageUpdateWithoutEventsInput = {
+    content?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutProductsNestedInput
-    orders?: OrderUpdateManyWithoutProductNestedInput
+    receiver?: UserUpdateOneRequiredWithoutReceivedMessagesNestedInput
+    sender?: UserUpdateOneRequiredWithoutSentMessagesNestedInput
   }
 
-  export type ProductUncheckedUpdateWithoutEventsInput = {
+  export type MessageUncheckedUpdateWithoutEventsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    userId?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    quantity?: FloatFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    imageUrls?: ProductUpdateimageUrlsInput | string[]
-    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
-    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    senderId?: IntFieldUpdateOperationsInput | number
+    receiverId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    orders?: OrderUncheckedUpdateManyWithoutProductNestedInput
   }
 
   export type OrderUpsertWithoutEventsInput = {
@@ -20014,32 +19998,6 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MessageUpsertWithoutEventsInput = {
-    update: XOR<MessageUpdateWithoutEventsInput, MessageUncheckedUpdateWithoutEventsInput>
-    create: XOR<MessageCreateWithoutEventsInput, MessageUncheckedCreateWithoutEventsInput>
-    where?: MessageWhereInput
-  }
-
-  export type MessageUpdateToOneWithWhereWithoutEventsInput = {
-    where?: MessageWhereInput
-    data: XOR<MessageUpdateWithoutEventsInput, MessageUncheckedUpdateWithoutEventsInput>
-  }
-
-  export type MessageUpdateWithoutEventsInput = {
-    content?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: UserUpdateOneRequiredWithoutSentMessagesNestedInput
-    receiver?: UserUpdateOneRequiredWithoutReceivedMessagesNestedInput
-  }
-
-  export type MessageUncheckedUpdateWithoutEventsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    senderId?: IntFieldUpdateOperationsInput | number
-    receiverId?: IntFieldUpdateOperationsInput | number
-    content?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
   export type PostUpsertWithoutEventsInput = {
     update: XOR<PostUpdateWithoutEventsInput, PostUncheckedUpdateWithoutEventsInput>
     create: XOR<PostCreateWithoutEventsInput, PostUncheckedCreateWithoutEventsInput>
@@ -20064,6 +20022,48 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductUpsertWithoutEventsInput = {
+    update: XOR<ProductUpdateWithoutEventsInput, ProductUncheckedUpdateWithoutEventsInput>
+    create: XOR<ProductCreateWithoutEventsInput, ProductUncheckedCreateWithoutEventsInput>
+    where?: ProductWhereInput
+  }
+
+  export type ProductUpdateToOneWithWhereWithoutEventsInput = {
+    where?: ProductWhereInput
+    data: XOR<ProductUpdateWithoutEventsInput, ProductUncheckedUpdateWithoutEventsInput>
+  }
+
+  export type ProductUpdateWithoutEventsInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    quantity?: FloatFieldUpdateOperationsInput | number
+    price?: FloatFieldUpdateOperationsInput | number
+    imageUrls?: ProductUpdateimageUrlsInput | string[]
+    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
+    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    orders?: OrderUpdateManyWithoutProductNestedInput
+    user?: UserUpdateOneRequiredWithoutProductsNestedInput
+  }
+
+  export type ProductUncheckedUpdateWithoutEventsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    quantity?: FloatFieldUpdateOperationsInput | number
+    price?: FloatFieldUpdateOperationsInput | number
+    imageUrls?: ProductUpdateimageUrlsInput | string[]
+    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
+    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    orders?: OrderUncheckedUpdateManyWithoutProductNestedInput
   }
 
   export type ResourceUpsertWithoutEventsInput = {
@@ -20092,72 +20092,6 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserCreateWithoutRatingsGivenInput = {
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-    phoneNumber?: string | null
-    role?: $Enums.UserRole
-    country: $Enums.Country
-    county?: string | null
-    subCounty?: string | null
-    latitude?: number | null
-    longitude?: number | null
-    idNumber?: string | null
-    idImageUrl?: string | null
-    verificationStatus?: $Enums.VerificationStatus
-    avatarUrl?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
-    events?: EventCreateNestedManyWithoutUserInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
-    feedback?: FeedbackCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutRatingsGivenInput = {
-    id?: number
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-    phoneNumber?: string | null
-    role?: $Enums.UserRole
-    country: $Enums.Country
-    county?: string | null
-    subCounty?: string | null
-    latitude?: number | null
-    longitude?: number | null
-    idNumber?: string | null
-    idImageUrl?: string | null
-    verificationStatus?: $Enums.VerificationStatus
-    avatarUrl?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
-    events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
-    feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutRatingsGivenInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutRatingsGivenInput, UserUncheckedCreateWithoutRatingsGivenInput>
-  }
-
   export type UserCreateWithoutRatingsReceivedInput = {
     email: string
     password: string
@@ -20177,15 +20111,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
     events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
     feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
   }
 
   export type UserUncheckedCreateWithoutRatingsReceivedInput = {
@@ -20208,15 +20142,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
     events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
     feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
   }
 
   export type UserCreateOrConnectWithoutRatingsReceivedInput = {
@@ -20224,76 +20158,70 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutRatingsReceivedInput, UserUncheckedCreateWithoutRatingsReceivedInput>
   }
 
-  export type UserUpsertWithoutRatingsGivenInput = {
-    update: XOR<UserUpdateWithoutRatingsGivenInput, UserUncheckedUpdateWithoutRatingsGivenInput>
+  export type UserCreateWithoutRatingsGivenInput = {
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phoneNumber?: string | null
+    role?: $Enums.UserRole
+    country: $Enums.Country
+    county?: string | null
+    subCounty?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    idNumber?: string | null
+    idImageUrl?: string | null
+    verificationStatus?: $Enums.VerificationStatus
+    avatarUrl?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    averageRating?: number | null
+    events?: EventCreateNestedManyWithoutUserInput
+    feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+  }
+
+  export type UserUncheckedCreateWithoutRatingsGivenInput = {
+    id?: number
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phoneNumber?: string | null
+    role?: $Enums.UserRole
+    country: $Enums.Country
+    county?: string | null
+    subCounty?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    idNumber?: string | null
+    idImageUrl?: string | null
+    verificationStatus?: $Enums.VerificationStatus
+    avatarUrl?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    averageRating?: number | null
+    events?: EventUncheckedCreateNestedManyWithoutUserInput
+    feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+  }
+
+  export type UserCreateOrConnectWithoutRatingsGivenInput = {
+    where: UserWhereUniqueInput
     create: XOR<UserCreateWithoutRatingsGivenInput, UserUncheckedCreateWithoutRatingsGivenInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutRatingsGivenInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutRatingsGivenInput, UserUncheckedUpdateWithoutRatingsGivenInput>
-  }
-
-  export type UserUpdateWithoutRatingsGivenInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
-    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    country?: EnumCountryFieldUpdateOperationsInput | $Enums.Country
-    county?: NullableStringFieldUpdateOperationsInput | string | null
-    subCounty?: NullableStringFieldUpdateOperationsInput | string | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    idNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    idImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
-    events?: EventUpdateManyWithoutUserNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
-    feedback?: FeedbackUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutRatingsGivenInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
-    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    country?: EnumCountryFieldUpdateOperationsInput | $Enums.Country
-    county?: NullableStringFieldUpdateOperationsInput | string | null
-    subCounty?: NullableStringFieldUpdateOperationsInput | string | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    idNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    idImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
-    events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
-    feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserUpsertWithoutRatingsReceivedInput = {
@@ -20326,15 +20254,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
     events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateWithoutRatingsReceivedInput = {
@@ -20357,15 +20285,87 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
     events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
     feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
+  }
+
+  export type UserUpsertWithoutRatingsGivenInput = {
+    update: XOR<UserUpdateWithoutRatingsGivenInput, UserUncheckedUpdateWithoutRatingsGivenInput>
+    create: XOR<UserCreateWithoutRatingsGivenInput, UserUncheckedCreateWithoutRatingsGivenInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutRatingsGivenInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutRatingsGivenInput, UserUncheckedUpdateWithoutRatingsGivenInput>
+  }
+
+  export type UserUpdateWithoutRatingsGivenInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    country?: EnumCountryFieldUpdateOperationsInput | $Enums.Country
+    county?: NullableStringFieldUpdateOperationsInput | string | null
+    subCounty?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    idNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    idImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
+    events?: EventUpdateManyWithoutUserNestedInput
+    feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutRatingsGivenInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    country?: EnumCountryFieldUpdateOperationsInput | $Enums.Country
+    county?: NullableStringFieldUpdateOperationsInput | string | null
+    subCounty?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    idNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    idImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    verificationStatus?: EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
+    events?: EventUncheckedUpdateManyWithoutUserNestedInput
+    feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
   }
 
   export type UserCreateWithoutPasswordResetTokensInput = {
@@ -20387,15 +20387,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
     events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
     feedback?: FeedbackCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
   }
 
   export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
@@ -20418,15 +20418,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
     events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
     feedback?: FeedbackUncheckedCreateNestedManyWithoutUserInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
   }
 
   export type UserCreateOrConnectWithoutPasswordResetTokensInput = {
@@ -20464,15 +20464,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
     events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
     feedback?: FeedbackUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
@@ -20495,15 +20495,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
     events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
     feedback?: FeedbackUncheckedUpdateManyWithoutUserNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
   }
 
   export type UserCreateWithoutFeedbackInput = {
@@ -20525,15 +20525,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductCreateNestedManyWithoutUserInput
-    sentMessages?: MessageCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
-    posts?: PostCreateNestedManyWithoutUserInput
-    orders?: OrderCreateNestedManyWithoutBuyerInput
     events?: EventCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    receivedMessages?: MessageCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageCreateNestedManyWithoutSenderInput
+    orders?: OrderCreateNestedManyWithoutBuyerInput
     passwordResetTokens?: PasswordResetTokenCreateNestedManyWithoutUserInput
+    posts?: PostCreateNestedManyWithoutUserInput
+    products?: ProductCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingCreateNestedManyWithoutRaterInput
   }
 
   export type UserUncheckedCreateWithoutFeedbackInput = {
@@ -20556,15 +20556,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     averageRating?: number | null
-    products?: ProductUncheckedCreateNestedManyWithoutUserInput
-    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
-    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
-    posts?: PostUncheckedCreateNestedManyWithoutUserInput
-    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
     events?: EventUncheckedCreateNestedManyWithoutUserInput
-    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
-    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    receivedMessages?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    sentMessages?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    orders?: OrderUncheckedCreateNestedManyWithoutBuyerInput
     passwordResetTokens?: PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+    posts?: PostUncheckedCreateNestedManyWithoutUserInput
+    products?: ProductUncheckedCreateNestedManyWithoutUserInput
+    ratingsReceived?: RatingUncheckedCreateNestedManyWithoutFarmerInput
+    ratingsGiven?: RatingUncheckedCreateNestedManyWithoutRaterInput
   }
 
   export type UserCreateOrConnectWithoutFeedbackInput = {
@@ -20602,15 +20602,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
-    posts?: PostUpdateManyWithoutUserNestedInput
-    orders?: OrderUpdateManyWithoutBuyerNestedInput
     events?: EventUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    receivedMessages?: MessageUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUpdateManyWithoutSenderNestedInput
+    orders?: OrderUpdateManyWithoutBuyerNestedInput
     passwordResetTokens?: PasswordResetTokenUpdateManyWithoutUserNestedInput
+    posts?: PostUpdateManyWithoutUserNestedInput
+    products?: ProductUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUpdateManyWithoutRaterNestedInput
   }
 
   export type UserUncheckedUpdateWithoutFeedbackInput = {
@@ -20633,15 +20633,69 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     averageRating?: NullableFloatFieldUpdateOperationsInput | number | null
-    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
-    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
-    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
-    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
-    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
     events?: EventUncheckedUpdateManyWithoutUserNestedInput
-    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
-    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    receivedMessages?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    sentMessages?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutBuyerNestedInput
     passwordResetTokens?: PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+    posts?: PostUncheckedUpdateManyWithoutUserNestedInput
+    products?: ProductUncheckedUpdateManyWithoutUserNestedInput
+    ratingsReceived?: RatingUncheckedUpdateManyWithoutFarmerNestedInput
+    ratingsGiven?: RatingUncheckedUpdateManyWithoutRaterNestedInput
+  }
+
+  export type EventCreateManyUserInput = {
+    id?: number
+    action: string
+    entityType?: string | null
+    entityId?: number | null
+    details?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type FeedbackCreateManyUserInput = {
+    id?: number
+    name?: string | null
+    rating: number
+    comment: string
+    createdAt?: Date | string
+  }
+
+  export type MessageCreateManyReceiverInput = {
+    id?: number
+    senderId: number
+    content: string
+    createdAt?: Date | string
+  }
+
+  export type MessageCreateManySenderInput = {
+    id?: number
+    receiverId: number
+    content: string
+    createdAt?: Date | string
+  }
+
+  export type OrderCreateManyBuyerInput = {
+    id?: number
+    productId: number
+    quantity: number
+    totalPrice: number
+    status?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type PasswordResetTokenCreateManyUserInput = {
+    id?: number
+    token: string
+    expiresAt: Date | string
+  }
+
+  export type PostCreateManyUserInput = {
+    id?: number
+    content: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ProductCreateManyUserInput = {
@@ -20658,44 +20712,15 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MessageCreateManySenderInput = {
+  export type RatingCreateManyFarmerInput = {
     id?: number
-    receiverId: number
-    content: string
-    createdAt?: Date | string
-  }
-
-  export type MessageCreateManyReceiverInput = {
-    id?: number
-    senderId: number
-    content: string
-    createdAt?: Date | string
-  }
-
-  export type PostCreateManyUserInput = {
-    id?: number
-    content: string
+    raterId: number
+    productQuality: number
+    responseTime: number
+    communication: number
+    friendliness: number
     createdAt?: Date | string
     updatedAt?: Date | string
-  }
-
-  export type OrderCreateManyBuyerInput = {
-    id?: number
-    productId: number
-    quantity: number
-    totalPrice: number
-    status?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type EventCreateManyUserInput = {
-    id?: number
-    action: string
-    entityType?: string | null
-    entityId?: number | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
   }
 
   export type RatingCreateManyRaterInput = {
@@ -20709,81 +20734,86 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type RatingCreateManyFarmerInput = {
-    id?: number
-    raterId: number
-    productQuality: number
-    responseTime: number
-    communication: number
-    friendliness: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type PasswordResetTokenCreateManyUserInput = {
-    id?: number
-    token: string
-    expiresAt: Date | string
-  }
-
-  export type FeedbackCreateManyUserInput = {
-    id?: number
-    name?: string | null
-    rating: number
-    comment: string
-    createdAt?: Date | string
-  }
-
-  export type ProductUpdateWithoutUserInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    quantity?: FloatFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    imageUrls?: ProductUpdateimageUrlsInput | string[]
-    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
-    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+  export type EventUpdateWithoutUserInput = {
+    action?: StringFieldUpdateOperationsInput | string
+    entityType?: NullableStringFieldUpdateOperationsInput | string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    orders?: OrderUpdateManyWithoutProductNestedInput
-    events?: EventUpdateManyWithoutProductNestedInput
+    message?: MessageUpdateOneWithoutEventsNestedInput
+    order?: OrderUpdateOneWithoutEventsNestedInput
+    post?: PostUpdateOneWithoutEventsNestedInput
+    product?: ProductUpdateOneWithoutEventsNestedInput
+    resource?: ResourceUpdateOneWithoutEventsNestedInput
   }
 
-  export type ProductUncheckedUpdateWithoutUserInput = {
+  export type EventUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    quantity?: FloatFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    imageUrls?: ProductUpdateimageUrlsInput | string[]
-    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
-    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    action?: StringFieldUpdateOperationsInput | string
+    entityType?: NullableStringFieldUpdateOperationsInput | string | null
+    entityId?: NullableIntFieldUpdateOperationsInput | number | null
+    details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    orders?: OrderUncheckedUpdateManyWithoutProductNestedInput
-    events?: EventUncheckedUpdateManyWithoutProductNestedInput
   }
 
-  export type ProductUncheckedUpdateManyWithoutUserInput = {
+  export type EventUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    quantity?: FloatFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    imageUrls?: ProductUpdateimageUrlsInput | string[]
-    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
-    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
-    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
-    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    action?: StringFieldUpdateOperationsInput | string
+    entityType?: NullableStringFieldUpdateOperationsInput | string | null
+    entityId?: NullableIntFieldUpdateOperationsInput | number | null
+    details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeedbackUpdateWithoutUserInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: IntFieldUpdateOperationsInput | number
+    comment?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeedbackUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: IntFieldUpdateOperationsInput | number
+    comment?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeedbackUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: IntFieldUpdateOperationsInput | number
+    comment?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUpdateWithoutReceiverInput = {
+    content?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    events?: EventUpdateManyWithoutMessageNestedInput
+    sender?: UserUpdateOneRequiredWithoutSentMessagesNestedInput
+  }
+
+  export type MessageUncheckedUpdateWithoutReceiverInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    senderId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    events?: EventUncheckedUpdateManyWithoutMessageNestedInput
+  }
+
+  export type MessageUncheckedUpdateManyWithoutReceiverInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    senderId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MessageUpdateWithoutSenderInput = {
     content?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    receiver?: UserUpdateOneRequiredWithoutReceivedMessagesNestedInput
     events?: EventUpdateManyWithoutMessageNestedInput
+    receiver?: UserUpdateOneRequiredWithoutReceivedMessagesNestedInput
   }
 
   export type MessageUncheckedUpdateWithoutSenderInput = {
@@ -20801,26 +20831,52 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MessageUpdateWithoutReceiverInput = {
-    content?: StringFieldUpdateOperationsInput | string
+  export type OrderUpdateWithoutBuyerInput = {
+    quantity?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: UserUpdateOneRequiredWithoutSentMessagesNestedInput
-    events?: EventUpdateManyWithoutMessageNestedInput
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    events?: EventUpdateManyWithoutOrderNestedInput
+    product?: ProductUpdateOneRequiredWithoutOrdersNestedInput
   }
 
-  export type MessageUncheckedUpdateWithoutReceiverInput = {
+  export type OrderUncheckedUpdateWithoutBuyerInput = {
     id?: IntFieldUpdateOperationsInput | number
-    senderId?: IntFieldUpdateOperationsInput | number
-    content?: StringFieldUpdateOperationsInput | string
+    productId?: IntFieldUpdateOperationsInput | number
+    quantity?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    events?: EventUncheckedUpdateManyWithoutMessageNestedInput
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    events?: EventUncheckedUpdateManyWithoutOrderNestedInput
   }
 
-  export type MessageUncheckedUpdateManyWithoutReceiverInput = {
+  export type OrderUncheckedUpdateManyWithoutBuyerInput = {
     id?: IntFieldUpdateOperationsInput | number
-    senderId?: IntFieldUpdateOperationsInput | number
-    content?: StringFieldUpdateOperationsInput | string
+    productId?: IntFieldUpdateOperationsInput | number
+    quantity?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PasswordResetTokenUpdateWithoutUserInput = {
+    token?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PasswordResetTokenUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    token?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PasswordResetTokenUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    token?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type PostUpdateWithoutUserInput = {
@@ -20845,95 +20901,47 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type OrderUpdateWithoutBuyerInput = {
+  export type ProductUpdateWithoutUserInput = {
+    name?: StringFieldUpdateOperationsInput | string
     quantity?: FloatFieldUpdateOperationsInput | number
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
+    price?: FloatFieldUpdateOperationsInput | number
+    imageUrls?: ProductUpdateimageUrlsInput | string[]
+    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
+    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    product?: ProductUpdateOneRequiredWithoutOrdersNestedInput
-    events?: EventUpdateManyWithoutOrderNestedInput
+    events?: EventUpdateManyWithoutProductNestedInput
+    orders?: OrderUpdateManyWithoutProductNestedInput
   }
 
-  export type OrderUncheckedUpdateWithoutBuyerInput = {
+  export type ProductUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    productId?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
     quantity?: FloatFieldUpdateOperationsInput | number
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
+    price?: FloatFieldUpdateOperationsInput | number
+    imageUrls?: ProductUpdateimageUrlsInput | string[]
+    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
+    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    events?: EventUncheckedUpdateManyWithoutOrderNestedInput
+    events?: EventUncheckedUpdateManyWithoutProductNestedInput
+    orders?: OrderUncheckedUpdateManyWithoutProductNestedInput
   }
 
-  export type OrderUncheckedUpdateManyWithoutBuyerInput = {
+  export type ProductUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    productId?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
     quantity?: FloatFieldUpdateOperationsInput | number
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type EventUpdateWithoutUserInput = {
-    action?: StringFieldUpdateOperationsInput | string
-    entityType?: NullableStringFieldUpdateOperationsInput | string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    product?: ProductUpdateOneWithoutEventsNestedInput
-    order?: OrderUpdateOneWithoutEventsNestedInput
-    message?: MessageUpdateOneWithoutEventsNestedInput
-    post?: PostUpdateOneWithoutEventsNestedInput
-    resource?: ResourceUpdateOneWithoutEventsNestedInput
-  }
-
-  export type EventUncheckedUpdateWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    action?: StringFieldUpdateOperationsInput | string
-    entityType?: NullableStringFieldUpdateOperationsInput | string | null
-    entityId?: NullableIntFieldUpdateOperationsInput | number | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type EventUncheckedUpdateManyWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    action?: StringFieldUpdateOperationsInput | string
-    entityType?: NullableStringFieldUpdateOperationsInput | string | null
-    entityId?: NullableIntFieldUpdateOperationsInput | number | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type RatingUpdateWithoutRaterInput = {
-    productQuality?: IntFieldUpdateOperationsInput | number
-    responseTime?: IntFieldUpdateOperationsInput | number
-    communication?: IntFieldUpdateOperationsInput | number
-    friendliness?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    farmer?: UserUpdateOneRequiredWithoutRatingsReceivedNestedInput
-  }
-
-  export type RatingUncheckedUpdateWithoutRaterInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    farmerId?: IntFieldUpdateOperationsInput | number
-    productQuality?: IntFieldUpdateOperationsInput | number
-    responseTime?: IntFieldUpdateOperationsInput | number
-    communication?: IntFieldUpdateOperationsInput | number
-    friendliness?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type RatingUncheckedUpdateManyWithoutRaterInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    farmerId?: IntFieldUpdateOperationsInput | number
-    productQuality?: IntFieldUpdateOperationsInput | number
-    responseTime?: IntFieldUpdateOperationsInput | number
-    communication?: IntFieldUpdateOperationsInput | number
-    friendliness?: IntFieldUpdateOperationsInput | number
+    price?: FloatFieldUpdateOperationsInput | number
+    imageUrls?: ProductUpdateimageUrlsInput | string[]
+    qualityScore?: NullableFloatFieldUpdateOperationsInput | number | null
+    predictedPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -20970,44 +20978,45 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PasswordResetTokenUpdateWithoutUserInput = {
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PasswordResetTokenUncheckedUpdateWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PasswordResetTokenUncheckedUpdateManyWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type FeedbackUpdateWithoutUserInput = {
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: IntFieldUpdateOperationsInput | number
-    comment?: StringFieldUpdateOperationsInput | string
+  export type RatingUpdateWithoutRaterInput = {
+    productQuality?: IntFieldUpdateOperationsInput | number
+    responseTime?: IntFieldUpdateOperationsInput | number
+    communication?: IntFieldUpdateOperationsInput | number
+    friendliness?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    farmer?: UserUpdateOneRequiredWithoutRatingsReceivedNestedInput
   }
 
-  export type FeedbackUncheckedUpdateWithoutUserInput = {
+  export type RatingUncheckedUpdateWithoutRaterInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: IntFieldUpdateOperationsInput | number
-    comment?: StringFieldUpdateOperationsInput | string
+    farmerId?: IntFieldUpdateOperationsInput | number
+    productQuality?: IntFieldUpdateOperationsInput | number
+    responseTime?: IntFieldUpdateOperationsInput | number
+    communication?: IntFieldUpdateOperationsInput | number
+    friendliness?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type FeedbackUncheckedUpdateManyWithoutUserInput = {
+  export type RatingUncheckedUpdateManyWithoutRaterInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: IntFieldUpdateOperationsInput | number
-    comment?: StringFieldUpdateOperationsInput | string
+    farmerId?: IntFieldUpdateOperationsInput | number
+    productQuality?: IntFieldUpdateOperationsInput | number
+    responseTime?: IntFieldUpdateOperationsInput | number
+    communication?: IntFieldUpdateOperationsInput | number
+    friendliness?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type EventCreateManyProductInput = {
+    id?: number
+    userId?: number | null
+    action: string
+    entityType?: string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
   }
 
   export type OrderCreateManyProductInput = {
@@ -21020,13 +21029,34 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type EventCreateManyProductInput = {
-    id?: number
-    userId?: number | null
-    action: string
-    entityType?: string | null
+  export type EventUpdateWithoutProductInput = {
+    action?: StringFieldUpdateOperationsInput | string
+    entityType?: NullableStringFieldUpdateOperationsInput | string | null
     details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneWithoutEventsNestedInput
+    message?: MessageUpdateOneWithoutEventsNestedInput
+    order?: OrderUpdateOneWithoutEventsNestedInput
+    post?: PostUpdateOneWithoutEventsNestedInput
+    resource?: ResourceUpdateOneWithoutEventsNestedInput
+  }
+
+  export type EventUncheckedUpdateWithoutProductInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: NullableIntFieldUpdateOperationsInput | number | null
+    action?: StringFieldUpdateOperationsInput | string
+    entityType?: NullableStringFieldUpdateOperationsInput | string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type EventUncheckedUpdateManyWithoutProductInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: NullableIntFieldUpdateOperationsInput | number | null
+    action?: StringFieldUpdateOperationsInput | string
+    entityType?: NullableStringFieldUpdateOperationsInput | string | null
+    details?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type OrderUpdateWithoutProductInput = {
@@ -21035,8 +21065,8 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    buyer?: UserUpdateOneRequiredWithoutOrdersNestedInput
     events?: EventUpdateManyWithoutOrderNestedInput
+    buyer?: UserUpdateOneRequiredWithoutOrdersNestedInput
   }
 
   export type OrderUncheckedUpdateWithoutProductInput = {
@@ -21060,36 +21090,6 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type EventUpdateWithoutProductInput = {
-    action?: StringFieldUpdateOperationsInput | string
-    entityType?: NullableStringFieldUpdateOperationsInput | string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneWithoutEventsNestedInput
-    order?: OrderUpdateOneWithoutEventsNestedInput
-    message?: MessageUpdateOneWithoutEventsNestedInput
-    post?: PostUpdateOneWithoutEventsNestedInput
-    resource?: ResourceUpdateOneWithoutEventsNestedInput
-  }
-
-  export type EventUncheckedUpdateWithoutProductInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    userId?: NullableIntFieldUpdateOperationsInput | number | null
-    action?: StringFieldUpdateOperationsInput | string
-    entityType?: NullableStringFieldUpdateOperationsInput | string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type EventUncheckedUpdateManyWithoutProductInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    userId?: NullableIntFieldUpdateOperationsInput | number | null
-    action?: StringFieldUpdateOperationsInput | string
-    entityType?: NullableStringFieldUpdateOperationsInput | string | null
-    details?: NullableJsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
   export type EventCreateManyOrderInput = {
     id?: number
     userId?: number | null
@@ -21105,9 +21105,9 @@ export namespace Prisma {
     details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneWithoutEventsNestedInput
-    product?: ProductUpdateOneWithoutEventsNestedInput
     message?: MessageUpdateOneWithoutEventsNestedInput
     post?: PostUpdateOneWithoutEventsNestedInput
+    product?: ProductUpdateOneWithoutEventsNestedInput
     resource?: ResourceUpdateOneWithoutEventsNestedInput
   }
 
@@ -21144,9 +21144,9 @@ export namespace Prisma {
     details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneWithoutEventsNestedInput
-    product?: ProductUpdateOneWithoutEventsNestedInput
     order?: OrderUpdateOneWithoutEventsNestedInput
     post?: PostUpdateOneWithoutEventsNestedInput
+    product?: ProductUpdateOneWithoutEventsNestedInput
     resource?: ResourceUpdateOneWithoutEventsNestedInput
   }
 
@@ -21183,9 +21183,9 @@ export namespace Prisma {
     details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneWithoutEventsNestedInput
-    product?: ProductUpdateOneWithoutEventsNestedInput
-    order?: OrderUpdateOneWithoutEventsNestedInput
     message?: MessageUpdateOneWithoutEventsNestedInput
+    order?: OrderUpdateOneWithoutEventsNestedInput
+    product?: ProductUpdateOneWithoutEventsNestedInput
     resource?: ResourceUpdateOneWithoutEventsNestedInput
   }
 
@@ -21222,10 +21222,10 @@ export namespace Prisma {
     details?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneWithoutEventsNestedInput
-    product?: ProductUpdateOneWithoutEventsNestedInput
-    order?: OrderUpdateOneWithoutEventsNestedInput
     message?: MessageUpdateOneWithoutEventsNestedInput
+    order?: OrderUpdateOneWithoutEventsNestedInput
     post?: PostUpdateOneWithoutEventsNestedInput
+    product?: ProductUpdateOneWithoutEventsNestedInput
   }
 
   export type EventUncheckedUpdateWithoutResourceInput = {

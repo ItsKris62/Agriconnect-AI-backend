@@ -1,12 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  
 }
 
 datasource db {
@@ -14,158 +8,134 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-// Enum for user roles
-enum UserRole {
-  FARMER
-  BUYER
-  ADMIN
-}
-
-// Enum for East African countries
-enum Country {
-  KENYA
-  UGANDA
-  TANZANIA
-}
-
-// Enum for verification status
-enum VerificationStatus {
-  NOT_VERIFIED
-  VERIFIED
-}
-
 model User {
-  id              Int                 @id @default(autoincrement())
-  email           String              @unique
-  password        String              // Hashed with bcrypt
-  firstName       String              // e.g., "John"
-  lastName        String              // e.g., "Doe"
-  phoneNumber     String?             // e.g., "+254712345678"
-  role            UserRole            @default(FARMER)
-  country         Country
-  county          String?             // Kenyan counties (e.g., "Nairobi"), null for non-Kenyan users
-  subCounty       String?             // Kenyan sub-counties (e.g., "Kibra"), null for non-Kenyan users
-  latitude        Float?              // PostGIS point for latitude
-  longitude       Float?              // PostGIS point for longitude
-  idNumber        String?             // National ID number (optional)
-  idImageUrl      String?             // Cloudinary URL for national ID image
-  verificationStatus VerificationStatus @default(NOT_VERIFIED)
-  avatarUrl       String?             // Cloudinary URL for user avatar
-  createdAt       DateTime            @default(now())
-  updatedAt       DateTime            @updatedAt
-  products        Product[]           // Farmer's produce listings
-  sentMessages    Message[]           @relation("SentMessages")
-  receivedMessages Message[]          @relation("ReceivedMessages")
-  posts           Post[]              // Community posts
-  orders          Order[]             // Buyer's orders
-  events          Event[]             // Audit events
-  ratingsGiven    Rating[]            @relation("RatingsGiven") // Ratings given by this user
-  ratingsReceived Rating[]            @relation("RatingsReceived") // Ratings received by this farmer
-  averageRating   Float?              // Cached average rating for farmers
-  passwordResetTokens PasswordResetToken[] // Password reset tokens for this user
-  feedback        Feedback[]          // Feedback submitted by this user
+  id                  Int                  @id @default(autoincrement())
+  email               String               @unique
+  password            String
+  firstName           String
+  lastName            String
+  phoneNumber         String?
+  role                UserRole             @default(FARMER)
+  country             Country
+  county              String?
+  subCounty           String?
+  latitude            Float?
+  longitude           Float?
+  idNumber            String?
+  idImageUrl          String?
+  verificationStatus  VerificationStatus   @default(NOT_VERIFIED)
+  avatarUrl           String?
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  averageRating       Float?
+  events              Event[]
+  feedback            Feedback[]
+  receivedMessages    Message[]            @relation("ReceivedMessages")
+  sentMessages        Message[]            @relation("SentMessages")
+  orders              Order[]
+  passwordResetTokens PasswordResetToken[]
+  posts               Post[]
+  products            Product[]
+  ratingsReceived     Rating[]             @relation("RatingsReceived")
+  ratingsGiven        Rating[]             @relation("RatingsGiven")
 
   @@index([email], map: "user_email_idx")
-  
 }
 
-
-
 model Product {
-  id              Int                 @id @default(autoincrement())
-  userId          Int
-  name            String              // e.g., "Maize"
-  quantity        Float               // e.g., 100 kg
-  price           Float               // e.g., 50 KES/kg
-  imageUrls       String[]            // Cloudinary URLs for produce images
-  qualityScore    Float?              // AI-generated quality score
-  predictedPrice  Float?              // AI-generated price prediction
-  latitude        Float?              // PostGIS point for latitude for produce location
-  longitude       Float?              // PostGIS point for longitude for produce location
-  createdAt       DateTime            @default(now())
-  updatedAt       DateTime            @updatedAt
-  user            User                @relation(fields: [userId], references: [id])
-  orders          Order[]             // Orders for this product
-  events          Event[]             // Audit events (e.g., listing created)
+  id             Int      @id @default(autoincrement())
+  userId         Int
+  name           String
+  quantity       Float
+  price          Float
+  imageUrls      String[]
+  qualityScore   Float?
+  predictedPrice Float?
+  latitude       Float?
+  longitude      Float?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  events         Event[]
+  orders         Order[]
+  user           User     @relation(fields: [userId], references: [id])
 
   @@index([userId, createdAt], map: "product_user_created_idx")
-  }
+}
 
 model Order {
-  id              Int                 @id @default(autoincrement())
-  buyerId         Int
-  productId       Int
-  quantity        Float
-  totalPrice      Float
-  status          String              @default("PENDING") // e.g., PENDING, CONFIRMED, DELIVERED
-  createdAt       DateTime            @default(now())
-  updatedAt       DateTime            @updatedAt
-  buyer           User                @relation(fields: [buyerId], references: [id])
-  product         Product             @relation(fields: [productId], references: [id])
-  events          Event[]             // Audit events (e.g., order placed)
+  id         Int      @id @default(autoincrement())
+  buyerId    Int
+  productId  Int
+  quantity   Float
+  totalPrice Float
+  status     String   @default("PENDING")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  events     Event[]
+  buyer      User     @relation(fields: [buyerId], references: [id])
+  product    Product  @relation(fields: [productId], references: [id])
 }
 
 model Message {
-  id              Int                 @id @default(autoincrement())
-  senderId        Int
-  receiverId      Int
-  content         String
-  createdAt       DateTime            @default(now())
-  sender          User                @relation("SentMessages", fields: [senderId], references: [id])
-  receiver        User                @relation("ReceivedMessages", fields: [receiverId], references: [id])
-  events          Event[]             // Audit events (e.g., message sent)
+  id         Int      @id @default(autoincrement())
+  senderId   Int
+  receiverId Int
+  content    String
+  createdAt  DateTime @default(now())
+  events     Event[]
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id])
+  sender     User     @relation("SentMessages", fields: [senderId], references: [id])
 }
 
 model Post {
-  id              Int                 @id @default(autoincrement())
-  userId          Int
-  content         String
-  createdAt       DateTime            @default(now())
-  updatedAt       DateTime            @updatedAt
-  user            User                @relation(fields: [userId], references: [id])
-  events          Event[]             // Audit events (e.g., post created)
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  events    Event[]
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Resource {
-  id              Int                 @id @default(autoincrement())
-  title           String
-  url             String              // URL or Cloudinary URL for downloadable resources
-  createdAt       DateTime            @default(now())
-  updatedAt       DateTime            @updatedAt
-  events          Event[]             // Audit events (e.g., resource added)
+  id        Int      @id @default(autoincrement())
+  title     String
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  events    Event[]
 }
 
 model Event {
-  id              Int                 @id @default(autoincrement())
-  userId          Int?                // Nullable for system-generated events
-  action          String              // e.g., "USER_REGISTERED", "PRODUCT_CREATED"
-  entityType      String?             // e.g., "USER", "PRODUCT"
-  entityId        Int?                // ID of the affected entity
-  details         Json?               // Additional metadata (e.g., { "ip": "192.168.1.1" })
-  createdAt       DateTime            @default(now())
-  user            User?               @relation(fields: [userId], references: [id])
-  product         Product?            @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_product_fkey")
-  order           Order?              @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_order_fkey")
-  message         Message?            @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_message_fkey")
-  post            Post?               @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_post_fkey")
-  resource        Resource?           @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_resource_fkey")
+  id         Int       @id @default(autoincrement())
+  userId     Int?
+  action     String
+  entityType String?
+  entityId   Int?
+  details    Json?
+  createdAt  DateTime  @default(now())
+  user       User?     @relation(fields: [userId], references: [id])
+  message    Message?  @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_message_fkey")
+  order      Order?    @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_order_fkey")
+  post       Post?     @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_post_fkey")
+  product    Product?  @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_product_fkey")
+  resource   Resource? @relation(fields: [entityId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "event_resource_fkey")
 
   @@index([createdAt], map: "event_created_idx")
 }
 
 model Rating {
-  id              Int                 @id @default(autoincrement())
-  raterId         Int                 // User who gave the rating (e.g., buyer)
-  farmerId        Int                 // Farmer being rated
-  productQuality  Int                 // 1-5 score
-  responseTime    Int                 // 1-5 score
-  communication   Int                 // 1-5 score
-  friendliness     Int                 // 1-5 score
-  createdAt       DateTime            @default(now())
-  updatedAt       DateTime            @updatedAt
-  rater           User                @relation("RatingsGiven", fields: [raterId], references: [id])
-  farmer          User                @relation("RatingsReceived", fields: [farmerId], references: [id])
+  id             Int      @id @default(autoincrement())
+  raterId        Int
+  farmerId       Int
+  productQuality Int
+  responseTime   Int
+  communication  Int
+  friendliness   Int
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  farmer         User     @relation("RatingsReceived", fields: [farmerId], references: [id])
+  rater          User     @relation("RatingsGiven", fields: [raterId], references: [id])
 
   @@index([farmerId, createdAt], map: "rating_farmer_created_idx")
 }
@@ -181,9 +151,26 @@ model PasswordResetToken {
 model Feedback {
   id        Int      @id @default(autoincrement())
   userId    Int?
-  name      String?  // Optional name of the user
-  rating    Int      // 1-5 star rating
-  comment   String   // User's feedback comment
+  name      String?
+  rating    Int
+  comment   String
   createdAt DateTime @default(now())
   user      User?    @relation(fields: [userId], references: [id])
+}
+
+enum UserRole {
+  FARMER
+  BUYER
+  ADMIN
+}
+
+enum Country {
+  KENYA
+  UGANDA
+  TANZANIA
+}
+
+enum VerificationStatus {
+  NOT_VERIFIED
+  VERIFIED
 }
